@@ -1,3 +1,9 @@
+.navbar .container-fluid {
+    background-color: var(--light);
+    position: absolute;
+    top: 0;
+}
+
 .navbar-brand img {
-    width: 100px;
+    width: 80px;
 }
