@@ -17,10 +17,9 @@
 
 .modal-footer button {
     border: none;
-    width: 190px;
+    width: 160px;
     height: 40px;
     border-radius: 50px;
-    position: relative;
 }
 
 .modal-footer button:nth-child(1) {
@@ -35,17 +34,10 @@
 
 .modal-footer button img {
     width: 30px;
-    position: absolute;
-    left: 10px;
-    transform: translateY(-4px);
+    transform: translateY(-6px);
 }
 
-/* .modal-footer button span {
-    position: absolute;
-    right: 10px;
-    transform: translateY(-30px);
-} */
-
-/* .modal-footer button:nth-child(1) img {
-    transform: translateX(10px);
-} */
+.modal-footer button span {
+    transform: translateY(6px);
+    /* transform: translateX(-6px); */
+}

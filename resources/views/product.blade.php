@@ -41,6 +41,7 @@
                     <div class="card" style="width: 18rem;">
                         <img src="img/2086922454.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
+                            
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
@@ -56,13 +57,14 @@
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                        <div class="text-end">
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <div class="d-flex justify-content-between">
+                                            <a href="#" class="ms-3"><img src="img/icons/save-icon.svg" alt=""></a>
+                                            <button type="button" class="btn-close mt-3 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         
                                         <div class="modal-body">
                                             <div class="row">
-                                                <div class="col-6 house-pic">
+                                                <div class="col-6 house-pic text-center">
                                                     <img src="img/2086922454.jpg" class="card-img-top" alt="...">
                                                     <img src="img/2086922454.jpg" class="card-img-top" alt="...">
                                                     <img src="img/2086922454.jpg" class="card-img-top" alt="...">
@@ -70,20 +72,20 @@
                                                 <div class="col-6">
                                                     <div class="d-flex flex-column">
                                                         <div>
-                                                            <input type="checkbox" name="3d" id="3d" value="500">
-                                                            <label for="3d">3D Perspective</label>
+                                                            <input type="checkbox" name="3d" id="3d" value="500" class="form-check-input">
+                                                            <label for="3d" class="form-check-label">3D Perspective</label>
                                                         </div>
                                                         <div>
-                                                            <input type="checkbox" name="floorplan" id="floorplan" value="400">
-                                                            <label for="floorplan">Floor Plans</label>
+                                                            <input class="form-check-input" type="checkbox" name="floorplan" id="floorplan" value="400">
+                                                            <label class="form-check-label" for="floorplan">Floor Plans</label>
                                                         </div>
                                                         <div>
-                                                            <input type="checkbox" name="interior" id="interior" value="300">
-                                                            <label for="interior">Interior</label>
+                                                            <input class="form-check-input" type="checkbox" name="interior" id="interior" value="300">
+                                                            <label class="form-check-label" for="interior">Interior</label>
                                                         </div>
                                                         <div>
-                                                            <input type="checkbox" name="animaition" id="animation" value="1000">
-                                                            <label for="animation">Animation</label>                                                        
+                                                            <input class="form-check-input" type="checkbox" name="animaition" id="animation" value="1000">
+                                                            <label class="form-check-label" for="animation">Animation</label>                                                        
                                                         </div>
                                                         
                                                     </div>
@@ -100,8 +102,8 @@
                                                 <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, aut?</h5>
                                             </div>
                                             <div class="container d-flex justify-content-around">
-                                                <button><img src="img/icons/peso-icon.svg" alt=""><span>BUY NOW</span></button>
-                                                <button><img src="img/icons/cart-icon.svg" alt=""><span>ADD TO CART</span></button>
+                                                <button class="d-flex justify-content-around"><img src="img/icons/peso-icon.svg" alt=""><span>BUY NOW</span></button>
+                                                <button class="d-flex justify-content-between"><img src="img/icons/cart-icon.svg" alt=""><span>ADD TO CART</span></button>
                                             </div> 
                                         </div>
                                     </div>
