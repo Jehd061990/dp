@@ -3,7 +3,11 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
+<<<<<<< HEAD
         'reference' => '30c025e31bc3313b7b1369cf90de422a099d8170',
+=======
+        'reference' => '0dc21a3acfb2f245ab0c3fc8740bb97bcb6d889e',
+>>>>>>> b7c7c2abeba9851940c0e54623d2a5dc9f371442
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -48,6 +52,42 @@
             'install_path' => __DIR__ . '/../dflydev/dot-access-data',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'doctrine/cache' => array(
+            'pretty_version' => '2.2.0',
+            'version' => '2.2.0.0',
+            'reference' => '1ca8f21980e770095a31456042471a57bc4c68fb',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../doctrine/cache',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'doctrine/dbal' => array(
+            'pretty_version' => '3.8.0',
+            'version' => '3.8.0.0',
+            'reference' => 'd244f2e6e6bf32bff5174e6729b57214923ecec9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../doctrine/dbal',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'doctrine/deprecations' => array(
+            'pretty_version' => '1.1.3',
+            'version' => '1.1.3.0',
+            'reference' => 'dfbaa3c2d2e9a9df1118213f3b8b0c597bb99fab',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../doctrine/deprecations',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'doctrine/event-manager' => array(
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
+            'reference' => '750671534e0241a7c50ea5b43f67e23eb5c96f32',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../doctrine/event-manager',
+            'aliases' => array(),
+            'dev_requirement' => true,
         ),
         'doctrine/inflector' => array(
             'pretty_version' => '2.0.9',
@@ -382,7 +422,11 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
+<<<<<<< HEAD
             'reference' => '30c025e31bc3313b7b1369cf90de422a099d8170',
+=======
+            'reference' => '0dc21a3acfb2f245ab0c3fc8740bb97bcb6d889e',
+>>>>>>> b7c7c2abeba9851940c0e54623d2a5dc9f371442
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -655,6 +699,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'psr/cache' => array(
+            'pretty_version' => '3.0.0',
+            'version' => '3.0.0.0',
+            'reference' => 'aa5030cfa5405eccfdcb1083ce040c2cb8d253bf',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/cache',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'psr/clock' => array(
             'pretty_version' => '1.0.0',
             'version' => '1.0.0.0',
@@ -757,8 +810,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '3.0.0',
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -811,6 +864,15 @@
             'install_path' => __DIR__ . '/../ramsey/uuid',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'reliese/laravel' => array(
+            'pretty_version' => 'v1.2.4',
+            'version' => '1.2.4.0',
+            'reference' => '8ff949815af7cd7caba6108eb0be4055d1b80353',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../reliese/laravel',
+            'aliases' => array(),
+            'dev_requirement' => true,
         ),
         'rhumsaa/uuid' => array(
             'dev_requirement' => false,
