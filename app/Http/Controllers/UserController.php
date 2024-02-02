@@ -32,7 +32,7 @@ class UserController extends Controller
         $user->last_name = $r->input('last_name');
         $user->email = $r->input('email');
         $user->password = Hash::make($r->input('pw'));
-        $user->account_type = 'user';
+        $user->account_type = 3;
         $user->save();
 
         return redirect("/register")->with('success', 'New user added!');
