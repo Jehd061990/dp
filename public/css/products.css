@@ -27,6 +27,19 @@
     font-weight: bold;
 }
 
+.modal-content .save {
+    margin-top: 1px;
+    transition: 0.5s linear;]
+}
+
+.modal-content .save img {
+    width: 35px;
+}
+
+.modal-content .save:hover {
+    transform: translateY(7px);
+}
+
 .modal-footer button {
     border: none;
     width: 160px;
@@ -51,13 +64,17 @@
 }
 
 .modal-footer button .image {
-    /* background-color: yellow; */
+    padding-top: 4px;
     transition: 0.5s linear;
     position: relative;
 }
 
 .modal-footer button:nth-child(2) img {
     padding-left: 5px;
+}
+
+.modal-footer button:nth-child(1) img {
+    transform: translateY(0.5px);
 }
 
 .modal-footer button .span-text {

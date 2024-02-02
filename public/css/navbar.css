@@ -7,3 +7,10 @@
 .navbar-brand img {
     width: 100px;
 }
+
+.nav-item .vertical-bar {
+    width: 2px;
+    height: 20px;
+    background-color: var(--gray);
+    margin-top: 10px;
+}
