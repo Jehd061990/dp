@@ -2,63 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+
+    public function show_register()
     {
-        //
+        return view('register');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function register(Request $r)
     {
-        //
-    }
+        $user = new User;
+        $user->first_name = $r->input('first_name');
+        $user->last_name = $r->input('last_name');
+        $user->email = $r->input('email');
+        $user->password = Hash::make($r->input('pw'));
+        $user->account_type = 3;
+        $user->save();
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return redirect("/register");
     }
 }
