@@ -10,3 +10,34 @@
     background-color: var(--gray);
     /* margin-top: 300px; */
 }
+
+.house-pic img {
+    width: 100px;
+}
+
+.modal-footer button {
+    border: none;
+    width: 160px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.modal-footer button:nth-child(1) {
+    background-color: var(--blue-green);
+    color: var(--white);
+}
+
+.modal-footer button:nth-child(2) {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.modal-footer button img {
+    width: 30px;
+    transform: translateY(-6px);
+}
+
+.modal-footer button span {
+    transform: translateY(6px);
+    /* transform: translateX(-6px); */
+}
