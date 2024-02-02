@@ -20,7 +20,7 @@ class SuperAdminController extends Controller
         $user->last_name = $r->input('last_name');
         $user->email = $r->input('email');
         $user->password = Hash::make($r->input('pw'));
-        $user->account_type = 2;
+        $user->account_type = 'admin';
         $user->save();
 
         return redirect("/register/admin");

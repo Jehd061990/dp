@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function show_login()
+    {
+        return view('login');
+    }
 
     public function show_register()
     {
@@ -21,9 +25,9 @@ class UserController extends Controller
         $user->last_name = $r->input('last_name');
         $user->email = $r->input('email');
         $user->password = Hash::make($r->input('pw'));
-        $user->account_type = 3;
+        $user->account_type = 'user';
         $user->save();
 
-        return redirect("/register");
+        return redirect("/register")->with('success', 'Successfully registered');
     }
 }

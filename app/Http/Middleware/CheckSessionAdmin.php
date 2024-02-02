@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Session;
 
 class CheckSessionAdmin
 {
@@ -15,6 +16,11 @@ class CheckSessionAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
+
+        if (Session::get('account_type') !== 'admin') {
+            return redirect('/login')->with('fail', 'Unauthorized access!');
+        }
+
         return $next($request);
     }
 }
