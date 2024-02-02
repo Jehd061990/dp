@@ -13,7 +13,9 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property int $product_type_id
  * @property string $product_name
- * @property string $price
+ * @property string $1_storey_price
+ * @property string $2_storey_price
+ * @property string $3_storey_price
  *
  * @package App\Models
  */
@@ -25,6 +27,8 @@ class ProductType extends Model
 
 	protected $fillable = [
 		'product_name',
-		'price'
+		'1_storey_price',
+		'2_storey_price',
+		'3_storey_price'
 	];
 }
