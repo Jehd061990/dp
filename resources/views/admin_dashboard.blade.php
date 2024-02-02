@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>Your Profile</h1>
+    <h1>WELCOME ADMIN</h1>
     <a href="/logout">Logout</a>
 </body>
 

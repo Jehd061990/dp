@@ -1,9 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SuperAdminController;
+use App\Http\Controllers\AdminController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,14 @@ Route::get('/login', [UserController::class, 'show_login']);
 Route::post('/login', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout']);
 
+// USER SIDE
+Route::get('/profile', [UserController::class, 'user_profile']);
+
+// ADMIN SIDE
+Route::get('/admin/dashboard', [AdminController::class, 'admin_dashboard']);
+
+// SUPERADMIN SIDE
+Route::get('/admin/dashboard', [SuperAdminController::class, 'superadmin_dashboard']);
 
 Route::get('/product', [ProductController::class, 'products']);
 Route::get('/register', [UserController::class, 'show_register']);

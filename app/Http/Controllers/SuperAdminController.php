@@ -25,4 +25,9 @@ class SuperAdminController extends Controller
 
         return redirect("/register/admin");
     }
+
+    public function superadmin_dashboard()
+    {
+        return view('superadmin_dashboard');
+    }
 }
