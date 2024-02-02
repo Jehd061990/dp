@@ -19,6 +19,10 @@
                 <a class="nav-link" href="#" tabindex="-1">FAQ</a>
                 </li>
             </ul>
+            <ul>
+                <li>Login</li>
+                <li>Signup</li>
+            </ul>
         </div>
     </div>
 </nav>
