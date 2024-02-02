@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('/product', [ProductController::class, 'products']);
+Route::get('/register', [UserController::class, 'show_register']);
+Route::post('/register', [UserController::class, 'register']);
