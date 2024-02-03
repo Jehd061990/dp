@@ -29,7 +29,7 @@
 
 .modal-content .save {
     margin-top: 1px;
-    transition: 0.5s linear;]
+    transition: 0.5s linear;
 }
 
 .modal-content .save img {
@@ -119,4 +119,20 @@
 .modal-footer button:nth-child(2):hover img {
     padding-top: 5px;
     transform: translateX(55px);
+}
+
+/* responsive */
+@media only screen and (max-width: 576px) {
+    .view-card-btn {
+        width: 100px;
+    }
+
+    .modal-footer button {
+        width: 140px;
+        font-size: 12px;
+    }
+
+    #product-page .search-bg {
+        margin-top: 30px;
+    }
 }
