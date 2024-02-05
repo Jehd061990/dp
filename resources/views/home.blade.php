@@ -77,20 +77,20 @@
 
             <p class="text_indent">Innovative Designs, Endless <br/>Possibilities: Start Your Journey Here</p>
         </div>
-        <div class="col-lg-2" style="margin-left: -45px; margin-right: -50px; width: 300px; height: 250px">
+        <div class="col-lg-2 explore" style="margin-left: -45px; margin-right: -50px; width: 300px; height: 250px">
             <img src="/img/display_4.jpg" class="display_4 img-fluid"/>
             
           
             <p class="text_indent">Explore the beauty of Art and Architecture</p>
         
         </div>
-        <div class="col-lg-2" style="margin-left: 30px; margin-right: -50px; width: 300px; height: 250px">
+        <div class="col-lg-2 elevate" style="margin-left: 30px; margin-right: -50px; width: 300px; height: 250px">
                        <img src="/img/display_5.jpg" class="display_3 img-fluid"/>
 
             <p class="text_indent">Elevating Spaces, Inspiring Living: Dive into Our Architectural World</p>
             
         </div>
-        <div class="col-lg-4" style="margin-left: 63px">
+        <div class="col-lg-4 explore_1" style="margin-left: 63px" class="text_indent">
 
  <p class="text_indent">With each project, we start on an effort to create places that go beyond simple structures, aiming to improve lives and create an atmosphere of connection. Our approach blends careful design, environmental techniques, and an in-depth understanding of our client's needs, resulting in spaces that have purpose and meaning. We believe in crafting architectural solutions that not only reflect our commitment to innovation and sustainability but also resonate with the unique identity of each community we serve.</p>
  
