@@ -15,9 +15,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $storey
  * @property string $design
  * @property string $description
- * @property string $image
  * @property string $lot_area
- * @property int $product_type_id
+ * @property string|null $3d_image
+ * @property string|null $floor_plan_image
+ * @property string|null $interior_image
+ * @property string $title
  *
  * @package App\Models
  */
@@ -27,16 +29,14 @@ class Product extends Model
 	protected $primaryKey = 'product_id';
 	public $timestamps = false;
 
-	protected $casts = [
-		'product_type_id' => 'int'
-	];
-
 	protected $fillable = [
 		'storey',
 		'design',
 		'description',
-		'image',
 		'lot_area',
-		'product_type_id'
+		'3d_image',
+		'floor_plan_image',
+		'interior_image',
+		'title'
 	];
 }
