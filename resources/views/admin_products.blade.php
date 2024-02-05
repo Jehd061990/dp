@@ -8,7 +8,8 @@
 </head>
 
 <body>
-    PRODUCTS
-</body>
+    <h1>products</h1>
+    <a href="products/create" class="btn btn-success">+ Add</a>
+    <p>{{$product -> title}}</p>
 
 </html>

@@ -28,16 +28,15 @@ Route::get('/logout', [UserController::class, 'logout']);
 
 // USER SIDE
 Route::get('/profile', [UserController::class, 'user_profile']);
+Route::get('/register', [UserController::class, 'show_register']);
+Route::post('/register', [UserController::class, 'register']);
 
 // ADMIN SIDE
 Route::get('/admin/dashboard', [AdminController::class, 'admin_dashboard']);
 
 // SUPERADMIN SIDE
 Route::get('/admin/dashboard', [SuperAdminController::class, 'superadmin_dashboard']);
-
 Route::get('/products', [ProductController::class, 'products']);
-Route::get('/register', [UserController::class, 'show_register']);
-Route::post('/register', [UserController::class, 'register']);
 Route::get('/register/admin', [SuperAdminController::class, 'show_register_admin']);
 Route::post('/register/admin', [SuperAdminController::class, 'register_admin']);
 
