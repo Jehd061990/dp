@@ -5,7 +5,7 @@ use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
-
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,10 +35,16 @@ Route::get('/admin/dashboard', [AdminController::class, 'admin_dashboard']);
 // SUPERADMIN SIDE
 Route::get('/admin/dashboard', [SuperAdminController::class, 'superadmin_dashboard']);
 
-Route::get('/product', [ProductController::class, 'products']);
+Route::get('/products', [ProductController::class, 'products']);
 Route::get('/register', [UserController::class, 'show_register']);
 Route::post('/register', [UserController::class, 'register']);
 Route::get('/register/admin', [SuperAdminController::class, 'show_register_admin']);
 Route::post('/register/admin', [SuperAdminController::class, 'register_admin']);
+
+// SUPERADMIN AND ADMIN
+Route::get('/admin/products/create', [ProductController::class, 'add_product_form']);
+Route::post('/admin/products', [ProductController::class, 'add_product']);
+Route::get('/admin/products', [SuperAdminController::class, 'admin_show_products']);
+
 // Route::get('/register/admin', [SuperAdminController::class, 'show_register_admin']);
 //Route::post('/register/admin', [SuperAdminController::class, 'register_admin']);
