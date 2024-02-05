@@ -36,14 +36,34 @@
             <td><img src="{{ asset('img/products/' . $p->floor_plan_image) }}" width="100px" alt="Floor Plan Image"></td>
             <td><img src="{{ asset('img/products/' . $p->interior_image) }}" width="100px" alt="Interior Image"></td>
             <td><a href="" class="btn btn-primary">View</a></td>
-            <td><a href="" class="btn btn-warning">Edit</a></td>
+            <td><a href="/admin/products/edit/{{$p -> product_id}}" class="btn btn-warning">Edit</a></td>
             <td>
-                <form action="" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <input type="submit" class="btn btn-danger" value="Delete" />
-                </form>
+                <a data-bs-toggle="modal" data-bs-target="#delete_{{$p -> product_id}}" class="btn btn-danger">Delete</a>
             </td>
+
+            <!-- delete modal -->
+            <div class="modal fade" id="delete_{{$p -> product_id}}" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Delete {{$p -> title}} ({{$p -> product_id}})</h5>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">Once this action is taken, it cannot be undone.
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" data-bs-dismiss="modal">
+                                    Cancel
+                                </button>
+                                <form action="/admin/products/{{$p -> product_id}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input class="btn btn-danger" type="submit" value="Delete" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </tr>
         @endforeach
     </table>

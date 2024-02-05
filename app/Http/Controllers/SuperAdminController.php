@@ -40,4 +40,12 @@ class SuperAdminController extends Controller
 
         return view('admin_products', compact('product'));
     }
+
+    public function delete_product(string $id)
+    {
+        $product = Product::where('product_id', '=', $id)
+            ->delete();
+
+        return redirect('admin/products');
+    }
 }

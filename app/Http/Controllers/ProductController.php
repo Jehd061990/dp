@@ -56,4 +56,33 @@ class ProductController extends Controller
     {
         return view('product_create');
     }
+
+    public function edit_product(Request $r, string $id)
+    {
+        $product = Product::where('product_id', '=', $id)
+            ->update(
+                [
+                    'title' => $r->input('title'),
+                    'design' => $r->input('design'),
+                    'description' => $r->input('description'),
+                    'lot_area' => $r->input('lot_area'),
+                    'image_3d' => $r->input('image_3d'),
+                    'floor_plan_image' => $r->input('floor_plan_image'),
+                    'interior_image' => $r->input('interior_image'),
+                ]
+            );
+
+        return redirect('/admin/products');
+    }
+
+    public function edit_product_form(string $id)
+    {
+        $product = Product::query()
+            ->select('*')
+            ->where('product_id', '=', $id)
+            ->get()
+            ->first();
+
+        return view('product_edit', compact('product'));
+    }
 }

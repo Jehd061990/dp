@@ -44,6 +44,10 @@ Route::post('/register/admin', [SuperAdminController::class, 'register_admin']);
 Route::get('/admin/products/create', [ProductController::class, 'add_product_form']);
 Route::post('/admin/products', [ProductController::class, 'add_product']);
 Route::get('/admin/products', [SuperAdminController::class, 'admin_show_products']);
+Route::delete('/admin/products/{id}', [SuperAdminController::class, 'delete_product']);
+Route::put('/admin/products/{id}', [ProductController::class, 'edit_product']);
+Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit_product_form']);
 
-// Route::get('/profile/upload', [UserController::class, 'upload_profile_picture_form']);
-//Route::post('/profile/upload', [UserController::class, 'upload_profile_picture']);
+
+//     Route::get('/admin/students/edit/{id}', [StudentController::class, 'edit_student_form']);
+//    Route::put('/admin/students/{id}', [StudentController::class, 'edit_student']);
