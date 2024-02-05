@@ -1,0 +1,40 @@
+.login-page {
+    /* background-color: var(--light); */
+    background-color: blue;
+    margin: 0;
+}
+
+.login-page .login-container {
+    /* transform: translateY(25%); */
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 850px;
+    height: 500px;
+    background-color: var(--white);
+    position: absolute;
+}
+
+.login-container .right {
+    width: 400px;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    right: 0;
+}
+
+.login-container .right .img-bg {
+    width: 400px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+}
+
+.login-container .right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
