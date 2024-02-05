@@ -19,7 +19,7 @@ use App\Models\Product;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 // PUBLIC SIDE
 Route::get('/login', [UserController::class, 'show_login']);
@@ -29,16 +29,14 @@ Route::get('/product', [ProductController::class, 'products']);
 
 // USER SIDE
 Route::get('/profile', [UserController::class, 'user_profile']);
+Route::get('/register', [UserController::class, 'show_register']);
+Route::post('/register', [UserController::class, 'register']);
 
 // ADMIN SIDE
 Route::get('/admin/dashboard', [AdminController::class, 'admin_dashboard']);
 
 // SUPERADMIN SIDE
 Route::get('/admin/dashboard', [SuperAdminController::class, 'superadmin_dashboard']);
-
-
-Route::get('/register', [UserController::class, 'show_register']);
-Route::post('/register', [UserController::class, 'register']);
 Route::get('/register/admin', [SuperAdminController::class, 'show_register_admin']);
 Route::post('/register/admin', [SuperAdminController::class, 'register_admin']);
 
@@ -46,6 +44,14 @@ Route::post('/register/admin', [SuperAdminController::class, 'register_admin']);
 Route::get('/admin/products/create', [ProductController::class, 'add_product_form']);
 Route::post('/admin/products', [ProductController::class, 'add_product']);
 Route::get('/admin/products', [SuperAdminController::class, 'admin_show_products']);
+Route::delete('/admin/products/{id}', [SuperAdminController::class, 'delete_product']);
+Route::put('/admin/products/{id}', [ProductController::class, 'edit_product']);
+Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit_product_form']);
+Route::get('/admin/products/{id}', [ProductController::class, 'show_product']);
+Route::get('/admin/test', [ProductController::class, 'showStorey']);
 
-// Route::get('/register/admin', [SuperAdminController::class, 'show_register_admin']);
-//Route::post('/register/admin', [SuperAdminController::class, 'register_admin']);
+
+
+
+//     Route::get('/admin/students/edit/{id}', [StudentController::class, 'edit_student_form']);
+//    Route::put('/admin/students/{id}', [StudentController::class, 'edit_student']);
