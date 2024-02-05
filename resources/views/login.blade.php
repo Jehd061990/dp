@@ -2,20 +2,29 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @include('layouts/header')
     <title>Document</title>
 </head>
 
-<body>
-    <form action="/login" method="POST">
+<body class="login-page">
+    <!-- <form action="/login" method="POST">
         @csrf
         <label>Email address: </label>
         <input type="email" name="email" /><br />
         <label>Password: </label>
         <input type="password" name="pw" /><br />
         <input type="submit" class="btn btn-primary" />
-    </form>
+    </form> -->
+    <div class="login-container">
+        <!-- <div class="left">
+
+        </div> -->
+        <div class="right">
+            <div class="img-bg">
+                <img src="img/download.jpg" alt="house background image">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
