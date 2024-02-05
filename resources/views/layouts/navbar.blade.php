@@ -15,16 +15,16 @@
         <div class="collapse navbar-collapse justify-content-end me-3 text-center navbar-margin-top" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" href="#">Products</a>
+                    <a class="nav-link active" href="#">Products</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#" tabindex="-1">About</a>
+                    <a class="nav-link" href="#" tabindex="-1">About</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#" tabindex="-1">FAQ</a>
+                    <a class="nav-link" href="#" tabindex="-1">FAQ</a>
                 </li>
             </ul>
             
