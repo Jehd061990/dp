@@ -21,13 +21,19 @@
         <input type="text" name="description" /><br />
         <label>Lot Area:</label>
         <input type="text" name="lot_area" /><br />
-        <!-- <label>Product Name:</label>
-        <select name="product_name">
-            <option value="3D Perspective">3D Perspective</option>
-            <option value="Floor Plan">Floor Plan</option>
-            <option value="Interior">Interior</option>
-            <option value="Full sets of plans">Full sets of plans</option>
-        </select><br /> -->
+        <label>Product Name:</label>
+        <select name="storey_id">
+            <option value="1">3D Perspective</option>
+            <option value="2">Floor Plan</option>
+            <option value="3">Interior</option>
+            <option value="4">Full sets of plans</option>
+        </select><br />
+        <label>3D Image:</label>
+        <input type="file" name="image_3d" /><br />
+        <label>Floor Plan Image:</label>
+        <input type="file" name="floor_plan_image" /><br />
+        <label>Interior Image:</label>
+        <input type="file" name="interior_image" /><br />
         <input type="submit" class="btn btn-success">
     </form>
 </body>
