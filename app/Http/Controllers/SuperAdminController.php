@@ -30,4 +30,9 @@ class SuperAdminController extends Controller
     {
         return view('superadmin_dashboard');
     }
+
+    public function admin_show_products()
+    {
+        return view('admin_products');
+    }
 }
