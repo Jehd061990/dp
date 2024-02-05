@@ -45,5 +45,5 @@ Route::get('/admin/products/create', [ProductController::class, 'add_product_for
 Route::post('/admin/products', [ProductController::class, 'add_product']);
 Route::get('/admin/products', [SuperAdminController::class, 'admin_show_products']);
 
-// Route::get('/register/admin', [SuperAdminController::class, 'show_register_admin']);
-//Route::post('/register/admin', [SuperAdminController::class, 'register_admin']);
+// Route::get('/profile/upload', [UserController::class, 'upload_profile_picture_form']);
+//Route::post('/profile/upload', [UserController::class, 'upload_profile_picture']);

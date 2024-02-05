@@ -28,6 +28,12 @@
             <option value="3">Interior</option>
             <option value="4">Full sets of plans</option>
         </select><br />
+        <label>3D Image:</label>
+        <input type="file" name="image_3d" /><br />
+        <label>Floor Plan Image:</label>
+        <input type="file" name="floor_plan_image" /><br />
+        <label>Interior Image:</label>
+        <input type="file" name="interior_image" /><br />
         <input type="submit" class="btn btn-success">
     </form>
 </body>

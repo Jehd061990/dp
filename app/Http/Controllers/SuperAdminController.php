@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Product;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
@@ -33,6 +34,10 @@ class SuperAdminController extends Controller
 
     public function admin_show_products()
     {
-        return view('admin_products');
+        $product = Product::query()
+            ->select('*')
+            ->get();
+
+        return view('admin_products', compact('product'));
     }
 }

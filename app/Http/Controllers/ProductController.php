@@ -25,19 +25,26 @@ class ProductController extends Controller
         $product->description = $r->input('description');
         $product->lot_area = $r->input('lot_area');
         $product->title = $r->input('title');
+        if ($r->file('image_3d')) {
+            $file = $r->file('image_3d');
+            $filename = date('YmdHiu') . $file->getClientOriginalName();
+            $file->move(public_path('img/products'), $filename);
+            $product->image_3d = $filename;
+        }
+        if ($r->file('floor_plan_image')) {
+            $file = $r->file('floor_plan_image');
+            $filename = date('YmdHiu') . $file->getClientOriginalName();
+            $file->move(public_path('img/products'), $filename);
+            $product->floor_plan_image = $filename;
+        }
+        if ($r->file('interior_image')) {
+            $file = $r->file('interior_image');
+            $filename = date('YmdHiu') . $file->getClientOriginalName();
+            $file->move(public_path('img/products'), $filename);
+            $product->interior_image = $filename;
+        }
+
         $product->save();
-
-        // $product_type = new ProductType;
-        // $product_type->product_id = $product->product_id;
-        // $product_type->save();
-
-        // $product_type = Product::query()
-        //     ->select('*')
-        //     ->join('faculties_educ', 'faculties.faculty_id', '=', 'faculties_educ.faculty_id')
-        //     ->where('academe_points', '>=', 1200)
-        //     ->orderBy('last_name')
-        //     ->limit(5)
-        //     ->get();
 
         return redirect("admin/products");
 

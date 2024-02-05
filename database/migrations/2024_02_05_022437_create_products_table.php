@@ -26,7 +26,10 @@ return new class extends Migration
             $table->string('floor_plan_image')->nullable();
             $table->string('interior_image')->nullable();
             $table->string('title', 300);
-            $table->foreign('storey_id')->references('storey_id')->on('storey')->onCascade('delete');
+            $table->foreign('storey_id')
+                ->references('storey_id')
+                ->on('storey')
+                ->onCascade('delete');
         });
     }
 
