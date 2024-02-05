@@ -1,56 +1,56 @@
-body {
+body#home-page {
     background-color: #ececec;
     margin: 0;
     position: relative;
 }
 
-.dwelling_car {
+#home-page .dwelling_car {
     margin-top: 80px;
 }
 
-.dwelling_2nd_images {
+#home-page .dwelling_2nd_images {
     margin-top: 70px;
     margin-bottom: 10px;
 }
 
-.display_1 {
+#home-page .display_1 {
     height: 210px;
     width: 420px;
 }
 
-.display_3 {
+#home-page .display_3 {
     margin: 0;
     height: 150px;
     width: 420px;
 }
 
-.display_4 {
+#home-page .display_4 {
     margin: 0;
     height: 150px;
     width: 280px;
 }
-.display_2 {
+#home-page .display_2 {
     height: 270px;
     width: 650px;
 }
-.discover {
+#home-page .discover {
     text-align: center;
     margin-left: 0;
     margin-right: 0;
 }
 
-.home-page {
+#home-page .home-page {
     margin: 0;
     position: relative;
     display: flex;
     justify-content: center;
 }
 
-.text_indent {
+#home-page .text_indent {
     text-align: start;
 }
 
-.text_indent_background {
+#home-page .text_indent_background {
     background-color: #c0c0c0;
     padding: 5px;
 }
@@ -59,8 +59,12 @@ body {
     text-align: center;
 } */
 
+/* .dwelling-hero .carousel-item img {
+    width: 300px !important;
+} */
+
 @media only screen and (max-width: 950px) {
-    body {
+    body#home-page {
         margin: auto;
         padding: 0;
         text-align: center;
@@ -75,11 +79,11 @@ body {
         text-align: center;
     } */
 
-    .col-lg-3 {
+    #home-page .col-lg-3 {
         margin-top: 20px;
     }
 
-    .col-lg-4 {
+    #home-page .col-lg-4 {
         margin-top: auto;
         margin-left: auto;
         margin-right: auto;
@@ -88,7 +92,7 @@ body {
         text-align: center;
     }
 
-    .display_3 {
+    #home-page .display_3 {
         margin-left: auto;
         margin-right: auto;
         margin-top: 10px;
@@ -97,12 +101,12 @@ body {
         max-width: 300px;
         text-align: center;
     }
-    .text_indent {
+    #home-page .text_indent {
         text-align: center;
         margin: 0;
     }
 
-    .dwelling_2nd_images {
+    #home-page .dwelling_2nd_images {
         margin-top: 10px;
         margin-bottom: 10px;
     }
@@ -116,15 +120,15 @@ body {
         text-align: center;
     } */
 
-    .display_1 {
+    #home-page .display_1 {
         display: none;
     }
 
-    .explore {
+    #home-page .explore {
         display: none;
     }
 
-    .explore_1 {
+    #home-page .explore_1 {
         margin: auto;
         margin-top: 0;
         width: 70%;
@@ -132,7 +136,7 @@ body {
         text-align: center;
     }
 
-    .elevate {
+    #home-page .elevate {
         margin: auto;
         offset: auto;
         padding: auto;

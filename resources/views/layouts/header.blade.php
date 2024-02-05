@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/products.css">  
     <link rel="stylesheet" href="/css/footer.css">  
-    <link rel="stylesheet" href="/css/login.css">  
+    <link rel="stylesheet" href="/css/login.css">
+
+    <link rel="stylesheet" href="/css/home.css">
     
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
@@ -22,3 +24,4 @@
     <!-- external js -->
     <script src="/js/navbar.js"></script>
     <script src="/js/login.js"></script>
+    <script src="/js/home.js"></script> 

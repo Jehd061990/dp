@@ -30,7 +30,7 @@ class UserController extends Controller
                 if (Session::get('account_type') == 'admin') {
                     return redirect('/admin/dashboard');
                 } else if (Session::get('account_type') == 'user') {
-                    return redirect('/profile');
+                    return redirect('/');
                 } else if (Session::get('account_type') == 'superadmin') {
                     return redirect('/admin/dashboard');
                 }

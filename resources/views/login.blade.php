@@ -72,7 +72,7 @@
                 
             <div class="img-bg">
                 
-                <img src="img/download.jpg" alt="house background image">
+                <img src="img/icons/download.jpg" alt="house background image">
                 <div class="signup-banner d-flex justify-content-between">
                     <div class="first text-center">Unlock the World of Architectural Brilliance with Floor Planning Hub</div>
                     <div class="second text-center">
