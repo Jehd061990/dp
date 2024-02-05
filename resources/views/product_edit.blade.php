@@ -20,9 +20,10 @@
         <input type="text" name="title" value="{{$product -> title}}" /><br />
         <label>Design:</label>
         <input type="text" name="design" value="{{$product -> design}}" /><br />
-
         <label>Description:</label>
         <input type="text" name="description" value="{{$product -> description}}" /><br />
+        <label>Lot Area:</label>
+        <input type="text" name="lot_area" value="{{$product -> lot_area}}" /><br />
         <label>Product name:</label>
         <select name="storey_id">
             <option value="{{$product -> storey_id}}">{{$product -> storey_id}}</option>

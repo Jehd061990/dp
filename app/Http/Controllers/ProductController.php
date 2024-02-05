@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Storey;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 // use App\Models\Product;
@@ -66,11 +67,37 @@ class ProductController extends Controller
                     'design' => $r->input('design'),
                     'description' => $r->input('description'),
                     'lot_area' => $r->input('lot_area'),
-                    'image_3d' => $r->input('image_3d'),
-                    'floor_plan_image' => $r->input('floor_plan_image'),
-                    'interior_image' => $r->input('interior_image'),
+
                 ]
             );
+
+        if ($r->input('image_3d')) {
+            $product = Product::where('product_id', '=', $id)
+                ->update(
+                    [
+                        'image_3d' => $r->input('image_3d'),
+                    ]
+                );
+        }
+
+        if ($r->input('floor_plan_image')) {
+            $product = Product::where('product_id', '=', $id)
+                ->update(
+                    [
+                        'floor_plan_image' => $r->input('floor_plan_image'),
+                    ]
+                );
+        }
+
+        if ($r->input('interior_image')) {
+            $product = Product::where('product_id', '=', $id)
+                ->update(
+                    [
+                        'interior_image' => $r->input('interior_image'),
+                    ]
+                );
+        }
+
 
         return redirect('/admin/products');
     }
@@ -84,5 +111,26 @@ class ProductController extends Controller
             ->first();
 
         return view('product_edit', compact('product'));
+    }
+
+    public function show_product(string $id)
+    {
+        $product = Product::query()
+            ->select('*')
+            ->where('product_id', '=', $id)
+            ->get()
+            ->first();
+
+        return view('product_show', compact('product'));
+    }
+
+    public function showStorey()
+    {
+        $product = DB::table('storey')
+            ->select('products.*')
+            ->join('products', 'product_id', '=', 'products.storey_id')
+            ->get();
+
+        dd($product);
     }
 }

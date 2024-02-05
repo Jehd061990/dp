@@ -47,6 +47,10 @@ Route::get('/admin/products', [SuperAdminController::class, 'admin_show_products
 Route::delete('/admin/products/{id}', [SuperAdminController::class, 'delete_product']);
 Route::put('/admin/products/{id}', [ProductController::class, 'edit_product']);
 Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit_product_form']);
+Route::get('/admin/products/{id}', [ProductController::class, 'show_product']);
+Route::get('/admin/test', [ProductController::class, 'showStorey']);
+
+
 
 
 //     Route::get('/admin/students/edit/{id}', [StudentController::class, 'edit_student_form']);
