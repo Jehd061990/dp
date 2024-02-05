@@ -71,6 +71,6 @@ class UserController extends Controller
         $user->account_type = 'user';
         $user->save();
 
-        return redirect("/register");
+        return redirect("/login");
     }
 }
