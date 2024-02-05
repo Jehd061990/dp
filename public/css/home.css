@@ -1,3 +1,60 @@
-.sliding_carousel {
-    height: cover;
+body {
+    background-color: #ececec;
+    margin: 0;
+    position: relative;
 }
+
+.dwelling_car {
+    margin-top: 80px;
+}
+
+.dwelling_2nd_images {
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+
+.display_1 {
+    height: 210px;
+    width: 420px;
+}
+
+.display_3 {
+    margin: 0;
+    height: 150px;
+    width: 420px;
+}
+
+.display_4 {
+    margin: 0;
+    height: 150px;
+    width: 280px;
+}
+.display_2 {
+    height: 270px;
+    width: 650px;
+}
+.discover {
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.home-page {
+    margin: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.text_indent {
+    text-align: start;
+}
+
+.text_indent_background {
+    background-color: #c0c0c0;
+    padding: 5px;
+}
+/* .carousel-item {
+    vertical-align: middle;
+    text-align: center;
+} */
