@@ -4,15 +4,40 @@
 }
 
 #product-page .search-bg {
-    height: 100px;
     width: 100%;
     margin-top: 50px;
     background-color: var(--gray);
-    /* margin-top: 300px; */
 }
 
 .house-pic img {
     width: 100px;
+}
+
+.view-card-btn {
+    border: none;
+    width: 160px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: var(--blue-green);
+    color: var(--white);
+}
+
+.view-card-btn:hover {
+    background-color: var(--blue-green-hover);
+    font-weight: bold;
+}
+
+.modal-content .save {
+    margin-top: 1px;
+    transition: 0.5s linear;]
+}
+
+.modal-content .save img {
+    width: 35px;
+}
+
+.modal-content .save:hover {
+    transform: translateY(7px);
 }
 
 .modal-footer button {
@@ -34,10 +59,64 @@
 
 .modal-footer button img {
     width: 30px;
-    transform: translateY(-6px);
+    transform: translateY(4px);
+    transition: 0.5s linear;
 }
 
-.modal-footer button span {
+.modal-footer button .image {
+    padding-top: 4px;
+    transition: 0.5s linear;
+    position: relative;
+}
+
+.modal-footer button:nth-child(2) img {
+    padding-left: 5px;
+}
+
+.modal-footer button:nth-child(1) img {
+    transform: translateY(0.5px);
+}
+
+.modal-footer button .span-text {
     transform: translateY(6px);
-    /* transform: translateX(-6px); */
+    transition: 0.5s linear;
+}
+
+.modal-footer button:nth-child(1) .span-text {
+    padding-right: 15px;
+}
+
+.modal-footer button:nth-child(2) .span-text {
+    padding-right: 10px;
+}
+
+/* hover modal footer button */
+.modal-footer button:nth-child(1):hover .span-text {
+    opacity: 0;
+}
+
+.modal-footer button:nth-child(1):hover img {
+    animation: peso-rotate 0.5s linear;
+}
+
+@keyframes peso-rotate {
+    from {
+        transform: rotateZ(0);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.modal-footer button:nth-child(1):hover .image {
+    transform: translateX(60px);
+}
+
+.modal-footer button:nth-child(2):hover .span-text {
+    opacity: 0;
+}
+
+.modal-footer button:nth-child(2):hover img {
+    padding-top: 5px;
+    transform: translateX(55px);
 }

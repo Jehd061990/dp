@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\SuperAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +19,16 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('welcome');
 });
+// PUBLIC SIDE
+Route::get('/login', [UserController::class, 'show_login']);
+Route::post('/login', [UserController::class, 'login']);
+Route::get('/logout', [UserController::class, 'logout']);
+
 
 Route::get('/product', [ProductController::class, 'products']);
+Route::get('/register', [UserController::class, 'show_register']);
+Route::post('/register', [UserController::class, 'register']);
+Route::get('/register/admin', [SuperAdminController::class, 'show_register_admin']);
+Route::post('/register/admin', [SuperAdminController::class, 'register_admin']);
+// Route::get('/register/admin', [SuperAdminController::class, 'show_register_admin']);
+//Route::post('/register/admin', [SuperAdminController::class, 'register_admin']);

@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    @include('layouts/header')
-    <link rel="stylesheet" href="css/footer.css" />
-    <title>Footer</title>
-    
-</head>
-<body>
 <footer class="footer">
     <div class="container bottom_border">
     <div class="row">
@@ -72,6 +63,4 @@
    
     </div>
     
-    </footer>
-    </body>
-    </html>
+</footer>
