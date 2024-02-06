@@ -35,10 +35,10 @@
                                 <div class="carousel-caption"></div>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#dwelling-hero" data-bs-slide="prev">
+                        <button class="carousel-control-prev prev" type="button" data-bs-target="#dwelling-hero" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#dwelling-hero" data-bs-slide="next">
+                        <button class="carousel-control-next next" type="button" data-bs-target="#dwelling-hero" data-bs-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
@@ -59,7 +59,7 @@
             <div class="col-lg-4 discover">
                 <h5><strong>Discover Inspired Designs and Timeless Architecture with Us</strong></h5>
                 
-                <p class="text_indent">At Dwelling Plans, we welcome you to take a journey into a world where innovation meets tradition and each architectural design tells its own story. Our collection features a varied range of innovative designs and timeless architecture that flawlessly combine form and function. </p>
+                <p class="text_indent">At <strong>Dwelling Plans</strong>, we welcome you to take a journey into a world where innovation meets tradition and each architectural design tells its own story. Our collection features a varied range of innovative designs and timeless architecture that flawlessly combine form and function. </p>
                 <p class="text_indent">Whether you choose modern elegance, timeless charm, or creative solutions, our team of passionate architects and designers is committed to making your vision a reality. Explore our selection to see how we transform places into timeless masterpieces that captivate and withstand the test of time.</p>
             
             </div>
@@ -73,30 +73,32 @@
 
         <div class="row">
             <div class="col-lg-3">
-                <img src="/img/display_3.jpg" class="display_4 img-fluid" />
-            
+                <a href="/product">
+                <img src="/img/display_3.jpg" alt="3D Perspective" class="display_4 img-fluid" style="margin-top: -50px;"/>
+                </a>
 
                 <p class="text_indent">Innovative Designs, Endless <br/>Possibilities: Start Your Journey Here</p>
             </div>
-            <div class="col-lg-2 explore" style="margin-left: -45px; margin-right: -50px; width: 300px; height: 250px">
-                <img src="/img/display_4.jpg" class="display_4 img-fluid"/>
-                
+            <div class="col-lg-2 explore" style="margin-left: -45px; margin-right: -50px; margin-top: -50px;width: 300px">
+                <a href="/product">
+                <img src="/img/display_4.jpg" alt="3D Perspective" class="img-fluid"/>
+                </a>
             
                 <p class="text_indent">Explore the beauty of Art and Architecture</p>
             
             </div>
-            <div class="col-lg-2 elevate" style="margin-left: 30px; margin-right: -50px; width: 300px; height: 250px">
-                        <img src="/img/display_5.jpg" class="display_3 img-fluid"/>
+            <div class="col-lg-2 elevate" style="margin-left: 30px; margin-right: -50px; margin-top: -50px; width: 300px">
+                <a href="/product"> <img src="/img/display_5.jpg" alt="3D Perspective" class="img-fluid"/> </a>
 
                 <p class="text_indent">Elevating Spaces, Inspiring Living: Dive into Our Architectural World</p>
                 
             </div>
-            <div class="col-lg-4 explore_1" style="margin-left: 63px" class="text_indent">
+            <div class="col-lg-4 explore_1" style="margin-left: 63px;" class="text_indent">
 
-                <p class="text_indent">With each project, we start on an effort to create places that go beyond simple structures, aiming to improve lives and create an atmosphere of connection. Our approach blends careful design, environmental techniques, and an in-depth understanding of our client's needs, resulting in spaces that have purpose and meaning. We believe in crafting architectural solutions that not only reflect our commitment to innovation and sustainability but also resonate with the unique identity of each community we serve.</p>
+                <p class="text_indent">With each project, we start on an effort to create places that go beyond simple structures, aiming to improve lives and create an atmosphere of connection. Our approach blends careful design, environmental techniques, and an in-depth understanding of our client's needs, resulting in spaces that have purpose and meaning. We reflect our commitment to innovation and sustainability.</p>
     
             </div>
-        </div>
+    </div>                              
     </div>
 
     @include('layouts/footer')

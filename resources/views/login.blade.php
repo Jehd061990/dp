@@ -3,7 +3,7 @@
 
 <head>
     @include('layouts/header')
-    <title>Document</title>
+    <title>Login/Signup</title>
 </head>
 
 <body class="login-page">
