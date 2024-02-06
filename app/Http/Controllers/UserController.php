@@ -31,7 +31,7 @@ class UserController extends Controller
                     return redirect('/admin/dashboard');
                 } else if (Session::get('account_type') == 'user') {
                     return redirect('/');
-                } else if (Session::get('account_type') == 'superadmin') {
+                } else if (Session::get('account_type') == 'super admin') {
                     return redirect('/admin/dashboard');
                 }
             } else {
@@ -53,7 +53,12 @@ class UserController extends Controller
 
     public function user_profile()
     {
-        return view('profile');
+        $user = User::query()
+            ->select('*')
+            ->where('user_id', '=', Session::get('user_id'))
+            ->get()
+            ->first();
+        return view('profile', compact('user'));
     }
 
     public function show_register()

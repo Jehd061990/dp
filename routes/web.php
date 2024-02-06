@@ -25,6 +25,7 @@ use App\Http\Middleware\CheckSessionSuperAdminAndAdmin;
 Route::get('/', function () {
     return view('home');
 });
+
 // PUBLIC SIDE
 Route::get('/login', [UserController::class, 'show_login']);
 Route::post('/login', [UserController::class, 'login']);

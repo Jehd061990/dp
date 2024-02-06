@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <h1>products</h1>
-        <a href="products/create" class="btn btn-success">+ Add</a>
+        <a href="/admin/products/create" class="btn btn-success">+ Add</a>
         <div class="row">
 
             <table class="table">
@@ -29,7 +29,6 @@
                 </tr>
                 @foreach($product as $p)
                 <tr>
-
                     <td>{{$p -> title}}</td>
                     <td>{{$p -> design}}</td>
                     <td>{{$p -> description}}</td>

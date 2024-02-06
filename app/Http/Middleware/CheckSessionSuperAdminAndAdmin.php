@@ -17,7 +17,7 @@ class CheckSessionSuperAdminAndAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Session::get('account_type') !== 'super admin' || Session::get('account_type') !== 'admin') {
+        if (Session::get('account_type') !== 'super admin' && Session::get('account_type') !== 'admin') {
             return redirect('/login')->with('fail', 'Unauthorized access!');
         }
         return $next($request);
