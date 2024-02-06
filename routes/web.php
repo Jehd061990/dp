@@ -6,6 +6,9 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Models\Product;
+use App\Http\Middleware\CheckSessionAdmin;
+use App\Http\Middleware\CheckSessionSuperAdmin;
+use App\Http\Middleware\CheckSessionUser;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,21 +27,27 @@ Route::get('/', function () {
 // PUBLIC SIDE
 Route::get('/login', [UserController::class, 'show_login']);
 Route::post('/login', [UserController::class, 'login']);
-Route::get('/logout', [UserController::class, 'logout']);
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/product', [ProductController::class, 'products']);
 
 // USER SIDE
-Route::get('/profile', [UserController::class, 'user_profile']);
-Route::get('/register', [UserController::class, 'show_register']);
-Route::post('/register', [UserController::class, 'register']);
+Route::middleware(['checkSessionUser'])->group(function () {
+    Route::get('/profile', [UserController::class, 'user_profile']);
+    Route::get('/register', [UserController::class, 'show_register']);
+    Route::post('/register', [UserController::class, 'register']);
+});
 
 // ADMIN SIDE
-Route::get('/admin/dashboard', [AdminController::class, 'admin_dashboard']);
+Route::middleware(['checkSessionAdmin'])->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'admin_dashboard']);
+});
 
 // SUPERADMIN SIDE
-Route::get('/admin/dashboard', [SuperAdminController::class, 'superadmin_dashboard']);
-Route::get('/register/admin', [SuperAdminController::class, 'show_register_admin']);
-Route::post('/register/admin', [SuperAdminController::class, 'register_admin']);
+Route::middleware(['checkSessionSuperAdmin'])->group(function () {
+    Route::get('/admin/dashboard', [SuperAdminController::class, 'superadmin_dashboard']);
+    Route::get('/register/admin', [SuperAdminController::class, 'show_register_admin']);
+    Route::post('/register/admin', [SuperAdminController::class, 'register_admin']);
+});
 
 // SUPERADMIN AND ADMIN
 Route::get('/admin/products/create', [ProductController::class, 'add_product_form']);

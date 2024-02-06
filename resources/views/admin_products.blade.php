@@ -29,6 +29,7 @@
                 </tr>
                 @foreach($product as $p)
                 <tr>
+
                     <td>{{$p -> title}}</td>
                     <td>{{$p -> design}}</td>
                     <td>{{$p -> description}}</td>

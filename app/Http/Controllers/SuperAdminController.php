@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use App\Models\Storey;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
@@ -34,8 +36,13 @@ class SuperAdminController extends Controller
 
     public function admin_show_products()
     {
-        $product = Product::query()
-            ->select('*')
+        // $product = Product::query()
+        //     ->select('*')
+        //     ->get();
+        $product = DB::table('products')
+            // ->select('products.*')
+            ->join('storey', 'storey.storey_id', '=', 'products.storey_id')
+            ->select('products.*', 'storey.*')
             ->get();
 
         return view('admin_products', compact('product'));
