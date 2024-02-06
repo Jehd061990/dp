@@ -136,6 +136,7 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         ),
         'K' => 
         array (
+            'Kyslik\\ColumnSortable\\' => 22,
             'KitLoong\\MigrationsGenerator\\' => 29,
         ),
         'I' => 
@@ -456,6 +457,10 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         array (
             0 => __DIR__ . '/..' . '/laravel/prompts/src',
         ),
+        'Kyslik\\ColumnSortable\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable',
+        ),
         'KitLoong\\MigrationsGenerator\\' => 
         array (
             0 => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src',
@@ -595,7 +600,7 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
         'App\\Models\\OrderProduct' => __DIR__ . '/../..' . '/app/Models/OrderProduct.php',
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
-        'App\\Models\\ProductType' => __DIR__ . '/../..' . '/app/Models/ProductType.php',
+        'App\\Models\\Storey' => __DIR__ . '/../..' . '/app/Models/Storey.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -3327,6 +3332,10 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'KitLoong\\MigrationsGenerator\\Support\\MigrationNameHelper' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Support/MigrationNameHelper.php',
         'KitLoong\\MigrationsGenerator\\Support\\Regex' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Support/Regex.php',
         'KitLoong\\MigrationsGenerator\\Support\\TableName' => __DIR__ . '/..' . '/kitloong/laravel-migrations-generator/src/Support/TableName.php',
+        'Kyslik\\ColumnSortable\\ColumnSortableServiceProvider' => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable/ColumnSortableServiceProvider.php',
+        'Kyslik\\ColumnSortable\\Exceptions\\ColumnSortableException' => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable/Exceptions/ColumnSortableException.php',
+        'Kyslik\\ColumnSortable\\Sortable' => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable/Sortable.php',
+        'Kyslik\\ColumnSortable\\SortableLink' => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable/SortableLink.php',
         'Laravel\\Prompts\\Concerns\\Colors' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Colors.php',
         'Laravel\\Prompts\\Concerns\\Cursor' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Cursor.php',
         'Laravel\\Prompts\\Concerns\\Erase' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Erase.php',

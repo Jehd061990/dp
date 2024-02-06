@@ -12,20 +12,17 @@
 </head>
 
 <body>
-    @include('layouts/navbar_admin')
     <div class="container">
+        <h1>products</h1>
+        <a href="products/create" class="btn btn-success">+ Add</a>
         <div class="row">
-            <h1>products</h1>
-            <a href="products/create" class="btn btn-success">+ Add</a>
+
             <table class="table">
                 <tr>
                     <th>Title</th>
                     <th>Design</th>
                     <th>Description</th>
                     <th>Lot Area</th>
-                    <th>3D Image</th>
-                    <th>Floor Plan Image</th>
-                    <th>Interior Image</th>
                     <th>View</th>
                     <th>Edit</th>
                     <th>Delete</th>
@@ -36,9 +33,6 @@
                     <td>{{$p -> design}}</td>
                     <td>{{$p -> description}}</td>
                     <td>{{$p -> lot_area}}</td>
-                    <td><img src="{{ asset('img/products/' . $p->image_3d) }}" width="100px" alt="3D Image"></td>
-                    <td><img src="{{ asset('img/products/' . $p->floor_plan_image) }}" width="100px" alt="Floor Plan Image"></td>
-                    <td><img src="{{ asset('img/products/' . $p->interior_image) }}" width="100px" alt="Interior Image"></td>
                     <td><a href="/admin/products/{{$p -> product_id}}" class="btn btn-primary">View</a></td>
                     <td><a href="/admin/products/edit/{{$p -> product_id}}" class="btn btn-warning">Edit</a></td>
                     <td>
@@ -71,6 +65,8 @@
                 </tr>
                 @endforeach
             </table>
+
+
         </div>
     </div>
 

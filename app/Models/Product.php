@@ -6,6 +6,7 @@
 
 namespace App\Models;
 
+use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -30,6 +31,9 @@ class Product extends Model
 	protected $table = 'products';
 	protected $primaryKey = 'product_id';
 	public $timestamps = false;
+
+	// use Sortable;
+	// public $sortable = ['title', 'design'];
 
 	protected $casts = [
 		'storey_id' => 'int'

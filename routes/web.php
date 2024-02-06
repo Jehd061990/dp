@@ -49,6 +49,8 @@ Route::put('/admin/products/{id}', [ProductController::class, 'edit_product']);
 Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit_product_form']);
 Route::get('/admin/products/{id}', [ProductController::class, 'show_product']);
 Route::get('/admin/test', [ProductController::class, 'showStorey']);
+// Route::get('/admin/products', [ProductController::class, 'index']);
+
 
 
 
