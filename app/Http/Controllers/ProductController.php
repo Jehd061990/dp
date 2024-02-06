@@ -15,7 +15,11 @@ class ProductController extends Controller
 {
     public function products()
     {
-        return view('product');
+        $products = Product::query()
+            ->select('*')
+            ->get();
+            
+        return view('product',compact('products'));
     }
 
     public function add_product(Request $r)

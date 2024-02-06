@@ -14,37 +14,31 @@
     <title>Home</title>
 </head>
 
-<body>
+<body id="home-page">
     @include('layouts/navbar')
-    <div class="home-page bg-primary">
-        <!-- <div><img src="/img/2056374.jpg" alt="3D House Perspective" class="img-fluid dwelling_car"/></div> -->
-        <!-- <div class="row dwelling_car"> -->
-            <!-- <div class="col-lg-12"> -->
-                    <div id="dwelling-hero" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="/img/2056374.jpg" alt="3D perspective" class="img-fluid">
-                                <div class="carousel-caption"></div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/img/2056374.jpg" alt="3D perspective" class="img-fluid">
-                                <div class="carousel-caption"></div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/img/2056374.jpg" alt="3D perspective" class="img-fluid">
-                                <div class="carousel-caption"></div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#dwelling-hero" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#dwelling-hero" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
-                    </div>
-               
-            <!-- </div> -->
-        <!-- </div> -->
+    <div class="home-page">
+        <div id="dwelling-hero" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/img/2056374.jpg" alt="3D perspective" class="img-fluid">
+                    <div class="carousel-caption"></div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/img/2056374.jpg" alt="3D perspective" class="img-fluid">
+                    <div class="carousel-caption"></div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/img/2056374.jpg" alt="3D perspective" class="img-fluid">
+                    <div class="carousel-caption"></div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#dwelling-hero" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#dwelling-hero" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
     </div>
     
     <div class="container d-grid justify-content-center dwelling_2nd_images">
