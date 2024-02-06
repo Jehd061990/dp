@@ -27,7 +27,7 @@ class ProductController extends Controller
         $product->description = $r->input('description');
         $product->lot_area = $r->input('lot_area');
         $product->title = $r->input('title');
-        if ($r->file('image_3d')) {
+        if ($r->file('image_3d')) { //switch case
             $file = $r->file('image_3d');
             $filename = date('YmdHiu') . $file->getClientOriginalName();
             $file->move(public_path('img/products'), $filename);
@@ -128,21 +128,28 @@ class ProductController extends Controller
 
     public function show_product(string $id)
     {
-        $product = Product::query()
-            ->select('*')
-            ->where('product_id', '=', $id)
+        // $product = Product::query()
+        //     ->select('*')
+        //     ->where('product_id', '=', $id)
+        //     ->get()
+        //     ->first();
+
+        $product = DB::table('products')
+            // ->select('products.*')
+            ->join('storey', 'storey.storey_id', '=', 'products.storey_id')
+            ->select('products.*', 'storey.*')
             ->get()
             ->first();
-
 
         return view('product_show', compact('product'));
     }
 
     public function showStorey()
     {
-        $product = DB::table('storey')
-            ->select('products.*')
-            ->join('products', 'product_id', '=', 'products.storey_id')
+        $product = DB::table('products')
+            // ->select('products.*')
+            ->join('storey', 'storey.storey_id', '=', 'products.storey_id')
+            ->select('product.*,storey.*')
             ->get();
 
         dd($product);

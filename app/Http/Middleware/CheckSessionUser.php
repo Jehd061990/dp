@@ -16,7 +16,6 @@ class CheckSessionUser
      */
     public function handle(Request $request, Closure $next): Response
     {
-
         if (Session::get('account_type') !== 'user') {
             return redirect('/login')->with('fail', 'Unauthorized access!');
         }

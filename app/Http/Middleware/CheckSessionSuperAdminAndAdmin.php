@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Session;
 
-class CheckSessionAdmin
+
+class CheckSessionSuperAdminAndAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,7 +17,7 @@ class CheckSessionAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Session::get('account_type') !== 'admin') {
+        if (Session::get('account_type') !== 'super admin' && Session::get('account_type') !== 'admin') {
             return redirect('/login')->with('fail', 'Unauthorized access!');
         }
         return $next($request);

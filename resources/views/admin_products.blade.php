@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <h1>products</h1>
-        <a href="products/create" class="btn btn-success">+ Add</a>
+        <a href="/admin/products/create" class="btn btn-success">+ Add</a>
         <div class="row">
 
             <table class="table">
