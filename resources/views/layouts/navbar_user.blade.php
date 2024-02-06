@@ -42,6 +42,7 @@
                     <li>
                         <div class="vertical-bar"></div>
                     </li>
+
                     <li class="nav-item"><a href="{{route('logout')}}" class="nav-link"> Logout</a></li>
                 </ul>
             </div>

@@ -18,7 +18,7 @@
     <div class="login-container">
         <div class="login-left">
             <div class="login-container">
-                
+
                 <form action="/login" method="POST" class="form-wrapper">
                     <h4 class="text-center mt-2">Sign In</h4>
                     @csrf
@@ -40,7 +40,7 @@
 
         <div class="login-right">
             <div class="signup-container">
-                
+
                 <form action="/register" method="POST" class="signup-form-wrapper">
                     <h4 class="text-center  mt-1">Sign Up</h4>
                     @csrf
@@ -69,9 +69,9 @@
                     </div>
                 </form>
             </div>
-                
+
             <div class="img-bg">
-                
+
                 <img src="img/icons/download.jpg" alt="house background image">
                 <div class="signup-banner d-flex justify-content-between">
                     <div class="first text-center">Unlock the World of Architectural Brilliance with Floor Planning Hub</div>
