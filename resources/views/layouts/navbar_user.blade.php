@@ -38,7 +38,7 @@
                 </ul> -->
 
                 <ul class="right-links profile-settings">
-                    <li class="nav-item"><a href="#" class="nav-link">Profile </a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Profile </a></li>
                     <li>
                         <div class="vertical-bar"></div>
                     </li>
@@ -47,10 +47,8 @@
                 </ul>
             </div>
 
-
-
             <div class="greet">
-                <h5>Hello Missy</h5>
+                <h5>Hello</h5>
                 <ul class="notify">
                     <li class="nav-item me-2"><a href="#" class="nav-link"><img src="img/icons/nav-bell-icon.svg" alt="bell icon"></a></li>
                     <li class="nav-item ms-2"><a href="#" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"></a></li>
@@ -63,10 +61,10 @@
                     <img src="https://newprofilepic.photo-cdn.net//assets/images/article/profile.jpg?90af0c8" alt="Profile picture">
                 </button>
                 <ul class="dropdown-menu text-center">
-                    <h6>Hello Missy</h6>
+                    <h6> <b>FIRST NAME</b></h6>
 
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
+                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
                 </ul>
             </div>
         </div>

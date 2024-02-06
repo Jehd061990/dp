@@ -7,6 +7,7 @@
 </head>
 
 <body class="login-page">
+    @include('layouts/navbar')
     <!-- <form action="/login" method="POST">
         @csrf
         <label>Email address: </label>

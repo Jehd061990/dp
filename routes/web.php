@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Http\Middleware\CheckSessionAdmin;
 use App\Http\Middleware\CheckSessionSuperAdmin;
 use App\Http\Middleware\CheckSessionUser;
+use App\Http\Middleware\CheckSessionSuperAdminAndAdmin;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,16 +51,17 @@ Route::middleware(['checkSessionSuperAdmin'])->group(function () {
 });
 
 // SUPERADMIN AND ADMIN
-Route::get('/admin/products/create', [ProductController::class, 'add_product_form']);
-Route::post('/admin/products', [ProductController::class, 'add_product']);
-Route::get('/admin/products', [SuperAdminController::class, 'admin_show_products']);
-Route::delete('/admin/products/{id}', [SuperAdminController::class, 'delete_product']);
-Route::put('/admin/products/{id}', [ProductController::class, 'edit_product']);
-Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit_product_form']);
-Route::get('/admin/products/{id}', [ProductController::class, 'show_product']);
-Route::get('/admin/test', [ProductController::class, 'showStorey']);
-// Route::get('/admin/products', [ProductController::class, 'index']);
-
+Route::middleware(['checkSessionSuperAdminAndAdmin'])->group(function () {
+    Route::get('/admin/products/create', [ProductController::class, 'add_product_form']);
+    Route::post('/admin/products', [ProductController::class, 'add_product']);
+    Route::get('/admin/products', [SuperAdminController::class, 'admin_show_products']);
+    Route::delete('/admin/products/{id}', [SuperAdminController::class, 'delete_product']);
+    Route::put('/admin/products/{id}', [ProductController::class, 'edit_product']);
+    Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit_product_form']);
+    Route::get('/admin/products/{id}', [ProductController::class, 'show_product']);
+    Route::get('/admin/test', [ProductController::class, 'showStorey']);
+    // Route::get('/admin/products', [ProductController::class, 'index']);
+});
 
 
 
