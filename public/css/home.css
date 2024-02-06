@@ -1,16 +1,27 @@
-body#home-page {
+.home_body {
     background-color: #ececec;
+}
+
+#home-page {
     margin: 0;
     position: relative;
 }
 
 #home-page .dwelling_car {
-    margin-top: 100px;
+    margin-top: 30px;
+    background-color: #ececec;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .dwelling_2nd_images {
-    margin-top: 70px;
-    margin-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 70px;
+}
+
+.dwelling_3rd_images {
+    margin-top: 20px;
+    margin-bottom: 70px;
 }
 
 #home-page {
@@ -20,23 +31,6 @@ body#home-page {
     margin: 0;
     height: 150px;
     width: 420px;
-}
-
-.display_1 {
-    height: 100px;
-    width: 420px;
-}
-
-.display_3 {
-    margin: 0;
-    height: 150px;
-    width: 420px;
-}
-
-.display_4 {
-    margin: 0;
-    height: 100px;
-    width: 280px;
 }
 
 #home-page {
@@ -49,14 +43,9 @@ body#home-page {
     display: flex;
     justify-content: center;
     margin-right: 0;
-    background-color: #c0c0c0;
-    padding: 5px;
-    margin-top: 1000px;
 }
-
-.display_2 {
-    height: 10px;
-    width: 650px;
+#display_2 {
+    margin: 0;
 }
 
 .discover {
@@ -86,7 +75,7 @@ body#home-page {
 } */
 
 #dwelling-hero {
-    margin-top: 90px;
+    margin-top: 50px;
 }
 
 .next {
@@ -101,83 +90,142 @@ body#home-page {
     align-items: start;
 }
 
-@media only screen and (max-width: 950px) {
-    body#home-page {
-        margin: auto;
-        padding: 0;
-        text-align: center;
-        align-items: center;
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+#dwelling-hero {
+    margin-top: 90px;
+}
+
+.img_home {
+    margin-top: 40px;
+    margin-left: 0;
+    margin-right: 0;
+    min-height: 40vh;
+}
+
+#small_2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    min-height: 10vh;
+}
+
+#small_4 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#no-gutters [class^="col-"] {
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .home-page {
+        margin: 0;
     }
 
-    /* .col-lg-2 {
-        margin-left: auto;
-        margin-right: auto;
-        width: 90%;
-        max-width: 300px;
-        text-align: center;
-    } */
-
-    #home-page .col-lg-3 {
-        margin-top: 20px;
-    }
-
-    #home-page .col-lg-4 {
-        margin-top: auto;
-        margin-left: auto;
-        margin-right: auto;
-        width: 95%;
-        max-width: 300px;
-        text-align: center;
-    }
-
-    #home-page .display_3 {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width: 95%;
-        max-width: 300px;
-        text-align: center;
-    }
-    #home-page .text_indent {
+    .text_indent {
         text-align: center;
         margin: 0;
     }
 
-    #home-page .dwelling_2nd_images {
-        margin-top: 10px;
-        margin-bottom: 10px;
+    .explore_1 {
+        text-align: center;
+        margin: 0;
     }
 
-    /* .style {
-        margin-top: auto;
-        margin-left: auto;
-        margin-right: auto;
-        width: 66%;
-        max-width: 300px;
-        text-align: center;
-    } */
+    .img_home {
+        margin: 0;
+    }
 
-    #home-page .display_1 {
+    #dwelling-hero {
+        margin-left: 0;
+        margin-top: 60px;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    #home-page .dwelling_car {
+        height: 300px;
+    }
+
+    .text_indent_background {
+        text-align: center;
+        margin: 0;
+    }
+
+    .text_indent_background {
+        text-align: center;
+        margin: 0;
+    }
+    #inspired {
+        margin-top: 30px;
+    }
+
+    .img_home {
+        min-height: 30vh;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+    .home-page {
+        margin: 0;
+        font-size: 12px;
+    }
+    .text_indent {
+        text-align: center;
+        margin: 0;
+    }
+
+    .explore_1 {
+        text-align: center;
+        margin: 0;
+    }
+
+    .img_home {
+        margin: 0;
+        margin-top: 40px;
+        height: 100px;
+    }
+    #dwelling-hero {
+        margin-top: 30px;
+    }
+
+    #home-page .dwelling_car {
+        margin-top: 100px;
+    }
+    .text_indent_background {
+        text-align: center;
+        margin: 0;
+    }
+
+    #inspired {
+        margin-top: 30px;
+    }
+
+    .display_1 {
         display: none;
     }
-
-    #home-page .explore {
-        display: none;
-    }
-
-    #home-page .explore_1 {
-        margin: auto;
-        margin-top: 0;
-        width: 70%;
-        max-width: 250px;
-        text-align: center;
-    }
-
-    #home-page .elevate {
-        margin: auto;
-        offset: auto;
-        padding: auto;
-        border: auto;
+    .img_home {
+        min-height: 30vh;
     }
 }
