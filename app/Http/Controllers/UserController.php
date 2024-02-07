@@ -58,6 +58,30 @@ class UserController extends Controller
             ->where('user_id', '=', Session::get('user_id'))
             ->get()
             ->first();
+
+        return view('profile', compact('user'));
+    }
+
+    public function edit_profile(Request $r, string $id)
+    {
+        $user = User::where('user_id', '=', $id);
+
+        $user->update(
+            [
+                'first_name' => $r->input('first_name'),
+                'last_name' => $r->input('last_name'),
+                'email' => $r->input('email'),
+            ]
+        );
+
+        return redirect('/profile')->with('success', 'Profile updated successfully');
+    }
+
+    public function edit_profile_form(string $id)
+    {
+        $user = User::where('user_id', '=', $id)
+            ->first();
+
         return view('profile', compact('user'));
     }
 

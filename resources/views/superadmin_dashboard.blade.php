@@ -2,14 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    @include('layouts/header_superadmin')
+    <title>Dashboard</title>
 </head>
 
-<body>
-    <h1>WELCOME SUPERADMIN</h1>
-    <a href="/logout">Logout</a>
+<body class="d-flex justify-content-between">
+    @include('layouts/navbar_superadmin')
+    <div class="bg-primary content-body">
+        <h1>WELCOME SUPERADMIN</h1>
+        <a href="/logout">Logout</a>
+    </div>
 </body>
 
 </html>

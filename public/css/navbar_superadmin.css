@@ -1,0 +1,39 @@
+.content-body {
+    width: 100%;
+}
+
+.sidebar {
+    border-radius: 30px;
+    width: 200px;
+    background-color: var(--gray);
+    height: 100vh;
+}
+
+.sidebar ul {
+    list-style: none;
+    background-color: yellowgreen;
+}
+
+.sidebar ul li {
+    background-color: azure;
+    width: 75%;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+.sidebar .profile .profile-img {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.sidebar .profile .profile-img img {
+    object-fit: cover;
+    width: auto;
+    width: 100px;
+    height: 100px;
+}

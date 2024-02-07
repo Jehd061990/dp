@@ -5,6 +5,7 @@ use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 use App\Models\Product;
 use App\Http\Middleware\CheckSessionAdmin;
 use App\Http\Middleware\CheckSessionSuperAdmin;
@@ -32,12 +33,14 @@ Route::post('/login', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/product', [ProductController::class, 'products']);
 Route::post('/register', [UserController::class, 'register']);
+Route::get('/register', [UserController::class, 'show_register']);
 
 // USER SIDE
 Route::middleware(['checkSessionUser'])->group(function () {
     Route::get('/profile', [UserController::class, 'user_profile']);
-    Route::get('/register', [UserController::class, 'show_register']);
-    // Route::post('/register', [UserController::class, 'register']);
+    Route::post('/product', [OrderController::class, 'place_order']);
+    Route::put('/profile/{id}', [UserController::class, 'edit_profile']);
+    Route::get('/profile/edit/{id}', [UserController::class, 'edit_profile_form']);
 });
 
 // ADMIN SIDE
@@ -49,7 +52,10 @@ Route::middleware(['checkSessionAdmin'])->group(function () {
 Route::middleware(['checkSessionSuperAdmin'])->group(function () {
     Route::get('/admin/dashboard', [SuperAdminController::class, 'superadmin_dashboard']);
     Route::get('/register/admin', [SuperAdminController::class, 'show_register_admin']);
-    Route::post('/register/admin', [SuperAdminController::class, 'register_admin']);
+    Route::post('/admin/accounts', [SuperAdminController::class, 'register_admin']);
+    Route::get('/admin/accounts', [SuperAdminController::class, 'register_admin_show']);
+    Route::delete('/admin/accounts/{id}', [SuperAdminController::class, 'delete_admin']);
+    Route::get('/admin/accounts/{id}', [SuperAdminController::class, 'show_admin']);
 });
 
 // SUPERADMIN AND ADMIN
@@ -64,9 +70,3 @@ Route::middleware(['checkSessionSuperAdminAndAdmin'])->group(function () {
     Route::get('/admin/test', [ProductController::class, 'showStorey']);
     // Route::get('/admin/products', [ProductController::class, 'index']);
 });
-
-
-
-
-//     Route::get('/admin/students/edit/{id}', [StudentController::class, 'edit_student_form']);
-//    Route::put('/admin/students/{id}', [StudentController::class, 'edit_student']);
