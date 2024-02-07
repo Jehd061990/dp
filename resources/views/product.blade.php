@@ -35,8 +35,6 @@
         </div>
     </div>
 
-    
-
     <div class="container mt-5 d-grid justify-content-center">
         <div class="row mb-3">
             @foreach($products as $p)
@@ -47,7 +45,7 @@
 
                         <h5 class="card-title">{{$p->title}}</h5>
                         <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                        
+
                         <!-- Button trigger modal -->
                         <div class="text-center">
                             <button type="button" class="view-card-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -120,8 +118,6 @@
         </div>
 
     </div>
-
-
 
     </div>
     @include('layouts/footer')
