@@ -19,8 +19,8 @@ class ProductController extends Controller
         $products = Product::query()
             ->select('*')
             ->get();
-            
-        return view('product',compact('products'));
+
+        return view('product', compact('products'));
     }
 
     public function add_product(Request $r)
@@ -72,7 +72,6 @@ class ProductController extends Controller
                     'design' => $r->input('design'),
                     'description' => $r->input('description'),
                     'lot_area' => $r->input('lot_area'),
-
                 ]
             );
 
@@ -114,7 +113,6 @@ class ProductController extends Controller
                     ]
                 );
         }
-
 
         return redirect('/admin/products');
     }

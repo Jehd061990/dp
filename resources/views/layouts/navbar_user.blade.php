@@ -9,10 +9,10 @@
         </button>
 
         @if (Session::get('user_id'))
-            <ul class="notification">
-                <li class="nav-item me-2"><a href="#" class="nav-link"><img src="img/icons/nav-bell-icon.svg" alt="bell icon"></a></li>
-                <li class="nav-item ms-2"><a href="#" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"></a></li>
-            </ul>
+        <ul class="notification">
+            <li class="nav-item me-2"><a href="#" class="nav-link"><img src="img/icons/nav-bell-icon.svg" alt="bell icon"></a></li>
+            <li class="nav-item ms-2"><a href="#" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"></a></li>
+        </ul>
         @endif
 
         <div class="collapse navbar-collapse justify-content-end me-3 text-center navbar-margin-top" id="navbarTogglerDemo03">
@@ -32,25 +32,24 @@
             </ul>
 
             @if (Session::get('user_id'))
-                <div class="right">
-                    <ul class="right-links profile-settings">
-                        <li class="nav-item"><a href="" class="nav-link">Profile </a></li>
-                        <li>
-                            <div class="vertical-bar"></div>
-                        </li>
+            <div class="right">
+                <ul class="right-links profile-settings">
+                    <li class="nav-item"><a href="" class="nav-link">Profile </a></li>
+                    <li>
+                        <div class="vertical-bar"></div>
+                    </li>
 
-                        <li class="nav-item"><a href="{{route('logout')}}" class="nav-link"> Logout</a></li>
-                    </ul>
-                </div>
+                    <li class="nav-item"><a href="{{route('logout')}}" class="nav-link"> Logout</a></li>
+                </ul>
+            </div>
 
-                <div class="greet">
-                    <h5>Hello</h5>
-                    <ul class="notify">
-                        <li class="nav-item me-2"><a href="#" class="nav-link"><img src="img/icons/nav-bell-icon.svg" alt="bell icon"></a></li>
-                        <li class="nav-item ms-2"><a href="#" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"></a></li>
-                    </ul>
-                </div>
-
+            <div class="greet">
+                <h5>Hello</h5>
+                <ul class="notify">
+                    <li class="nav-item me-2"><a href="#" class="nav-link"><img src="img/icons/nav-bell-icon.svg" alt="bell icon"></a></li>
+                    <li class="nav-item ms-2"><a href="#" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"></a></li>
+                </ul>
+            </div>
 
             <div class="sdropdown profile-set">
                 <button class="profile-pic" data-bs-toggle="dropdown" aria-expanded="false">
@@ -58,21 +57,22 @@
                 </button>
                 <ul class="dropdown-menu text-center">
                     <!-- <h6> <b>FIRST NAME</b></h6> -->
-
-                        <li><a class="dropdown-item" href="/profile">Profile</a></li>
-                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
-                    </ul>
-                </div>
+                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                </ul>
+            </div>
             @else
-                <div class="right second">
-                    <ul class="right-links login-settings">
-                        <li class="nav-item"><a href="#" class="nav-link">Login </a></li>
-                        <li><div class="vertical-bar"></div></li>
-                        <li class="nav-item"><a href="#" class="nav-link"> Signup</a></li>
-                    </ul>
-                </div>
+            <div class="right second">
+                <ul class="right-links login-settings">
+                    <li class="nav-item"><a href="/login" class="nav-link">Login </a></li>
+                    <li>
+                        <div class="vertical-bar"></div>
+                    </li>
+                    <li class="nav-item"><a href="/register" class="nav-link"> Signup</a></li>
+                </ul>
+            </div>
             @endif
-            
+
         </div>
     </div>
 </nav>
