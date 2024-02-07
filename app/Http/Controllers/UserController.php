@@ -102,4 +102,10 @@ class UserController extends Controller
 
         return redirect("/login");
     }
+
+    public function portfolio()
+    {
+        return view('portfolio');
+    }
+    
 }
