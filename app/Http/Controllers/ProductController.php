@@ -136,10 +136,17 @@ class ProductController extends Controller
         //     ->get()
         //     ->first();
 
-        $product = DB::table('products')
-            // ->select('products.*')
-            ->join('storey', 'storey.storey_id', '=', 'products.storey_id')
-            ->select('products.*', 'storey.*')
+        // $product = DB::table('products')
+        //     // ->select('products.*')
+        //     ->join('storey', 'storey.storey_id', '=', 'products.storey_id')
+        //     ->select('products.*', 'storey.*')
+        //     ->get()
+        //     ->first();
+
+        $product = Product::query()
+            ->select('*')
+            ->where('product_id', '=', $id)
+            ->join('storey', 'products.storey_id', '=', 'storey.storey_id')
             ->get()
             ->first();
 
@@ -156,11 +163,4 @@ class ProductController extends Controller
 
         dd($product);
     }
-
-    // public function index(Request $r)
-    // {
-    //     $product = Product::paginate(10); // Paginate with 10 items per page
-
-    //     return view('admin_products', compact('product'));
-    // }
 }
