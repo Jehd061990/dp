@@ -3,7 +3,7 @@
 
 <head>
     @include('layouts/header')
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 
 <body>
