@@ -1,39 +1,22 @@
-.home_body {
-    background-color: #ececec;
+#home-page .home_body {
+    background-color: var(--light);
+    margin-top: -40px;
 }
 
-#home-page {
+/* .home_body {
     margin: 0;
-    position: relative;
-}
+} */
 
-#home-page .dwelling_car {
-    margin-top: 30px;
-    background-color: #ececec;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.dwelling_2nd_images {
-    margin-top: 40px;
-    margin-bottom: 70px;
-}
-
-.dwelling_3rd_images {
-    margin-top: 20px;
-    margin-bottom: 70px;
-}
-
-#home-page {
+/* #home-page {
     height: 210px;
     width: 420px;
     margin-bottom: 10px;
     margin: 0;
     height: 150px;
     width: 420px;
-}
+} */
 
-#home-page {
+/* #home-page {
     height: 270px;
     width: 650px;
     text-align: center;
@@ -43,29 +26,52 @@
     display: flex;
     justify-content: center;
     margin-right: 0;
+} */
+
+/* #home-page {
+    margin: 0;
+    position: relative;
+} */
+
+#home-page .dwelling_car {
+    margin-top: 30px;
+    background-color: #ececec;
+    margin-left: 0;
+    margin-right: 0;
 }
-#display_2 {
+
+#home-page .dwelling_2nd_images {
+    margin-top: 40px;
+    margin-bottom: 70px;
+}
+
+#home-page .dwelling_3rd_images {
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+#home-page #display_2 {
     margin: 0;
 }
 
-.discover {
+#home-page .discover {
     text-align: center;
     margin-left: 0;
     margin-right: 0;
 }
 
-.home-page {
+#home-page .home-page {
     margin: 0;
     position: relative;
     display: flex;
     justify-content: center;
 }
 
-.text_indent {
+#home-page .text_indent {
     text-align: start;
 }
 
-.text_indent_background {
+#home-page .text_indent_background {
     background-color: #c0c0c0;
     padding: 5px;
 }
@@ -74,30 +80,30 @@
     text-align: center;
 } */
 
-#dwelling-hero {
+#home-page #dwelling-hero {
     margin-top: 50px;
 }
 
-.next {
+/* #home-page .next {
     display: flex;
     justify-content: space-between;
     align-items: end;
 }
 
-.prev {
+#home-page .prev {
     display: flex;
     justify-content: space-between;
     align-items: start;
-}
+} */
 
-.home-page {
+/* .home-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
+} */
 
-.home-page {
+#home-page .home-page {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,18 +111,18 @@
     padding: 10px;
 }
 
-#dwelling-hero {
+#home-page #dwelling-hero {
     margin-top: 90px;
 }
 
-.img_home {
+#home-page .img_home {
     margin-top: 40px;
     margin-left: 0;
     margin-right: 0;
     min-height: 40vh;
 }
 
-#small_2 {
+#home-page #small_2 {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -125,7 +131,7 @@
     min-height: 10vh;
 }
 
-#small_4 {
+#home-page #small_4 {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -133,31 +139,31 @@
     justify-content: center;
 }
 
-#no-gutters [class^="col-"] {
+#home-page #no-gutters [class^="col-"] {
     padding-right: 2px;
     padding-left: 2px;
 }
 
 @media only screen and (max-width: 1024px) {
-    .home-page {
+    #home-page .home_body {
+        transform: translateY(-6px);
         margin: 0;
     }
-
-    .text_indent {
+    #home-page .text_indent {
         text-align: center;
         margin: 0;
     }
 
-    .explore_1 {
+    #home-page .explore_1 {
         text-align: center;
         margin: 0;
     }
 
-    .img_home {
+    #home-page .img_home {
         margin: 0;
     }
 
-    #dwelling-hero {
+    #home-page #dwelling-hero {
         margin-left: 0;
         margin-top: 60px;
         margin-right: 0;
@@ -168,64 +174,65 @@
         height: 300px;
     }
 
-    .text_indent_background {
+    #home-page .text_indent_background {
         text-align: center;
         margin: 0;
     }
 
-    .text_indent_background {
+    #home-page .text_indent_background {
         text-align: center;
         margin: 0;
     }
-    #inspired {
+    #home-page #inspired {
         margin-top: 30px;
     }
 
-    .img_home {
+    #home-page .img_home {
         min-height: 30vh;
     }
 }
 
 @media only screen and (max-width: 568px) {
-    .home-page {
+    #home-page .home-page {
         margin: 0;
         font-size: 12px;
+        text-align: center;
     }
-    .text_indent {
+    #home-page .text_indent {
         text-align: center;
         margin: 0;
     }
 
-    .explore_1 {
+    #home-page .explore_1 {
         text-align: center;
         margin: 0;
     }
 
-    .img_home {
+    #home-page .img_home {
         margin: 0;
         margin-top: 40px;
         height: 100px;
     }
-    #dwelling-hero {
+    #home-page #dwelling-hero {
         margin-top: 30px;
     }
 
     #home-page .dwelling_car {
         margin-top: 100px;
     }
-    .text_indent_background {
+    #home-page .text_indent_background {
         text-align: center;
         margin: 0;
     }
 
-    #inspired {
+    #home-page #inspired {
         margin-top: 30px;
     }
 
-    .display_1 {
+    #home-page .display_1 {
         display: none;
     }
-    .img_home {
+    #home-page .img_home {
         min-height: 30vh;
     }
 }
