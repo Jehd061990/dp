@@ -32,6 +32,7 @@ Route::post('/login', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/product', [ProductController::class, 'products']);
 Route::post('/register', [UserController::class, 'register']);
+Route::get('/portfolio', [UserController::class, 'portfolio']);
 
 // USER SIDE
 Route::middleware(['checkSessionUser'])->group(function () {

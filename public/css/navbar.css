@@ -1,8 +1,9 @@
 .navbar .container-fluid {
-    background-color: var(--light);
+    background-color: var(--dark-gray);
     position: fixed;
     top: 0;
     z-index: 2;
+    padding-bottom: 10px;
 }
 
 .navbar-brand img {
@@ -15,6 +16,12 @@
     width: 150px;
 }
 
+#nav_names {
+    color: var(--light);
+}
+.navbar-nav {
+    color: var(--light);
+}
 .navbar .right.second {
     position: absolute;
     right: 25px !important;
@@ -32,7 +39,21 @@
 }
 
 .navbar .right-links li {
-    color: var(--dark-gray);
+    color: var(--light);
+    margin-bottom: -40px;
+}
+
+#nav_names {
+    color: var(--light);
+    margin-bottom: -30px;
+    padding: 30px;
+}
+
+#logo_pos {
+    margin-left: 30px;
+    width: 150px;
+    height: 80px;
+    margin-bottom: -10px;
 }
 
 .navbar .profile-settings {
@@ -81,7 +102,7 @@
 .navbar .right-links .vertical-bar {
     width: 2px;
     height: 20px;
-    background-color: var(--gray);
+    background-color: var(--light);
     margin-top: 3px;
 }
 
@@ -94,7 +115,7 @@
     height: 100vh;
     /* filter: blur(5px); */
     z-index: 1;
-    background-color: var(--light);
+    background-color: var(--dark-gray);
     transition: 0.5s linear;
 }
 
@@ -112,11 +133,12 @@
     background-color: transparent !important;
     outline: none;
     box-shadow: none;
+    margin-bottom: -18px;
 }
 
 .navbar-tg .top {
     position: absolute;
-    background-color: var(--gray);
+    background-color: var(--light);
     width: 100%;
     height: 5px;
     border-radius: 5px;
@@ -126,6 +148,33 @@
 
 .navbar-tg .top.active {
     animation: tg-top 0.2s linear forwards;
+}
+
+/* hover */
+.navbar-nav a {
+    text-decoration: none;
+    font-weight: normal;
+
+    transition: color 0.3s;
+}
+
+.navbar-nav a:hover {
+    text-decoration: underline;
+}
+
+.navbar-nav .active {
+    font-weight: bold;
+}
+
+.right-links a {
+    text-decoration: none;
+    font-weight: normal;
+    color: var(--light);
+    transition: color 0.3s;
+}
+
+.right-links a:hover {
+    text-decoration: underline;
 }
 
 @keyframes tg-top {
@@ -143,7 +192,7 @@
 
 .navbar-tg .middle {
     position: absolute;
-    background-color: var(--gray);
+    background-color: var(--light);
     border-radius: 5px;
     width: 100%;
     height: 5px;
@@ -171,7 +220,7 @@
 .navbar-tg .bottom {
     position: absolute;
     border-radius: 5px;
-    background-color: var(--gray);
+    background-color: var(--light);
     width: 100%;
     height: 5px;
     bottom: 0;
@@ -287,5 +336,18 @@
     .navbar .notification {
         right: 70px;
         top: 27px;
+    }
+
+    .navbar .right-links li {
+        margin-bottom: 0;
+    }
+
+    #logo_pos {
+        margin-bottom: 0px;
+    }
+
+    #nav_names {
+        margin-bottom: 0;
+        padding: 0;
     }
 }

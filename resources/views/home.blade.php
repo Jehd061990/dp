@@ -2,22 +2,23 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" type="image/png" href="{{ url('/img/icon/home.png', [], true) }}">
     <!-- @include('layouts/head')
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/home.css">
     <script src="/js/home.js"></script>  -->
+   
+
 
     @include('layouts/header')
-
     <title>Home</title>
 </head>
 
-<body id="home-page">
-    @include('layouts/navbar')
-    
+<body>
     <div class="home_body">
+    @include('layouts/navbar')
     <div id="dwelling_carousel">
         <!-- <div><img src="/img/2056374.jpg" alt="3D House Perspective" class="img-fluid dwelling_car"/></div> -->
         <!-- <div class="row dwelling_car"> -->

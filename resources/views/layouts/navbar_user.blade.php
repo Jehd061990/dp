@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="navbar-bg"></div>
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+        <a class="navbar-brand" href="/" ><img src="img/logo3_white.png" alt="Dwelling Plans Logo" id="logo_pos"></a>
         <button class="navbar-tg d-block d-lg-none" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-label="Toggle navigation">
             <div class="top"></div>
             <div class="middle"></div>
@@ -16,18 +16,18 @@
         @endif
 
         <div class="collapse navbar-collapse justify-content-end me-3 text-center navbar-margin-top" id="navbarTogglerDemo03">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+                <li class="nav-item" >
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/" id="nav_names">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('product') ? 'active' : '' }}" href="/product">Products</a>
+                    <a class="nav-link {{ Request::is('product') ? 'active' : '' }}" href="/product" id="nav_names">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="#" tabindex="-1">About</a>
+                    <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="#" tabindex="-1" id="nav_names">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('faq') ? 'active' : '' }}" href="#" tabindex="-1">FAQ</a>
+                    <a class="nav-link {{ Request::is('faq') ? 'active' : '' }}" href="#" tabindex="-1" id="nav_names">FAQ</a>
                 </li>
             </ul>
 
