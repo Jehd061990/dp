@@ -79,11 +79,11 @@ class UserController extends Controller
 
     public function edit_profile_form(string $id)
     {
-        $user = User::where('user_id', '=', $id)->first();
+        $user = User::where('user_id', '=', $id)
+            ->first();
 
         return view('profile', compact('user'));
     }
-
 
     public function show_register()
     {

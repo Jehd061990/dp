@@ -2,21 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    @include('layouts/header')
     <title>Profile</title>
 </head>
 
 <body>
+    @include('layouts/navbar')
     <h1>Your Profile</h1>
-
-
-    <!-- <a href="/profile/edit/{{$user -> user_id}}" class="btn btn-warning">Edit</a> -->
-    <!--     
-    <a href="/logout">Logout</a> -->
 
     <form id="edit_profile_form" action="{{ url('/profile/'.$user->user_id) }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -36,16 +28,7 @@
         <button type="submit" style="display: none;" id="save_button" class="btn btn-success">Save Changes</button>
     </form>
 
-    <script>
-        $(document).ready(function() {
-            $('#edit_button').click(function() {
-                $('#edit_profile_form input').prop('disabled', false);
-
-                $('#edit_button').hide();
-                $('#save_button').show();
-            });
-        });
-    </script>
+    <script src="/js/profile.js"></script>
 
 </body>
 
