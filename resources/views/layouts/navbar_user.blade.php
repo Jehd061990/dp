@@ -66,9 +66,9 @@
             @else
                 <div class="right second">
                     <ul class="right-links login-settings">
-                        <li class="nav-item"><a href="#" class="nav-link">Login </a></li>
+                        <li class="nav-item"><a href="/login" class="nav-link">Login </a></li>
                         <li><div class="vertical-bar"></div></li>
-                        <li class="nav-item"><a href="#" class="nav-link"> Signup</a></li>
+                        <li class="nav-item"><a href="/register" class="nav-link"> Signup</a></li>
                     </ul>
                 </div>
             @endif
