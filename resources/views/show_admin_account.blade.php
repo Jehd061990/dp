@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <h1>Admin Accounts</h1>
     <h1>ACCOUNT ID: {{$user -> user_id}}</h1>
     <ul>
         <li>NAME: {{$user -> last_name}}, {{$user -> first_name}}</li>

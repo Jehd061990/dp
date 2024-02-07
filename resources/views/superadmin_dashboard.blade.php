@@ -10,7 +10,7 @@
     @include('layouts/navbar_superadmin')
     <div class="bg-primary content-body">
         <h1>WELCOME SUPERADMIN</h1>
-        <a href="/logout">Logout</a>
+        <!-- <a href="/logout">Logout</a> -->
     </div>
 </body>
 
