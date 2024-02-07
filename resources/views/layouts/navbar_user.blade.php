@@ -52,12 +52,12 @@
                 </div>
 
 
-                <div class="sdropdown profile-set">
-                    <button class="profile-pic" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://newprofilepic.photo-cdn.net//assets/images/article/profile.jpg?90af0c8" alt="Profile picture">
-                    </button>
-                    <ul class="dropdown-menu text-center">
-                        <h6> <b>FIRST NAME</b></h6>
+            <div class="sdropdown profile-set">
+                <button class="profile-pic" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://newprofilepic.photo-cdn.net//assets/images/article/profile.jpg?90af0c8" alt="Profile picture">
+                </button>
+                <ul class="dropdown-menu text-center">
+                    <!-- <h6> <b>FIRST NAME</b></h6> -->
 
                         <li><a class="dropdown-item" href="/profile">Profile</a></li>
                         <li><a class="dropdown-item" href="/logout">Logout</a></li>

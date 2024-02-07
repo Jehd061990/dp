@@ -9,6 +9,8 @@
 
 <body>
     <h1>Your Profile</h1>
+
+    <h2>HELLO {{$user -> first_name}}</h2>
     <a href="/logout">Logout</a>
 </body>
 
