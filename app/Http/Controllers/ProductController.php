@@ -18,7 +18,9 @@ class ProductController extends Controller
     {
         $products = Product::query()
             ->select('*')
+            ->join('storey', 'products.storey_id', '=', 'storey.storey_id')
             ->get();
+
 
         return view('product', compact('products'));
     }
@@ -162,5 +164,19 @@ class ProductController extends Controller
             ->get();
 
         dd($product);
+    }
+
+    public function index()
+    {
+        try {
+            $storey = Storey::first();
+
+            $products = Product::all();
+
+            return view('product', compact('storey', 'products'));
+        } catch (\Exception $e) {
+
+            dd($e->getMessage());
+        }
     }
 }
