@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>Title: {{$product -> product_id}}</h1>
+    <h1>Title: {{$product -> title}}</h1>
     <ul>
         <li>Design: {{$product -> design}}</li>
         <li>Description: {{$product -> description}}</li>

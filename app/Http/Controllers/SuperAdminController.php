@@ -26,7 +26,7 @@ class SuperAdminController extends Controller
         $user->account_type = 'admin';
         $user->save();
 
-        return redirect("/admin");
+        return redirect("/admin/accounts");
     }
 
     public function superadmin_dashboard()
@@ -70,5 +70,24 @@ class SuperAdminController extends Controller
             ->get();
 
         return view('admin_show', compact('total_admin', 'admin'));
+    }
+
+    public function delete_admin(string $id)
+    {
+        $user = User::where('user_id', '=', $id)
+            ->delete();
+
+        return redirect('admin/accounts');
+    }
+
+    public function show_admin(string $id)
+    {
+        $user = User::query()
+            ->select('*')
+            ->where('user_id', '=', $id)
+            ->get()
+            ->first();
+
+        return view('show_admin_account', compact('user'));
     }
 }

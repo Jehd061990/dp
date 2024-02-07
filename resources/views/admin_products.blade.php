@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="stylesheet" href="/css/navbar_admin.css">
     <title>Document</title>
 </head>
@@ -33,10 +34,10 @@
                     <td>{{$p -> design}}</td>
                     <td>{{$p -> description}}</td>
                     <td>{{$p -> lot_area}}</td>
-                    <td><a href="/admin/products/{{$p -> product_id}}" class="btn btn-primary">View</a></td>
-                    <td><a href="/admin/products/edit/{{$p -> product_id}}" class="btn btn-warning">Edit</a></td>
+                    <td><a href="/admin/products/{{$p -> product_id}}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a></td>
+                    <td><a href="/admin/products/edit/{{$p -> product_id}}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a></td>
                     <td>
-                        <a data-bs-toggle="modal" data-bs-target="#delete_{{$p -> product_id}}" class="btn btn-danger">Delete</a>
+                        <a data-bs-toggle="modal" data-bs-target="#delete_{{$p -> product_id}}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
                     </td>
 
                     <!-- delete modal -->
