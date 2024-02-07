@@ -13,7 +13,7 @@
 <body>
     <!-- edit modal -->
     <h1>Edit {{$product -> title}} ({{$product -> product_id}})</h1>
-    <form action="/admin/products/{{$product -> product_id}}" method="POST">
+    <form action="/admin/products/{{$product -> product_id}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <label>Title:</label>

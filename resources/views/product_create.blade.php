@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Product</title>
 </head>
 
 <body>
     <h1>Add New Product</h1>
     <form action="/admin/products" method="POST" enctype="multipart/form-data">
         @csrf
-        <label>Storey:</label>
-        <input type="text" name="storey" /><br />
         <label>Title:</label>
         <input type="text" name="title" /><br />
         <label>Design:</label>

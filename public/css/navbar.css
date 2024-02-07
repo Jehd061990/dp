@@ -15,6 +15,12 @@
     width: 150px;
 }
 
+.navbar .right.second {
+    position: absolute;
+    right: 25px !important;
+    width: 150px;
+}
+
 .navbar .right-links {
     list-style: none;
     display: flex;

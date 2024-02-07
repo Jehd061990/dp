@@ -8,6 +8,7 @@ use App\Models\Storey;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+// use Kyslik\ColumnSortable\Sortable;
 // use App\Models\Product;
 
 
@@ -30,7 +31,7 @@ class ProductController extends Controller
         $product->description = $r->input('description');
         $product->lot_area = $r->input('lot_area');
         $product->title = $r->input('title');
-        if ($r->file('image_3d')) {
+        if ($r->file('image_3d')) { //switch case
             $file = $r->file('image_3d');
             $filename = date('YmdHiu') . $file->getClientOriginalName();
             $file->move(public_path('img/products'), $filename);
@@ -75,29 +76,41 @@ class ProductController extends Controller
                 ]
             );
 
-        if ($r->input('image_3d')) {
-            $product = Product::where('product_id', '=', $id)
+        if ($r->file('image_3d')) {
+            $file = $r->file('image_3d');
+            $filename = date('YmdHiu') . $file->getClientOriginalName();
+            $file->move(public_path('img/products'), $filename);
+
+            Product::where('product_id', '=', $id)
                 ->update(
                     [
-                        'image_3d' => $r->input('image_3d'),
+                        'image_3d' => $filename
                     ]
                 );
         }
 
-        if ($r->input('floor_plan_image')) {
-            $product = Product::where('product_id', '=', $id)
+        if ($r->file('floor_plan_image')) {
+            $file = $r->file('floor_plan_image');
+            $filename = date('YmdHiu') . $file->getClientOriginalName();
+            $file->move(public_path('img/products'), $filename);
+
+            Product::where('product_id', '=', $id)
                 ->update(
                     [
-                        'floor_plan_image' => $r->input('floor_plan_image'),
+                        'floor_plan_image' => $filename
                     ]
                 );
         }
 
-        if ($r->input('interior_image')) {
-            $product = Product::where('product_id', '=', $id)
+        if ($r->file('interior_image')) {
+            $file = $r->file('interior_image');
+            $filename = date('YmdHiu') . $file->getClientOriginalName();
+            $file->move(public_path('img/products'), $filename);
+
+            Product::where('product_id', '=', $id)
                 ->update(
                     [
-                        'interior_image' => $r->input('interior_image'),
+                        'interior_image' => $filename
                     ]
                 );
         }
@@ -119,9 +132,16 @@ class ProductController extends Controller
 
     public function show_product(string $id)
     {
-        $product = Product::query()
-            ->select('*')
-            ->where('product_id', '=', $id)
+        // $product = Product::query()
+        //     ->select('*')
+        //     ->where('product_id', '=', $id)
+        //     ->get()
+        //     ->first();
+
+        $product = DB::table('products')
+            // ->select('products.*')
+            ->join('storey', 'storey.storey_id', '=', 'products.storey_id')
+            ->select('products.*', 'storey.*')
             ->get()
             ->first();
 
@@ -130,11 +150,19 @@ class ProductController extends Controller
 
     public function showStorey()
     {
-        $product = DB::table('storey')
-            ->select('products.*')
-            ->join('products', 'product_id', '=', 'products.storey_id')
+        $product = DB::table('products')
+            // ->select('products.*')
+            ->join('storey', 'storey.storey_id', '=', 'products.storey_id')
+            ->select('product.*,storey.*')
             ->get();
 
         dd($product);
     }
+
+    // public function index(Request $r)
+    // {
+    //     $product = Product::paginate(10); // Paginate with 10 items per page
+
+    //     return view('admin_products', compact('product'));
+    // }
 }

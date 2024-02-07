@@ -35,12 +35,14 @@
         </div>
     </div>
 
+    
+
     <div class="container mt-5 d-grid justify-content-center">
         <div class="row mb-3">
             @foreach($products as $p)
             <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="card" style="width: 100%;">
-                    <img src="img/{{$p -> image_3d}}" class="card-img-top" alt="...">
+                    <img src="img/products/{{$p -> image_3d}}" class="card-img-top" alt="...">
                     <div class="card-body">
 
                         <h5 class="card-title">{{$p->title}}</h5>

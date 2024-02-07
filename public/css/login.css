@@ -32,9 +32,6 @@
 }
 
 /* ----------------- Left -------------------- */
-/* .login-container .login-left {
-    background-color: yellowgreen;
-} */
 
 .login-container .login-left .login-container {
     /* background-color: yellowgreen; */
@@ -387,4 +384,46 @@
     to {
         transform: translateX(-50%);
     }
+}
+
+@media only screen and (max-width: 900px) {
+    .login-page .login-container {
+        /* transform: translateY(25%); */
+        /* width: 850px;
+        height: 500px; */
+        width: 80%;
+        height: 40%px;
+    }
+
+    .login-container .login-left .login-container .form-wrapper {
+        background-color: yellow;
+        position: absolute;
+        left: 10%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 35%;
+        height: 90%;
+    }
+
+    .login-container .login-right {
+        width: 50%;
+        height: 100%;
+        background-color: goldenrod;
+        position: absolute;
+        right: 0;
+        border-radius: 30px;
+    }
+
+    .login-container .login-right .img-bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        overflow: hidden;
+        border-radius: 100px 30px 30px 200px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
 }
