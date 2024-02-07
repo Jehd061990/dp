@@ -36,13 +36,12 @@ class SuperAdminController extends Controller
 
     public function admin_show_products()
     {
-        // $product = Product::query()
-        //     ->select('*')
-        //     ->get();
+
         $product = DB::table('products')
             // ->select('products.*')
             ->join('storey', 'storey.storey_id', '=', 'products.storey_id')
             ->select('products.*', 'storey.*')
+            ->orderBy('products.product_id', 'desc')
             ->get();
 
         return view('admin_products', compact('product'));

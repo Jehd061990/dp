@@ -44,25 +44,22 @@
                     <div class="card-body">
 
                         <h5 class="card-title">{{$p->title}}</h5>
-                        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
 
                         <!-- Button trigger modal -->
                         <div class="text-center">
-                            <button type="button" class="view-card-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="view-card-btn" data-bs-toggle="modal" data-bs-target="#exampleModal{{$p->product_id}}">
                                 View
                             </button>
                         </div>
 
-
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal{{$p->product_id}}" tabindex="-1" aria-labelledby="exampleModalLabel{{$p->product_id}}" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="d-flex justify-content-between">
                                         <a href="#" class="ms-3 save"><img src="img/icons/save-icon.svg" alt=""></a>
                                         <button type="button" class="btn-close mt-3 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col-6 house-pic d-grid justify-content-center gap-3">
@@ -72,33 +69,31 @@
                                             </div>
                                             <div class="col-6 d-grid justify-content-center gap-3">
                                                 <div class="d-flex flex-column">
+                                                    <!-- Checkboxes for different options -->
                                                     <div>
-                                                        <input type="checkbox" name="3d" id="3d" value="500" class="form-check-input">
-                                                        <label for="3d" class="form-check-label">3D Perspective</label>
+                                                        <input type="checkbox" class="checkbox" data-price="{{$p->perspective_3d_price}}" id="product_{{$p->product_id}}" value="{{$p->product_id}}">
+                                                        <label for="product_{{$p->product_id}}">3D Perspective (PHP {{$p->perspective_3d_price}})</label>
                                                     </div>
                                                     <div>
-                                                        <input class="form-check-input" type="checkbox" name="floorplan" id="floorplan" value="400">
-                                                        <label class="form-check-label" for="floorplan">Floor Plans</label>
+                                                        <input type="checkbox" class="checkbox" data-price="{{$p->floor_plan_price}}" id="floorplan_{{$p->product_id}}" value="{{$p->product_id}}">
+                                                        <label for="floorplan_{{$p->product_id}}">Floor Plans (PHP {{$p->floor_plan_price}})</label>
                                                     </div>
                                                     <div>
-                                                        <input class="form-check-input" type="checkbox" name="interior" id="interior" value="300">
-                                                        <label class="form-check-label" for="interior">Interior</label>
+                                                        <input type="checkbox" class="checkbox" data-price="{{$p->interior_price}}" id="interior_{{$p->product_id}}" value="{{$p->product_id}}">
+                                                        <label for="interior_{{$p->product_id}}">Interior (PHP {{$p->interior_price}})</label>
                                                     </div>
                                                     <div>
-                                                        <input class="form-check-input" type="checkbox" name="full-sets-of-plans" id="full-sets-of-plans" value="1000">
-                                                        <label class="form-check-label" for="full-sets-of-plans">Full sets of plans</label>
+                                                        <input type="checkbox" class="checkbox" data-price="{{$p->full_set_price}}" id="full_set_{{$p->product_id}}" value="{{$p->product_id}}">
+                                                        <label for="full_set_{{$p->product_id}}">Full Set of Plans (PHP {{$p->full_set_price}})</label>
                                                     </div>
-
-                                                </div>
-
-                                                <div class="mt-2">
-                                                    <h3>Php 5,000</h3>
+                                                    <div class="mt-2 total-price">
+                                                        <h6>Total Price: PHP 0.00</h6>
+                                                    </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
+                                    <div class=" modal-footer">
                                         <div>
                                             <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, aut?</h5>
                                         </div>
@@ -109,17 +104,42 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+
                     </div>
                 </div>
             </div>
-
             @endforeach
         </div>
 
     </div>
 
-    </div>
+    <!-- updating total price -->
+    <!-- updating total price -->
+    <script>
+        $(document).ready(function() {
+            $(".checkbox").change(function() {
+                updateTotalPrice($(this));
+            });
+
+            function updateTotalPrice(checkbox) {
+                let total_price = 0;
+                checkbox.closest('.modal').find('.checkbox:checked').each(function() {
+                    let item_price = parseFloat($(this).data('price'));
+                    if (!isNaN(item_price)) { // Check if item_price is a valid number
+                        total_price += item_price;
+                    }
+                });
+                checkbox.closest('.modal').find('.total-price').text("Total Price: PHP " + total_price.toFixed(2)); // Update total price element within the modal
+            }
+
+            // Initial update when the page loads
+            updateTotalPrice();
+        });
+    </script>
+
+
     @include('layouts/footer')
 </body>
 
