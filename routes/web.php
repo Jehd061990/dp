@@ -52,7 +52,8 @@ Route::middleware(['checkSessionAdmin'])->group(function () {
 Route::middleware(['checkSessionSuperAdmin'])->group(function () {
     Route::get('/admin/dashboard', [SuperAdminController::class, 'superadmin_dashboard']);
     Route::get('/register/admin', [SuperAdminController::class, 'show_register_admin']);
-    Route::post('/register/admin', [SuperAdminController::class, 'register_admin']);
+    Route::post('/admin', [SuperAdminController::class, 'register_admin']);
+    Route::get('/admin', [SuperAdminController::class, 'register_admin_show']);
 });
 
 // SUPERADMIN AND ADMIN
