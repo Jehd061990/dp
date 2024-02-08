@@ -18,7 +18,6 @@ class CartsTableSeeder extends Seeder
     public function run()
     {
 
-
         DB::table('carts')->delete();
     }
 }
