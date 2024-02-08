@@ -2,8 +2,13 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" type="image/png" href="{{ asset('img/products.png') }}">
     @include('layouts/header')
+    <script src="/js/products.js"></script>
+
     <title>Products</title>
+ 
+    
 </head>
 
 <body>
@@ -16,16 +21,16 @@
                         <input type="text" placeholder="search" class="form-control">
                     </div>
 
-                    <div class="col-sm-7 d-flex justify-content-center gap-3">
-                        <select class="form-control" name="" id="">
-                            <option value="">Sort by sqm</option>
+                    <div class="col-sm-7 d-flex justify-content-center gap-3 drop_product">
+                        <select class="dropdown" name="" id="">
+                            <option value="">Sort by sqm </option>
                         </select>
 
-                        <select class="form-control" name="" id="">
+                        <select class="dropdown" name="" id="">
                             <option value="">Sort by storey</option>
                         </select>
 
-                        <select class="form-control" name="" id="">
+                        <select class="dropdown" name="" id="">
                             <option value="">Sort by design</option>
                         </select>
                     </div>
@@ -43,7 +48,7 @@
                     <img src="img/products/{{$p -> image_3d}}" class="card-img-top" alt="...">
                     <div class="card-body">
 
-                        <h5 class="card-title">{{$p->title}}</h5>
+                        <h5 class="card-title">{{$p->storey_id}} {{$p->title}}</h5>
 
                         <!-- Button trigger modal -->
                         <div class="text-center">
@@ -63,9 +68,10 @@
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col-6 house-pic d-grid justify-content-center gap-3">
-                                                <img src="img/2086922454.jpg" class="card-img-top" alt="...">
-                                                <img src="img/2086922454.jpg" class="card-img-top" alt="...">
-                                                <img src="img/2086922454.jpg" class="card-img-top" alt="...">
+                                                <img src="img/products/{{$p -> image_3d}}" class="card-img-top" alt="...">
+                                                <img src="img/products/{{$p->floor_plan_image}}" class="card-img-top preview-image" alt="...">
+
+                                                <img src="img/products/{{$p -> interior_image}}" class="card-img-top" alt="...">
                                             </div>
                                             <div class="col-6 d-grid justify-content-center gap-3">
                                                 <div class="d-flex flex-column">
@@ -117,27 +123,7 @@
 
     <!-- updating total price -->
     <!-- updating total price -->
-    <script>
-        $(document).ready(function() {
-            $(".checkbox").change(function() {
-                updateTotalPrice($(this));
-            });
-
-            function updateTotalPrice(checkbox) {
-                let total_price = 0;
-                checkbox.closest('.modal').find('.checkbox:checked').each(function() {
-                    let item_price = parseFloat($(this).data('price'));
-                    if (!isNaN(item_price)) { // Check if item_price is a valid number
-                        total_price += item_price;
-                    }
-                });
-                checkbox.closest('.modal').find('.total-price').text("Total Price: PHP " + total_price.toFixed(2)); // Update total price element within the modal
-            }
-
-            // Initial update when the page loads
-            updateTotalPrice();
-        });
-    </script>
+  
 
 
     @include('layouts/footer')
