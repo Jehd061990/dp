@@ -6,6 +6,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -17,6 +18,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $account_type
  * @property string $first_name
  * @property string $last_name
+ * 
+ * @property Collection|Cart[] $carts
  *
  * @package App\Models
  */
@@ -37,4 +40,9 @@ class User extends Model
 		'first_name',
 		'last_name'
 	];
+
+	public function carts()
+	{
+		return $this->hasMany(Cart::class);
+	}
 }

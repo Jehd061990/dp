@@ -170,7 +170,6 @@ class ProductController extends Controller
     {
         try {
             $storey = Storey::first();
-
             $products = Product::all();
 
             return view('product', compact('storey', 'products'));

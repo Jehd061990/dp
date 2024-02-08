@@ -6,7 +6,7 @@
 
 namespace App\Models;
 
-use Kyslik\ColumnSortable\Sortable;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -17,12 +17,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $design
  * @property string $description
  * @property string $lot_area
- * @property string|null $3d_image
+ * @property string|null $image_3d
  * @property string|null $floor_plan_image
  * @property string|null $interior_image
  * @property string $title
  * 
  * @property Storey $storey
+ * @property Collection|Cart[] $carts
  *
  * @package App\Models
  */
@@ -31,9 +32,6 @@ class Product extends Model
 	protected $table = 'products';
 	protected $primaryKey = 'product_id';
 	public $timestamps = false;
-
-	// use Sortable;
-	// public $sortable = ['title', 'design'];
 
 	protected $casts = [
 		'storey_id' => 'int'
@@ -44,7 +42,7 @@ class Product extends Model
 		'design',
 		'description',
 		'lot_area',
-		'3d_image',
+		'image_3d',
 		'floor_plan_image',
 		'interior_image',
 		'title'
@@ -53,5 +51,10 @@ class Product extends Model
 	public function storey()
 	{
 		return $this->belongsTo(Storey::class);
+	}
+
+	public function carts()
+	{
+		return $this->hasMany(Cart::class);
 	}
 }

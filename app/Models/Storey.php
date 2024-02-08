@@ -13,9 +13,11 @@ use Illuminate\Database\Eloquent\Model;
  * Class Storey
  * 
  * @property int $storey_id
- * @property string $storey_name
- * @property string $storey_price
- * @property string $flr_type
+ * @property string $perspective_3d_price
+ * @property string $floor_plan_price
+ * @property string $interior_price
+ * @property string $full_set_price
+ * @property string $floor_type
  * 
  * @property Collection|Product[] $products
  *
@@ -28,9 +30,11 @@ class Storey extends Model
 	public $timestamps = false;
 
 	protected $fillable = [
-		'storey_name',
-		'storey_price',
-		'flr_type'
+		'perspective_3d_price',
+		'floor_plan_price',
+		'interior_price',
+		'full_set_price',
+		'floor_type'
 	];
 
 	public function products()

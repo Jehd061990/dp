@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  <link rel="icon" type="image/png" href="{{ asset('img/profile.png') }}">
+
     @include('layouts/header')
     <title>Login/Signup</title>
 </head>
