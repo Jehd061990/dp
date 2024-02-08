@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="navbar-bg"></div>
     <div class="container-fluid">
-        <a class="navbar-brand" href="/" ><img src="img/logo3_white.png" alt="Dwelling Plans Logo" id="logo_pos"></a>
+        <a class="navbar-brand" href="/"><img src="img/logo3_white.png" alt="Dwelling Plans Logo" id="logo_pos"></a>
         <button class="navbar-tg d-block d-lg-none" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-label="Toggle navigation">
             <div class="top"></div>
             <div class="middle"></div>
@@ -11,13 +11,17 @@
         @if (Session::get('user_id'))
         <ul class="notification">
             <li class="nav-item me-2"><a href="#" class="nav-link"><img src="img/icons/nav-bell-icon.svg" alt="bell icon"></a></li>
-            <li class="nav-item ms-2"><a href="#" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"></a></li>
+            <li class="nav-item ms-2">
+                <a href="/cart" class="nav-link">
+                    <img src="img/icons/nav-cart-icon.svg" alt="cart icon">
+                </a>
+            </li>
         </ul>
         @endif
 
         <div class="collapse navbar-collapse justify-content-end me-3 text-center navbar-margin-top" id="navbarTogglerDemo03">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
-                <li class="nav-item" >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
                     <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/" id="nav_names">Home</a>
                 </li>
                 <li class="nav-item">
@@ -46,8 +50,10 @@
             <div class="greet">
                 <h5>Hello</h5>
                 <ul class="notify">
-                    <li class="nav-item me-2"><a href="#" class="nav-link"><img src="img/icons/nav-bell-icon.svg" alt="bell icon"></a></li>
-                    <li class="nav-item ms-2"><a href="#" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"></a></li>
+                    <li class="nav-item me-2">
+                        <a href="#" class="nav-link"><img src="img/icons/nav-bell-icon.svg" alt="bell icon"></a>
+                    </li>
+                    <li class="nav-item ms-2"><a href="{{route('cart')}}" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"></a></li>
                 </ul>
             </div>
 

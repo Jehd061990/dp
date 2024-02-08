@@ -2,13 +2,9 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" href="{{ asset('img/products.png') }}">
     @include('layouts/header')
     <script src="/js/products.js"></script>
-
     <title>Products</title>
- 
-    
 </head>
 
 <body>
@@ -21,16 +17,16 @@
                         <input type="text" placeholder="search" class="form-control">
                     </div>
 
-                    <div class="col-sm-7 d-flex justify-content-center gap-3 drop_product">
-                        <select class="dropdown" name="" id="">
-                            <option value="">Sort by sqm </option>
+                    <div class="col-sm-7 d-flex justify-content-center gap-3">
+                        <select class="form-control" name="" id="">
+                            <option value="">Sort by sqm</option>
                         </select>
 
-                        <select class="dropdown" name="" id="">
+                        <select class="form-control" name="" id="">
                             <option value="">Sort by storey</option>
                         </select>
 
-                        <select class="dropdown" name="" id="">
+                        <select class="form-control" name="" id="">
                             <option value="">Sort by design</option>
                         </select>
                     </div>
@@ -48,7 +44,7 @@
                     <img src="img/products/{{$p -> image_3d}}" class="card-img-top" alt="...">
                     <div class="card-body">
 
-                        <h5 class="card-title">{{$p->storey_id}} {{$p->title}}</h5>
+                        <h5 class="card-title">{{$p->title}}</h5>
 
                         <!-- Button trigger modal -->
                         <div class="text-center">
@@ -77,40 +73,48 @@
                                                 <div class="d-flex flex-column">
                                                     <!-- Checkboxes for different options -->
                                                     <div>
-                                                        <input type="checkbox" class="checkbox" data-price="{{$p->perspective_3d_price}}" id="product_{{$p->product_id}}" value="{{$p->product_id}}">
+                                                        <!-- <input type="checkbox" class="checkbox" data-price="{{$p->perspective_3d_price}}" id="product_{{$p->product_id}}" value="{{$p->product_id}}"> -->
+
                                                         <label for="product_{{$p->product_id}}">3D Perspective (PHP {{$p->perspective_3d_price}})</label>
                                                     </div>
                                                     <div>
-                                                        <input type="checkbox" class="checkbox" data-price="{{$p->floor_plan_price}}" id="floorplan_{{$p->product_id}}" value="{{$p->product_id}}">
+                                                        <!-- <input type="checkbox" class="checkbox" data-price="{{$p->floor_plan_price}}" id="floorplan_{{$p->product_id}}" value="{{$p->product_id}}"> -->
+
                                                         <label for="floorplan_{{$p->product_id}}">Floor Plans (PHP {{$p->floor_plan_price}})</label>
                                                     </div>
                                                     <div>
-                                                        <input type="checkbox" class="checkbox" data-price="{{$p->interior_price}}" id="interior_{{$p->product_id}}" value="{{$p->product_id}}">
+                                                        <!-- <input type="checkbox" class="checkbox" data-price="{{$p->interior_price}}" id="interior_{{$p->product_id}}" value="{{$p->product_id}}"> -->
+
                                                         <label for="interior_{{$p->product_id}}">Interior (PHP {{$p->interior_price}})</label>
                                                     </div>
                                                     <div>
-                                                        <input type="checkbox" class="checkbox" data-price="{{$p->full_set_price}}" id="full_set_{{$p->product_id}}" value="{{$p->product_id}}">
+
                                                         <label for="full_set_{{$p->product_id}}">Full Set of Plans (PHP {{$p->full_set_price}})</label>
                                                     </div>
                                                     <div class="mt-2 total-price">
-                                                        <h6>Total Price: PHP 0.00</h6>
+                                                        <h6>Total Price:
+                                                            <!-- Calculate and display total price -->
+                                                            <span id="total_price_{{$p->product_id}}">{{($p -> perspective_3d_price) + ($p-> floor_plan_price) + ($p -> interior_price) + ($p -> full_set_price)}}</span>
+                                                        </h6>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class=" modal-footer">
+                                    <div class="modal-footer">
                                         <div>
                                             <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, aut?</h5>
                                         </div>
                                         <div class="container d-flex justify-content-around">
-                                            <button class="d-flex justify-content-between"><span class="image"><img src="img/icons/peso-icon.svg" alt=""></span><span class="span-text">BUY NOW</span></button>
+                                            <button class="d-flex justify-content-between">
+                                                <span class="image"><img src="img/icons/peso-icon.svg" alt=""></span>
+                                                <span class="span-text">BUY NOW</span>
+                                            </button>
                                             <form action="{{ route('add_to_cart', ['product_id' => $p->product_id]) }}" method="POST">
                                                 @csrf
-                                                <input type="text" id="total_price_{{$p->product_id}}" name="total_price" value="0" hidden>
+                                                <input type="text" name="total_price" value="{{($p -> perspective_3d_price) + ($p-> floor_plan_price) + ($p -> interior_price) + ($p -> full_set_price)}}" hidden>
                                                 <button type="submit" class="btn btn-success">Add to Cart</button>
                                             </form>
-
                                         </div>
                                     </div>
                                 </div>
@@ -123,35 +127,8 @@
         </div>
     </div>
 
-    <script src="/js/price.js"></script>
-    <!-- <script>
-        // Function to calculate and update the total price based on selected checkboxes
-        function updateTotalPrice() {
-            // Get all checkboxes with class 'checkbox'
-            var checkboxes = document.querySelectorAll('.checkbox');
-            var totalPrice = 0;
+    <!-- <script src="/js/price.js"></script> -->
 
-            // Loop through each checkbox
-            checkboxes.forEach(function(checkbox) {
-                // Check if checkbox is checked
-                if (checkbox.checked) {
-                    // Get the price data attribute from the checkbox
-                    var price = parseFloat(checkbox.getAttribute('data-price'));
-                    // Add the price to the total price
-                    totalPrice += price;
-                }
-            });
-
-            // Update the total price element with the calculated total
-            document.querySelector('.total-price h6').textContent = 'Total Price: PHP ' + totalPrice.toFixed(2);
-        }
-
-        // Add event listener to each checkbox to trigger the updateTotalPrice function when checkbox state changes
-        var checkboxes = document.querySelectorAll('.checkbox');
-        checkboxes.forEach(function(checkbox) {
-            checkbox.addEventListener('change', updateTotalPrice);
-        });
-    </script> -->
 
     @include('layouts/footer')
 </body>
