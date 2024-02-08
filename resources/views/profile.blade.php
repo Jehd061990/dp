@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="icon" type="image/png" href="{{ asset('img/profile.png') }}">
     @include('layouts/header')
     <script src="/js/profile.js"></script>
     <script src="/js/footer.js"></script>

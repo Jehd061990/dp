@@ -6,6 +6,8 @@
 </head>
 
 <body>
+  <link rel="icon" type="image/png" href="{{ asset('img/profile.png') }}">
+
     <h1>Register</h1>
     <form action="/register" method="POST">
         @csrf

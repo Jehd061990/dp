@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  <link rel="icon" type="image/png" href="{{ asset('img/super_admin.png') }}">
+
     <title>Register</title>
 </head>
 
