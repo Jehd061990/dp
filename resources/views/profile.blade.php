@@ -15,11 +15,20 @@
         @method('PUT')
 
         <h2>{{$user -> first_name}}</h2>
-        <label for="email">First Name:</label>
+        <label for="first_name">First Name:</label>
         <input type="text" name="first_name" value="{{ $user->first_name }}" required disabled>
 
-        <label for="email">Last Name:</label>
+        <label for="last_name">Last Name:</label>
         <input type="text" name="last_name" value="{{ $user->last_name }}" required disabled>
+
+        <label for="mobile_number">Mobile Number:</label>
+        <input type="text" name="mobile_number" value="{{ $user-> mobile_number}}" required disabled>
+
+        <label for="address">Address:</label>
+        <input type="text" name="address" value="{{ $user-> address }}" required disabled>
+
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" name="birthdate" value="{{ $user->birthdate ? $user->birthdate->format('Y-m-d') : '' }}" required disabled /><br />
 
         <label for="email">Email:</label>
         <input type="email" name="email" value="{{ $user->email }}" required disabled>

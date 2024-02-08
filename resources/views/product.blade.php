@@ -99,46 +99,53 @@
                                         </div>
                                         <div class="container d-flex justify-content-around">
                                             <button class="d-flex justify-content-between"><span class="image"><img src="img/icons/peso-icon.svg" alt=""></span><span class="span-text">BUY NOW</span></button>
-                                            <button class="d-flex justify-content-between"><img src="img/icons/cart-icon.svg" alt=""><span class="span-text">ADD TO CART</span></button>
+                                            <form action="{{ route('add_to_cart', ['product_id' => $p->product_id]) }}" method="POST">
+                                                @csrf
+                                                <input type="text" id="total_price_{{$p->product_id}}" name="total_price" value="0" hidden>
+                                                <button type="submit" class="btn btn-success">Add to Cart</button>
+                                            </form>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
-
     </div>
 
-    <!-- updating total price -->
-    <!-- updating total price -->
-    <script>
-        $(document).ready(function() {
-            $(".checkbox").change(function() {
-                updateTotalPrice($(this));
+    <script src="/js/price.js"></script>
+    <!-- <script>
+        // Function to calculate and update the total price based on selected checkboxes
+        function updateTotalPrice() {
+            // Get all checkboxes with class 'checkbox'
+            var checkboxes = document.querySelectorAll('.checkbox');
+            var totalPrice = 0;
+
+            // Loop through each checkbox
+            checkboxes.forEach(function(checkbox) {
+                // Check if checkbox is checked
+                if (checkbox.checked) {
+                    // Get the price data attribute from the checkbox
+                    var price = parseFloat(checkbox.getAttribute('data-price'));
+                    // Add the price to the total price
+                    totalPrice += price;
+                }
             });
 
-            function updateTotalPrice(checkbox) {
-                let total_price = 0;
-                checkbox.closest('.modal').find('.checkbox:checked').each(function() {
-                    let item_price = parseFloat($(this).data('price'));
-                    if (!isNaN(item_price)) { // Check if item_price is a valid number
-                        total_price += item_price;
-                    }
-                });
-                checkbox.closest('.modal').find('.total-price').text("Total Price: PHP " + total_price.toFixed(2)); // Update total price element within the modal
-            }
+            // Update the total price element with the calculated total
+            document.querySelector('.total-price h6').textContent = 'Total Price: PHP ' + totalPrice.toFixed(2);
+        }
 
-            // Initial update when the page loads
-            updateTotalPrice();
+        // Add event listener to each checkbox to trigger the updateTotalPrice function when checkbox state changes
+        var checkboxes = document.querySelectorAll('.checkbox');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', updateTotalPrice);
         });
-    </script>
-
+    </script> -->
 
     @include('layouts/footer')
 </body>
