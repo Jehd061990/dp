@@ -1,5 +1,9 @@
 .home_body {
-    background-color: #ececec;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background-image: url("/img/home_back.png");
+    background-size: cover;
 }
 
 #home-page {
@@ -7,9 +11,12 @@
     position: relative;
 }
 
+#dwelling_carousel {
+    margin-top: 120px;
+}
+
 #home-page .dwelling_car {
     margin-top: 30px;
-    background-color: #ececec;
     margin-left: 0;
     margin-right: 0;
 }
@@ -59,7 +66,6 @@
 
 .text_indent_background {
     background-color: #c0c0c0;
-    padding: 5px;
 }
 /* .carousel-item {
     vertical-align: middle;
@@ -87,7 +93,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 10px;
 }
 
 #dwelling-hero {
@@ -120,6 +125,10 @@
 #no-gutters [class^="col-"] {
     padding-right: 2px;
     padding-left: 2px;
+}
+
+#crafting {
+    margin-top: 10px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -157,16 +166,19 @@
         margin: 0;
     }
 
-    .text_indent_background {
-        text-align: center;
-        margin: 0;
-    }
     #inspired {
         margin-top: 30px;
     }
 
     .img_home {
         min-height: 30vh;
+    }
+    #crafting {
+        margin-top: 0;
+    }
+
+    #dwelling_carousel {
+        margin-top: 30px;
     }
 }
 
@@ -187,7 +199,7 @@
 
     .img_home {
         margin: 0;
-        margin-top: 40px;
+        margin-top: 80px;
         height: 100px;
     }
     #dwelling-hero {
@@ -211,5 +223,13 @@
     }
     .img_home {
         min-height: 30vh;
+    }
+
+    #crafting {
+        margin-top: -30px;
+    }
+
+    #dwelling_carousel {
+        margin-top: 30px;
     }
 }
