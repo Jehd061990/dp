@@ -3,12 +3,6 @@
 
 <head>
     <link rel="icon" type="image/png" href="{{ url('/img/icon/home.png', [], true) }}">
-    <!-- @include('layouts/head')
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/home.css">
-    <script src="/js/home.js"></script>  -->
    
 
 

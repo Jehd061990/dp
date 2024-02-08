@@ -19,13 +19,19 @@
         <li>Floor Plan Image: <img src="{{ asset('img/products/' . $product->floor_plan_image) }}" width="100px" alt="Floor Plan Image"></li>
         <li>Interior Image: <img src="{{ asset('img/products/' . $product->interior_image) }}" width="100px" alt="Interior Image"></li>
         <li>
-            <h1>3D price: {{$product -> one_flr_price}}</h1>
+            <h1>Storey Type: {{$product -> floor_type}}</h1>
         </li>
         <li>
-            <h1>{{$product -> two_flr_price}}</h1>
+            <h1>3D Price: {{$product -> perspective_3d_price}}</h1>
         </li>
         <li>
-            <h1>{{$product -> three_flr_price}}</h1>
+            <h1>Floor Plan Price: {{$product -> floor_plan_price}}</h1>
+        </li>
+        <li>
+            <h1>Interior Plan Price: {{$product -> interior_price}}</h1>
+        </li>
+        <li>
+            <h1>Full Set Plan Price: {{$product -> full_set_price}}</h1>
         </li>
     </ul>
 </body>

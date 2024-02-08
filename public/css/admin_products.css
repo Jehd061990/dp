@@ -1,0 +1,48 @@
+.admin-products {
+    font-family: var(--text);
+}
+
+.admin-products table {
+    width: 95%;
+}
+
+.admin-products table tr .fixed-th {
+    width: 8%;
+}
+
+.admin-products table tr .fixed-th-title {
+    width: 15%;
+}
+
+.admin-products table .tr-head {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.admin-products .sdropdown button {
+    border: none;
+    background-color: transparent;
+}
+
+.admin-products .add-product {
+    background-color: var(--dark);
+    width: 150px;
+    height: 40px;
+    padding-top: 8px;
+    border-radius: 30px;
+    transition: 0.5s linear;
+    cursor: pointer;
+}
+
+.admin-products .add-product a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.admin-products .add-product:hover {
+    background-color: var(--dark-gray);
+}
+
+.admin-products .add-product:hover a {
+    font-weight: bold;
+}

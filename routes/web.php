@@ -41,6 +41,7 @@ Route::middleware(['checkSessionUser'])->group(function () {
     Route::post('/product', [OrderController::class, 'place_order']);
     Route::put('/profile/{id}', [UserController::class, 'edit_profile']);
     Route::get('/profile/edit/{id}', [UserController::class, 'edit_profile_form']);
+    Route::get('/product/{storey_id}', [ProductController::class, 'index']);
 });
 
 // ADMIN SIDE
@@ -68,5 +69,7 @@ Route::middleware(['checkSessionSuperAdminAndAdmin'])->group(function () {
     Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit_product_form']);
     Route::get('/admin/products/{id}', [ProductController::class, 'show_product']);
     Route::get('/admin/test', [ProductController::class, 'showStorey']);
+
+
     // Route::get('/admin/products', [ProductController::class, 'index']);
 });

@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <h1>hello</h1>
     @include('layouts/navbar')
 
     <div class="container">
