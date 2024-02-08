@@ -42,7 +42,12 @@ Route::middleware(['checkSessionUser'])->group(function () {
     Route::put('/profile/{id}', [UserController::class, 'edit_profile']);
     Route::get('/profile/edit/{id}', [UserController::class, 'edit_profile_form']);
     Route::get('/product/{storey_id}', [ProductController::class, 'index']);
+    Route::get('/cart', [OrderController::class, 'show_cart'])->name('cart.show');
+
+    // Route for adding items to the cart
+    Route::post('/add-to-cart/{product_id}', [OrderController::class, 'add_to_cart'])->name('cart.add');
 });
+
 
 // ADMIN SIDE
 Route::middleware(['checkSessionAdmin'])->group(function () {

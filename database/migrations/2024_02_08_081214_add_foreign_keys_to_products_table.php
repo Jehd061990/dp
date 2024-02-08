@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->integer('user_id', true);
-            $table->string('email');
-            $table->string('password');
-            $table->enum('account_type', ['super admin', 'admin', 'user']);
-            $table->string('first_name');
-            $table->string('last_name');
+        Schema::table('products', function (Blueprint $table) {
+            $table->foreign(['storey_id'])->references(['storey_id'])->on('storey');
         });
     }
 
@@ -30,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropForeign('products_storey_id_foreign');
+        });
     }
 };

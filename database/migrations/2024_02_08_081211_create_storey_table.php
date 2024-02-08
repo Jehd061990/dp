@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('storey', function (Blueprint $table) {
             $table->bigIncrements('storey_id');
-            $table->string('storey_name'); //fucking1 2 3
-            $table->string('storey_price', 50); //30k /40k /50k
-            $table->string('flr_type');
+            $table->string('perspective_3d_price');
+            $table->string('floor_plan_price');
+            $table->string('interior_price');
+            $table->string('full_set_price');
+            $table->string('floor_type');
         });
     }
 
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_types');
+        Schema::dropIfExists('storey');
     }
 };

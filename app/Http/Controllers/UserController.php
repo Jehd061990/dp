@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 
 class UserController extends Controller
@@ -62,24 +63,52 @@ class UserController extends Controller
         return view('profile', compact('user'));
     }
 
+
+
     public function edit_profile(Request $r, string $id)
     {
-        $user = User::where('user_id', '=', $id);
+        // Validate input data
+        $r->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                Rule::unique('users')->ignore($id, 'user_id'),
+            ],
+            'mobile_number' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'birthdate' => 'required|date',
+        ]);
 
-        $user->update(
-            [
-                'first_name' => $r->input('first_name'),
-                'last_name' => $r->input('last_name'),
-                'email' => $r->input('email'),
-            ]
-        );
+        // Retrieve the user
+        $user = User::where('user_id', $id)->first();
 
+        if (!$user) {
+            return redirect('/profile')->with('error', 'User not found');
+        }
+
+        // Update the user's information
+        $user->update([
+            'first_name' => $r->input('first_name'),
+            'last_name' => $r->input('last_name'),
+            'email' => $r->input('email'),
+            'mobile_number' => $r->input('mobile_number'),
+            'address' => $r->input('address'),
+            'birthdate' => $r->input('birthdate'),
+        ]);
+
+        // Redirect back to the profile page with a success message
         return redirect('/profile')->with('success', 'Profile updated successfully');
     }
+
 
     public function edit_profile_form(string $id)
     {
         $user = User::where('user_id', '=', $id)
+            ->join('accounts', 'accounts.user_id', '=', 'users.user_id')
             ->first();
 
         return view('profile', compact('user'));
@@ -107,5 +136,4 @@ class UserController extends Controller
     {
         return view('portfolio');
     }
-    
 }
