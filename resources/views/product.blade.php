@@ -123,12 +123,6 @@
         </div>
     </div>
 
-<<<<<<< HEAD
-    <!-- updating total price -->
-    <!-- updating total price -->
-  
-
-=======
     <script src="/js/price.js"></script>
     <!-- <script>
         // Function to calculate and update the total price based on selected checkboxes
@@ -158,7 +152,6 @@
             checkbox.addEventListener('change', updateTotalPrice);
         });
     </script> -->
->>>>>>> af5097cf4589687a52c508f2dff6b96fd2ec26c6
 
     @include('layouts/footer')
 </body>
