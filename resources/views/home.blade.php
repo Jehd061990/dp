@@ -130,14 +130,10 @@
       
 </div>                         
     </div>
-
-
-
-
-
-    @include('layouts/footer')
 </div>
+
 </div>
+@include('layouts/footer')
 </body>
 
 </html>

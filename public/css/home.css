@@ -10,6 +10,7 @@
 #home-page .dwelling_car {
     margin-top: 30px;
     background-color: #ececec;
+
     margin-left: 0;
     margin-right: 0;
 }
@@ -125,6 +126,8 @@
 @media only screen and (max-width: 1024px) {
     .home-page {
         margin: 0;
+        height: 100vh;
+        width: 100vw;
     }
 
     .text_indent {
