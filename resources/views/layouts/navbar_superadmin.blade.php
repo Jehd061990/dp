@@ -7,18 +7,20 @@
 <div class="sidebar-bg"></div>
 
 <div class="sidebar default text-center">
-    
+
     <div class="brand-logo">
         <img class="mt-5 mb-2" src="/img/logo3_white.png" alt="brand logo">
     </div>
-    
+
 
     <div class="profile">
         <ul>
             <li class="profile-img mb-1">
                 <img src="https://img.freepik.com/free-photo/black-businessman-happy-expression_1194-2539.jpg" alt="profile picture">
             </li>
-            <li><h5>Jorge</h5></li>
+            <li>
+                <h5>Jorge</h5>
+            </li>
         </ul>
     </div>
     <ul class="mt-5 mb-5 d-grid gap-3">
@@ -27,7 +29,7 @@
         <li><a href="/admin/products">Products</a></li>
         <li><a href="#">Orders</a></li>
         <li><a href="#">Settings</a></li>
-        
+
     </ul>
 
     <div class="logout">

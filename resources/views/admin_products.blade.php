@@ -9,13 +9,19 @@
 <body class="admin-products d-flex justify-content-between">
     @include('layouts/navbar_superadmin')
     <div class="container">
+        @if(session()->has('message'))
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+            {{session()->get('message')}}
+        </div>
+        @endif
         <!-- <h1>Productsss</h1> -->
         <div class="d-flex justify-content-end">
             <div class="add-product mt-3 mb-3 text-center">
                 <a href="/admin/products/create">+ Add Products</a>
             </div>
         </div>
-        
+
         <div class="row">
 
             <table class="table w-auto">
@@ -43,7 +49,7 @@
                                 <!-- <h6> <b>FIRST NAME</b></h6> -->
                                 <li><a class="dropdown-item" href="/admin/products/{{$p -> product_id}}" class="btn btn-primary">View</a></li>
                                 <li><a class="dropdown-item" href="/admin/products/edit/{{$p -> product_id}}" class="btn btn-warning">Edit</a></li>
-                                <li><a class="dropdown-item"data-bs-toggle="modal" data-bs-target="#delete_{{$p -> product_id}}" class="btn btn-danger">Delete</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_{{$p -> product_id}}" class="btn btn-danger">Delete</a></li>
                             </ul>
                         </div>
                     </td>

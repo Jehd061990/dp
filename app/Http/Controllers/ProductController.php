@@ -54,7 +54,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect("admin/products");
+        return redirect("admin/products")->with('message', 'Added Product Successfully');
 
         //return view('faculty', compact('faculties', 'faculties_dept', 'faculties_points'));
 

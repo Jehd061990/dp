@@ -26,7 +26,7 @@ class SuperAdminController extends Controller
         $user->account_type = 'admin';
         $user->save();
 
-        return redirect("/admin/accounts");
+        return redirect("/admin/accounts")->with('message', 'Added Admin Successfully');
     }
 
     public function superadmin_dashboard()
