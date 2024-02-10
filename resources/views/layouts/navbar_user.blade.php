@@ -53,7 +53,11 @@
                     <li class="nav-item me-2">
                         <a href="#" class="nav-link"><img src="img/icons/nav-bell-icon.svg" alt="bell icon"></a>
                     </li>
+<<<<<<< HEAD
                     {{-- <li class="nav-item ms-2"><a href="{{route('cart')}}" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"></a></li> --}}
+=======
+                    <li class="nav-item ms-2"><a href="" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"></a></li>
+>>>>>>> 0179fb4424ae98fc29a5a465f5367e3f2462928e
                 </ul>
             </div>
 

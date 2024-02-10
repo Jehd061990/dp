@@ -52,11 +52,11 @@ Route::middleware(['checkSessionUser'])->group(function () {
     Route::get('/profile/edit/{id}', [UserController::class, 'edit_profile_form']);
     Route::get('/product/{storey_id}', [ProductController::class, 'index']);
     Route::get('/cart', [OrderController::class, 'show_cart'])->name('cart.show');
-
-    // Route for adding items to the cart
-    Route::post('/add-to-cart/{product_id}', [OrderController::class, 'add_to_cart'])->name('cart.add');
+    Route::post('/add_to_cart/{product_id}', [OrderController::class, 'add_to_cart'])->name('add_to_cart');
+    Route::post('/checkout', [OrderController::class, 'place_order']);
+    Route::get('/checkout', [OrderController::class, 'view_orders']);
+    Route::delete('/cart/{id}', [SuperAdminController::class, 'delete_admin']);
 });
-
 
 // ADMIN SIDE
 Route::middleware(['checkSessionAdmin'])->group(function () {

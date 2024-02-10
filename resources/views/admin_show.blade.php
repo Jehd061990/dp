@@ -13,10 +13,16 @@
 </head>
 
 <body>
-    <h1>hello</h1>
     @include('layouts/navbar')
 
     <div class="container">
+        @if(session()->has('message'))
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+            {{session()->get('message')}}
+        </div>
+        @endif
+
         <h1>Total Admin: {{$total_admin -> total}}</h1>
         <a href="/register/admin" class="btn btn-success">+ Add</a>
         <div class="row">
