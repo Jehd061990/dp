@@ -11,6 +11,8 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
+
+    
     public function show_login()
     {
         return view('login');
@@ -69,6 +71,7 @@ class UserController extends Controller
     {
         // Validate input data
         $r->validate([
+            'profile_picture' => 'required|string|max:255',
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'email' => [
@@ -136,4 +139,12 @@ class UserController extends Controller
     {
         return view('portfolio');
     }
+
+
+    public function about()
+    {
+        
+        return view('about'); 
+    }
+
 }

@@ -17,7 +17,9 @@ return new class extends Migration
             $table->integer('order_id', true);
             $table->dateTime('time_placed')->useCurrent();
             $table->string('status', 30);
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id')->index('carts_user_id_foreign');
+            $table->unsignedBigInteger('cart_id')->index('cart_id');
+            $table->foreign(['cart_id'])->references(['cart_id'])->on('carts');
         });
     }
 

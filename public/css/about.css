@@ -1,0 +1,56 @@
+.about_body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header_about {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.nav_about .ul_about {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav_about .ul_about .li_about {
+    display: inline;
+    margin: 0 10px;
+}
+
+.nav_about .ul_about .li_about {
+    color: white;
+    text-decoration: none;
+}
+
+.a_about {
+    color: white;
+    text-decoration: none;
+}
+
+.a_about:hover {
+    color: #757575;
+}
+
+section#projects {
+    padding: 20px;
+    text-align: center;
+}
+
+.project {
+    margin: 20px;
+}
+
+.project img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}

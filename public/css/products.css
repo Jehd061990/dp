@@ -12,14 +12,14 @@
 .house-pic img {
     width: 100px;
     height: 100px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .view-card-btn {
     border: none;
     width: 160px;
     height: 40px;
-    border-radius: 50px;
+    border-radius: 30px;
     background-color: var(--blue-green);
     color: var(--white);
 }
@@ -101,7 +101,7 @@
     animation: peso-rotate 0.5s linear;
 }
 
-/* cards */
+/* cards added by April */
 .card-img-top {
     width: 100px;
     height: 300px;
@@ -109,6 +109,10 @@
 
 .card-title {
     text-align: center;
+}
+
+#card_design {
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3); /* Adjust values as needed */
 }
 
 @keyframes peso-rotate {
@@ -134,7 +138,20 @@
 }
 
 /* responsive */
-@media only screen and (max-width: 576px) {
+@media only screen and (min-width: 600px) and (max-width: 770px) {
+    #search_button {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 380px) and (max-width: 550px) {
+    #dropping {
+        display: none;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 356px) {
     .view-card-btn {
         width: 100px;
     }
@@ -147,7 +164,20 @@
     #product-page .search-bg {
         margin-top: 30px;
     }
+
+    .searching {
+        margin-top: 70px;
+        margin-right: -150px;
+        display: flex;
+        width: 100%px;
+    }
+
+    #dropping {
+        margin-top: 20px;
+    }
 }
+
+/* added by April */
 
 .image-preview-modal {
     position: fixed;
@@ -167,6 +197,11 @@
     max-height: 80%;
 }
 
+#preview-image {
+    max-width: 80%;
+    max-height: 80%;
+}
+
 .close-preview {
     position: absolute;
     top: 20px;
@@ -175,8 +210,7 @@
     color: #fff;
     cursor: pointer;
 }
-
-.drop_product .dropdown {
+#dropping {
     width: 236px;
     padding: 3px;
     border-radius: 5px;
@@ -184,12 +218,26 @@
     background-color: #fff;
     cursor: pointer;
 }
-.drop_product .dropdown:hover {
+#dropping:hover {
     border-color: #aaa;
 }
 
-.drop_product .dropdown:focus {
+#dropping:focus {
     outline: none;
     border-color: var(--blue-green);
     box-shadow: var(--blue-green);
+}
+
+#list_with_price {
+    margin-top: 60px;
+}
+
+#list_with_price_padding {
+    padding-bottom: 20px;
+    margin-left: -60px;
+}
+
+#search_bar {
+    width: 83%;
+    margin-right: 1px;
 }
