@@ -16,13 +16,10 @@
     @include('layouts/navbar')
 
 
-<<<<<<< HEAD
-=======
     <form id="edit_profile_form" action="{{ url('/profile/'.$user->user_id) }}" method="POST" enctype="multipart/form-data" class="container-fluid">
       @csrf @method('PUT')
       <h1 id="your_profile">Your Profile</h1>
 
->>>>>>> 0179fb4424ae98fc29a5a465f5367e3f2462928e
       <div class="row">
         <div class="col-lg-12">
 

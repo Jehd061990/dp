@@ -127,6 +127,9 @@
 #crafting {
     margin-top: 10px;
 }
+#port_carousel {
+    margin-left: 20px;
+}
 
 @media only screen and (max-width: 1024px) {
     .home-page {
@@ -176,6 +179,12 @@
 
     #dwelling_carousel {
         margin-top: 10px;
+    }
+    .colored-box {
+        display: none;
+    }
+    #port_carousel {
+        margin: 0;
     }
 }
 
@@ -229,8 +238,76 @@
     #dwelling_carousel {
         margin-top: 10px;
     }
+    .colored-box {
+        display: none;
+    }
+    #port_carousel {
+        margin-left: 20px;
+    }
 }
 
 .carousel-item {
     text-align: center;
+}
+
+.welcome-text {
+    font-size: 4em;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 1s, transform 2s;
+}
+
+.welcome-container {
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: start;
+    color: #fff;
+}
+
+#secondText {
+    margin-top: -40px;
+    margin-left: 120px;
+    font-weight: 400;
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.image-container {
+    display: flex;
+}
+
+.fade-in-image {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in-image.loaded {
+    opacity: 1;
+}
+
+#dwellingPlace {
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* #port_carousel {
+    margin-top: -30px;
+    align-items: center;
+    height: 10%;
+}
+
+.colored-box {
+    background-color: #757575;
+    padding: 20px;
+    margin-top: 90px;
+    margin-left: -15px;
+    color: white;
+    height: 220px;
+} */
+.wedesign {
+    margin-top: -30px;
 }

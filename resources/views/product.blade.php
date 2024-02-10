@@ -128,9 +128,10 @@
                                                 <span class="image"><img src="img/icons/peso-icon.svg" alt=""></span>
                                                 <span class="span-text">BUY NOW</span>
                                             </button>
-                                            {{-- <form action="{{ route('add_to_cart', ['product_id' => $p->product_id]) }}" method="POST"> --}}
+                                            <form action="{{ route('add_to_cart', ['product_id' => $p->product_id]) }}" method="POST">
                                                 @csrf
                                                 <input type="text" name="total_price" value="{{($p -> perspective_3d_price) + ($p-> floor_plan_price) + ($p -> interior_price) + ($p -> full_set_price)}}" hidden>
+                                                
                                                 <button type="submit" class="btn btn-success">Add to Cart</button>
                                             </form>
                                         </div>

@@ -147,4 +147,10 @@ class UserController extends Controller
         return view('about'); 
     }
 
+    public function FAQ()
+    {
+        
+        return view('FAQ'); 
+    }
+
 }
