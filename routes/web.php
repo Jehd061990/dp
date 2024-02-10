@@ -54,9 +54,10 @@ Route::middleware(['checkSessionUser'])->group(function () {
     Route::get('/cart', [OrderController::class, 'show_cart'])->name('cart.show');
     Route::post('/cart/{product_id}', [OrderController::class, 'add_to_cart'])->name('add_to_cart');
     Route::post('/checkout', [OrderController::class, 'place_order']);
+    Route::post('/checkout/{id}', [OrderController::class, 'order_placed']);
     Route::get('/checkout', [OrderController::class, 'view_orders']);
     Route::delete('/cart/delete/{id}', [OrderController::class, 'delete_cart'])->name('delete_cart');
-    Route::get('/checkout/{id}', [OrderController::class, 'view_order']);
+    Route::post('/profile', [UserController::class, 'upload_profile_picture']);
 });
 
 // ADMIN SIDE
@@ -83,8 +84,11 @@ Route::middleware(['checkSessionSuperAdminAndAdmin'])->group(function () {
     Route::put('/admin/products/{id}', [ProductController::class, 'edit_product']);
     Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit_product_form']);
     Route::get('/admin/products/{id}', [ProductController::class, 'show_product']);
+    Route::get('/admin/orders', [SuperAdminController::class, 'show_all_orders']);
+    Route::get('/admin/orders/{id}', [SuperAdminController::class, 'show_order']);
+    Route::put('/admin/orders/accept/{id}', [SuperAdminController::class, 'accept_order']);
+    Route::put('/admin/orders/status/{id}', [SuperAdminController::class, 'update_order_status']);
     Route::get('/admin/test', [ProductController::class, 'showStorey']);
-
 
     // Route::get('/admin/products', [ProductController::class, 'index']);
 });

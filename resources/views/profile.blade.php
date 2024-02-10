@@ -11,18 +11,13 @@
 </head>
 
 <body class="profile_body">
-
   <div class="profile_wrapper">
     @include('layouts/navbar')
 
-
-<<<<<<< HEAD
-=======
     <form id="edit_profile_form" action="{{ url('/profile/'.$user->user_id) }}" method="POST" enctype="multipart/form-data" class="container-fluid">
       @csrf @method('PUT')
       <h1 id="your_profile">Your Profile</h1>
 
->>>>>>> 0179fb4424ae98fc29a5a465f5367e3f2462928e
       <div class="row">
         <div class="col-lg-12">
 
@@ -31,12 +26,8 @@
           </label>
           <input type="file" name="profile_picture" class="input_profile text-center" id="profile_picture_upload" />
 
-
-
-
           <h2>{{$user -> first_name}}, {{$user -> last_name}}</h2>
           <h5>{{$user -> email}}</h5>
-
 
           {{--
           <img

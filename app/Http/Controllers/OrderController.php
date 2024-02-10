@@ -14,7 +14,7 @@ class OrderController extends Controller
 {
     public function show_cart()
     {
-        $cartItems = Cart::join('products', 'carts.product_id', '=', 'products.product_id')
+        $cartItems = Cart::join('products', 'carts.product_id', '=', 'products.product_id') //ganito gawin mo
             ->select('products.*', 'carts.*')
             ->get();
 
@@ -34,8 +34,6 @@ class OrderController extends Controller
         $cart->price = $request->total_price;
         $cart->save();
 
-        // SELECT SUM(storey.perspective_3d_price + storey.floor_plan_price + storey.interior_price + storey.full_set_price) AS total FROM carts JOIN products ON carts.product_id = products.product_id JOIN storey ON products.storey_id = storey.storey_id;
-
         $cartItems = Cart::join('products', 'carts.product_id', '=', 'products.product_id')
             ->select('products.*', 'carts.*')
             ->get();
@@ -48,49 +46,59 @@ class OrderController extends Controller
         $product = Cart::where('cart_id', '=', $id)
             ->delete();
 
-        return redirect('/cart'); //dapat dito pupunta
+        return redirect('cart');
     }
 
     public function place_order(Request $r)
     {
         $order = new Order();
-
         $order->user_id = Session::get('user_id');
         $order->status = 'pending';
         $order->save();
 
+        $checkoutItems = Cart::join('products', 'carts.product_id', '=', 'products.product_id')
+            ->select('products.*', 'carts.*')
+            ->get();
+
         $data = $r->all();
+        // dd($data);
+
         for ($i = 1; $i < count($data); $i++) {
             $orderCart = new OrderCart;
             $orderCart->order_id = $order->order_id;
             $orderCart->cart_id = $r->input("cart_" . $i);
             $orderCart->save();
+
+            $cartItem = Cart::find($r->input("cart_" . $i));
+            if ($cartItem) {
+                $cartItem->delete();
+            }
         }
 
-        return view('checkout', compact('order'));
+        return redirect('checkout');
+
+        // return view('checkout', compact('order'));
     }
+
+    // public function order_placed(string $id)
+    // {
+    //     $order = new Order();
+    //     $order->product_id = 
+    //         $order->user_id = Session::get('user_id');
+    //     $order->status = 'pending';
+    //     $order->save();
+
+    //     return view('checkout', compact('order'));
+    // }
 
     public function view_orders()
     {
-        $orders = Order::query()
+        $order = Order::query()
             ->select('*')
             ->where('user_id', Session::get('user_id'))
             ->orderBy('time_placed', 'DESC')
             ->get();
 
-        return view('checkout', compact('orders'));
-    }
-
-    public function view_order(string $id)
-    {
-        $orders = Order::query()
-            ->select('*')
-            ->join('order_products', 'order.order_id', '=', 'order_products.order_id')
-            ->join('products', 'order_products.product_id', '=', 'products.product_id')
-            ->where('order.order_id', '=', $id)
-            ->get();
-
-
-        return view('order_show', compact('orders', 'grand_total', 'progress_percent'));
+        return view('checkout', compact('order'));
     }
 }

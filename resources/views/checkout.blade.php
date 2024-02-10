@@ -2,32 +2,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Orders</title>
 </head>
 
 <body>
-    <h1>Orders</h1>
-    @if (count($orders) > 0)
+    <h1>My Orders</h1>
+    @if (!empty($order))
     <table class="table">
         <tr>
             <th>Order ID</th>
             <th>Time Placed</th>
             <th>Status</th>
-            <th>View Items</th>
         </tr>
-        @foreach ($orders as $o)
+        @foreach ($order as $o)
         <tr>
-            <td>{{$o -> order_id}}</td>
-            <td>{{$o -> time_placed}}</td>
-            <td>{{$o -> status}}</td>
-            <td><a href="/checkout/{{$o -> order_id}}" class="btn btn-success">View</a></td>
+            <td>{{$o->order_id}}</td>
+            <td>{{$o->time_placed}}</td>
+            <td>{{$o->status}}</td>
         </tr>
         @endforeach
     </table>
     @else
-    <p>No orders yet! <a href="/product">Check our products.</a></p>
+    <p>No orders found.</p>
     @endif
 </body>
 
