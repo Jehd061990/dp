@@ -18,6 +18,10 @@
     border-radius: 30px;
 }
 
+#login_margin {
+    margin-top: 120px;
+}
+
 .auth-submit-btn {
     /* border-color: var(--white);
     border: 2px solid;

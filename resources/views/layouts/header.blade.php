@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/about.css">
+
 
 
     <link rel="stylesheet" href="/css/home.css">

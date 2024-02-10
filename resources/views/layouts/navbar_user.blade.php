@@ -28,7 +28,7 @@
                     <a class="nav-link {{ Request::is('product') ? 'active' : '' }}" href="/product" id="nav_names">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="#" tabindex="-1" id="nav_names">About</a>
+                    <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="/about" tabindex="-1" id="nav_names">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('faq') ? 'active' : '' }}" href="#" tabindex="-1" id="nav_names">FAQ</a>
@@ -53,7 +53,7 @@
                     <li class="nav-item me-2">
                         <a href="#" class="nav-link"><img src="img/icons/nav-bell-icon.svg" alt="bell icon"></a>
                     </li>
-                    <li class="nav-item ms-2"><a href="{{route('cart')}}" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"></a></li>
+                    {{-- <li class="nav-item ms-2"><a href="{{route('cart')}}" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"></a></li> --}}
                 </ul>
             </div>
 
@@ -74,8 +74,7 @@
                     <li>
                         <div class="vertical-bar"></div>
                     </li>
-                    <li class="nav-item"><a href="/register" class="nav-link"> Signup</a></li>
-                </ul>
+                    <li class="nav-item"><a href="/login" class="nav-link"> Signup</a></li>
             </div>
             @endif
 

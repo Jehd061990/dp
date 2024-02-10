@@ -2,29 +2,8 @@
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
-  <link rel="icon" type="image/png" href="{{ url('/img/icon/home.png', [], true) }}">
-=======
-<<<<<<< HEAD
-    <link rel="icon" type="image/png" href="{{ asset('img/home.png') }}">
 
-=======
-    <link rel="icon" type="image/png" href="{{ url('/img/icon/home.png', [], true) }}">
-<<<<<<< HEAD
-    <!-- @include('layouts/head')
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/home.css">
-    <script src="/js/home.js"></script>  -->
-
-=======
->>>>>>> af5097cf4589687a52c508f2dff6b96fd2ec26c6
-   
->>>>>>> 7571122b221c1d7cfcb2d821f222fcbbede99c87
->>>>>>> 688b5fcc172925f0158fb1ca0b9a76bc9fc58366
-
-
+    <link rel="icon" type="image/png" href="{{ asset('img/5.png') }}">
 
   @include('layouts/header')
   <title>Home</title>
