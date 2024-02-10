@@ -22,8 +22,11 @@
                     @php
                     $totalPrice = 0; // Initialize total price variable
                     @endphp
+                    <span hidden>{{$c = 0}}</span>
                     @foreach($cartItems as $item)
+                    <span hidden>{{$c += 1 }}</span>
                     <tr>
+                        <input type="text" value="{{$item -> cart_id}}" name="cart_{{$c}}" hidden>
                         <td>{{$item -> title}}</td>
                         <td>{{$item -> design}}</td>
                         <td>{{$item -> price}}</td>
@@ -52,7 +55,6 @@
                     </div>
                     <div class="modal-body">Once this action is taken, it cannot be undone.
                         <div class="modal-footer">
-
                             <form action="{{route('delete_cart',$item->cart_id)}}" method="POST">
                                 <button type="button" onclick="window.location='/cart'">Cancel</button>
                                 @csrf

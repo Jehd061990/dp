@@ -6,7 +6,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -23,7 +22,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $title
  * 
  * @property Storey $storey
- * @property Collection|Cart[] $carts
  *
  * @package App\Models
  */
@@ -51,10 +49,5 @@ class Product extends Model
 	public function storey()
 	{
 		return $this->belongsTo(Storey::class);
-	}
-
-	public function carts()
-	{
-		return $this->hasMany(Cart::class);
 	}
 }

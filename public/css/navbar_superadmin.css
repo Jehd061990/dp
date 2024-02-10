@@ -10,6 +10,13 @@
     /* animation: 0.5s maximize linear forwards; */
 }
 
+/* @media only screen and (max-width: 992px) {
+
+    .content-body {
+        width: 70%;
+    }
+} */
+
 .sidebar-bg.minimize {
     animation: 0.5s sidebar-bg-minimize linear forwards;
 }
@@ -29,6 +36,7 @@
     background-color: var(--dark-gray);
     height: 100vh;
     position: fixed;
+    z-index: 1;
     /* animation: 0.5s maximize linear forwards; */
 }
 

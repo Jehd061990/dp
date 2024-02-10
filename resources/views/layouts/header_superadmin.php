@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/navbar_superadmin.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/admin_products.css">
-    
+    <link rel="stylesheet" href="/css/superadmin_dashboard.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -20,6 +20,9 @@
 
     <!-- google icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- absolute js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- external js -->
     <script src="/js/navbar_superadmin.js"></script>

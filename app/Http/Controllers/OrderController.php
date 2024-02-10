@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Order;
-use App\Models\OrderProduct;
+use App\Models\OrderCart;
 use App\Models\Cart;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -59,6 +59,14 @@ class OrderController extends Controller
         $order->status = 'pending';
         $order->save();
 
+        $data = $r->all();
+        for ($i = 1; $i < count($data); $i++) {
+            $orderCart = new OrderCart;
+            $orderCart->order_id = $order->order_id;
+            $orderCart->cart_id = $r->input("cart_" . $i);
+            $orderCart->save();
+        }
+
         return view('checkout', compact('order'));
     }
 
@@ -71,5 +79,18 @@ class OrderController extends Controller
             ->get();
 
         return view('checkout', compact('orders'));
+    }
+
+    public function view_order(string $id)
+    {
+        $orders = Order::query()
+            ->select('*')
+            ->join('order_products', 'order.order_id', '=', 'order_products.order_id')
+            ->join('products', 'order_products.product_id', '=', 'products.product_id')
+            ->where('order.order_id', '=', $id)
+            ->get();
+
+
+        return view('order_show', compact('orders', 'grand_total', 'progress_percent'));
     }
 }

@@ -23,17 +23,17 @@
                             <button type="submit" class="btn btn-light" id="search_button">Search</button>
                         </div>
                     </div>
-                    
-                    
-                    
-                    <div class="col-sm-7 d-flex justify-content-center gap-3" >
+
+
+
+                    <div class="col-sm-7 d-flex justify-content-center gap-3">
                         <select id="sort_by_lot_area">
                             <option value="">Sort by sqm</option>
                             {{-- @foreach($lotAreas as $lotArea)
                             <option value="{{ $lotArea }}">{{ $lotArea }}</option>
                             @endforeach --}}
                         </select>
-                        
+
 
                         <select class="dropdown" name="" id="dropping">
                             <option value="">Sort by storey</option>
@@ -43,7 +43,7 @@
                             <option value="">Sort by design</option>
                         </select>
                     </div>
-                
+
                 </div>
             </div>
 
@@ -51,16 +51,16 @@
     </div>
 
     <div class="container mt-5 d-grid justify-content-start" id="products_container">
-        <div class="row mb-3 product"  >
+        <div class="row mb-3 product">
             @foreach($products as $p)
             <div class="col-lg-3 col-md-4 col-6 mb-4">
                 <div class="card" style="width: 100%;" id="card_design">
-                    <img src="img/products/{{$p -> image_3d}}" class="card-img-top" alt="..." >
-                    
-                    <div class="card-body"  >
+                    <img src="img/products/{{$p -> image_3d}}" class="card-img-top" alt="...">
 
-                        <h5 class="card-title">{{$p->storey_id}} {{$p->title}}<br/>{{$p->lot_area}}</h5>
-                       
+                    <div class="card-body">
+
+                        <h5 class="card-title">{{$p->storey_id}} {{$p->title}}<br />{{$p->lot_area}}</h5>
+
                         <!-- Button trigger modal -->
                         <div class="text-center">
                             <button type="button" class="view-card-btn" data-bs-toggle="modal" data-bs-target="#exampleModal{{$p->product_id}}">
@@ -68,8 +68,8 @@
                             </button>
                         </div>
 
-{{-- pagination --}}
-{{-- {{$products -> links('pagination::bootstrap-5')}} --}}
+                        {{-- pagination --}}
+                        {{-- {{$products -> links('pagination::bootstrap-5')}} --}}
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal{{$p->product_id}}" tabindex="-1" aria-labelledby="exampleModalLabel{{$p->product_id}}" aria-hidden="true">
@@ -87,7 +87,7 @@
 
                                                 <img src="img/products/{{$p -> interior_image}}" class="card-img-top" alt="...">
                                             </div>
-                                            <div class="col-6 d-grid justify-content-center gap-3" >
+                                            <div class="col-6 d-grid justify-content-center gap-3">
                                                 <div class="d-flex flex-column" id="list_with_price">
                                                     <!-- Checkboxes for different options -->
                                                     <div id="list_with_price_padding">
@@ -110,10 +110,10 @@
                                                         <label for="full_set_{{$p->product_id}}">Full Set of Plans (PHP {{$p->full_set_price}})</label>
                                                     </div>
                                                     <div class="mt-2 total-price" id="list_with_price_padding">
-                                                      <h6> <strong>Total Price:
-                                                            <!-- Calculate and display total price -->
-                                                            <span id="total_price_{{$p->product_id}}">{{($p -> perspective_3d_price) + ($p-> floor_plan_price) + ($p -> interior_price) + ($p -> full_set_price)}}</span>
-                                                        </strong></h6>
+                                                        <h6> <strong>Total Price:
+                                                                <!-- Calculate and display total price -->
+                                                                <span id="total_price_{{$p->product_id}}">{{($p -> perspective_3d_price) + ($p-> floor_plan_price) + ($p -> interior_price) + ($p -> full_set_price)}}</span>
+                                                            </strong></h6>
                                                     </div>
                                                 </div>
                                             </div>
@@ -124,6 +124,10 @@
                                             <h6>{{$p->description}}</h6>
                                         </div>
                                         <div class="container d-flex justify-content-around">
+                                            <form action="/checkout" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-success">Buy Now</button>
+                                            </form>
                                             <button class="d-flex justify-content-between">
                                                 <span class="image"><img src="img/icons/peso-icon.svg" alt=""></span>
                                                 <span class="span-text">BUY NOW</span>
@@ -150,7 +154,6 @@
 
 
     @include('layouts/footer')
-</body>   
+</body>
+
 </html>
-
-
