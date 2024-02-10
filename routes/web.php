@@ -52,10 +52,10 @@ Route::middleware(['checkSessionUser'])->group(function () {
     Route::get('/profile/edit/{id}', [UserController::class, 'edit_profile_form']);
     Route::get('/product/{storey_id}', [ProductController::class, 'index']);
     Route::get('/cart', [OrderController::class, 'show_cart'])->name('cart.show');
-    Route::post('/add_to_cart/{product_id}', [OrderController::class, 'add_to_cart'])->name('add_to_cart');
+    Route::post('/cart/{product_id}', [OrderController::class, 'add_to_cart'])->name('add_to_cart');
     Route::post('/checkout', [OrderController::class, 'place_order']);
     Route::get('/checkout', [OrderController::class, 'view_orders']);
-    Route::delete('/cart/{id}', [SuperAdminController::class, 'delete_admin']);
+    Route::delete('/cart/delete/{id}', [OrderController::class, 'delete_cart'])->name('delete_cart');
 });
 
 // ADMIN SIDE
@@ -87,3 +87,4 @@ Route::middleware(['checkSessionSuperAdminAndAdmin'])->group(function () {
 
     // Route::get('/admin/products', [ProductController::class, 'index']);
 });
+//saan dito yung route ng delee?
