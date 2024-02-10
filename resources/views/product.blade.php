@@ -124,6 +124,10 @@
                                             <h6>{{$p->description}}</h6>
                                         </div>
                                         <div class="container d-flex justify-content-around">
+                                            <form action="/checkout" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-success">Buy Now</button>
+                                            </form>
                                             <button class="d-flex justify-content-between">
                                                 <span class="image"><img src="img/icons/peso-icon.svg" alt=""></span>
                                                 <span class="span-text">BUY NOW</span>
