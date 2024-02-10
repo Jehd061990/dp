@@ -21,5 +21,8 @@
     <!-- google icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
+    <!-- absolute js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <!-- external js -->
     <script src="/js/navbar_superadmin.js"></script>
