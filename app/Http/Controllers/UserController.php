@@ -159,4 +159,10 @@ class UserController extends Controller
 
         return redirect('/profile')->with('success', 'Profile picture updated!');
     }
+
+    public function FAQ()
+    {
+
+        return view('FAQ');
+    }
 }

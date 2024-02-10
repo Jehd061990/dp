@@ -33,14 +33,10 @@ Route::post('/login', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/product', [ProductController::class, 'products']);
 Route::post('/register', [UserController::class, 'register']);
-Route::get('/about', [UserController::class, 'about']);
+Route::get('/about',[UserController::class, 'about']);
+Route::get('/FAQ',[UserController::class, 'FAQ']);
 
-// Route for the initial product page
 Route::get('/products', [ProductController::class, 'products'])->name('products');
-
-
-
-
 Route::get('/portfolio', [UserController::class, 'portfolio']);
 
 

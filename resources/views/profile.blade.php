@@ -14,6 +14,10 @@
   <div class="profile_wrapper">
     @include('layouts/navbar')
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 31d40e1462c5d40bfb6023947c0fb5a838c4b876
     <form id="edit_profile_form" action="{{ url('/profile/'.$user->user_id) }}" method="POST" enctype="multipart/form-data" class="container-fluid">
       @csrf @method('PUT')
       <h1 id="your_profile">Your Profile</h1>

@@ -31,7 +31,7 @@
                     <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="/about" tabindex="-1" id="nav_names">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('faq') ? 'active' : '' }}" href="#" tabindex="-1" id="nav_names">FAQ</a>
+                    <a class="nav-link {{ Request::is('FAQ') ? 'active' : '' }}" href="/FAQ" tabindex="-1" id="nav_names">FAQ</a>
                 </li>
             </ul>
 
