@@ -80,4 +80,17 @@ class OrderController extends Controller
 
         return view('checkout', compact('orders'));
     }
+
+    public function view_order(string $id)
+    {
+        $orders = Order::query()
+            ->select('*')
+            ->join('order_products', 'order.order_id', '=', 'order_products.order_id')
+            ->join('products', 'order_products.product_id', '=', 'products.product_id')
+            ->where('order.order_id', '=', $id)
+            ->get();
+
+
+        return view('order_show', compact('orders', 'grand_total', 'progress_percent'));
+    }
 }
