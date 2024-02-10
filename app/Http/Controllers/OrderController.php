@@ -48,12 +48,13 @@ class OrderController extends Controller
         $product = Cart::where('cart_id', '=', $id)
             ->delete();
 
-        return redirect('/cart');
+        return redirect('/cart'); //dapat dito pupunta
     }
 
     public function place_order(Request $r)
     {
         $order = new Order();
+
         $order->user_id = Session::get('user_id');
         $order->status = 'pending';
         $order->save();
