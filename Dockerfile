@@ -26,3 +26,5 @@ ENV MYSQL_ATTR_SSL_CA cacert-2023-12-12.pem
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 CMD ["/start.sh"]
+
+umokay naman na!
