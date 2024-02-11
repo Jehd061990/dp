@@ -70,6 +70,12 @@
     top: 35px;
 }
 
+.navbar .notification a {
+    /* background-color: red; */
+    width: 55px;
+    height: 40px;
+}
+
 .navbar .notification img {
     width: 30px;
 }
@@ -136,7 +142,7 @@
     background-color: transparent !important;
     outline: none;
     box-shadow: none;
-    margin-bottom: -18px;
+    margin-bottom: -30px;
 }
 
 .navbar-tg .top {
@@ -260,6 +266,7 @@
     .navbar-brand img {
         margin-top: 10px;
         width: 78px;
+        margin-left: 20px;
     }
 
     .navbar .right {
@@ -294,7 +301,7 @@
 
     .navbar .notification {
         right: 65px;
-        top: 30px;
+        top: 37px;
     }
 
     .navbar .notification.deactive {
@@ -347,6 +354,7 @@
     .navbar-brand img {
         margin-top: 10px;
         width: 70px;
+        margin-left: 10px;
     }
 
     .navbar-tg {
@@ -355,7 +363,7 @@
 
     .navbar .notification {
         right: 70px;
-        top: 27px;
+        top: 34px;
     }
 
     .navbar .right-links li {

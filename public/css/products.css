@@ -137,46 +137,6 @@
     transform: translateX(55px);
 }
 
-/* responsive */
-@media only screen and (min-width: 600px) and (max-width: 770px) {
-    #search_button {
-        display: none;
-    }
-}
-
-@media only screen and (min-width: 380px) and (max-width: 550px) {
-    #dropping {
-        display: none;
-        margin-top: 10px;
-    }
-}
-
-@media only screen and (max-width: 356px) {
-    .view-card-btn {
-        width: 100px;
-    }
-
-    .modal-footer button {
-        width: 140px;
-        font-size: 12px;
-    }
-
-    #product-page .search-bg {
-        margin-top: 30px;
-    }
-
-    .searching {
-        margin-top: 70px;
-        margin-right: -150px;
-        display: flex;
-        width: 100%px;
-    }
-
-    #dropping {
-        margin-top: 20px;
-    }
-}
-
 /* added by April */
 
 .image-preview-modal {
@@ -258,5 +218,99 @@
     #search_bar {
         /* left: 60%; */
         width: 290px;
+    }
+}
+
+@media only screen and (max-width: 1127px) {
+    #search_bar {
+        left: 57%;
+        width: 240px;
+    }
+}
+
+@media only screen and (max-width: 967px) {
+    #search_bar {
+        left: 30%;
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #search_bar {
+        left: 20%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #search_bar {
+        width: 300px;
+        left: 30%;
+    }
+}
+
+@media only screen and (max-width: 513px) {
+    #search_bar {
+        width: 250px;
+        left: 30%;
+    }
+}
+
+@media only screen and (max-width: 449px) {
+    #search_bar {
+        width: 200px;
+        left: 30%;
+    }
+
+    .view-card-btn {
+        width: 100px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 770px) {
+    #search_button {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 380px) and (max-width: 550px) {
+    #dropping {
+        display: none;
+        margin-top: 10px;
+    }
+
+    #search_bar {
+        width: 190px;
+        /* left: 30%; */
+    }
+}
+
+@media only screen and (max-width: 356px) {
+    #search_bar {
+        width: 150px;
+        left: 35%;
+    }
+
+    .view-card-btn {
+        width: 80px;
+    }
+
+    .modal-footer button {
+        width: 140px;
+        font-size: 12px;
+    }
+
+    #product-page .search-bg {
+        margin-top: 30px;
+    }
+
+    .searching {
+        margin-top: 70px;
+        margin-right: -150px;
+        display: flex;
+        width: 100%px;
+    }
+
+    #dropping {
+        margin-top: 20px;
     }
 }
