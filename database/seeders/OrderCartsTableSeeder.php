@@ -6,9 +6,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use Carbon\Carbon;
 
-class OrdersTableSeeder extends Seeder
+class OrderCartsTableSeeder extends Seeder
 {
 
     /**
@@ -18,16 +17,17 @@ class OrdersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('orders')->delete();
 
-        // DB::table('orders')->insert(array(
+        DB::table('order_carts')->delete();
+
+        // DB::table('order_carts')->insert(array(
         //     0 =>
         //     array(
+        //         'oc_id' => '1',
         //         'order_id' => '1',
-        //         'time_placed' => Carbon::now()->format('Y-m-d H:i:s'),
-        //         'status' => 'pending',
-        //         'user_id' => '1',
+        //         'cart_id' => '1',
         //     )
+        //     // 2024-02-29 13:41:57
         // ));
     }
 }

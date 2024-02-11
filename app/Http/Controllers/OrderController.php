@@ -68,11 +68,6 @@ class OrderController extends Controller
             $orderCart->order_id = $order->order_id;
             $orderCart->cart_id = $r->input("cart_" . $i);
             $orderCart->save();
-
-            $cartItem = Cart::find($r->input("cart_" . $i));
-            if ($cartItem) {
-                $cartItem->delete();
-            }
         }
 
         return redirect('checkout');

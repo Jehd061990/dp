@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
             array(
                 'user_id' => 1,
                 'email' => 'jane_doe@dwells.com',
-                'password' => '$2y$12$BfpVD7DGCBDMnwBEEgWmzObAWbpxdL4fIxfyfeVAOmDD/U9HCZ41K',
+                'password' => '$argon2id$v=19$m=65536,t=4,p=1$QlFxdHBoYXpyS1dpU3lGSQ$4lkac1ZaW//txmVp7GaRBh/K3egluVSUlK8Q63KoC7Y',
                 'account_type' => 'super admin',
                 'first_name' => 'jane',
                 'last_name' => 'doe',
@@ -33,7 +33,7 @@ class UsersTableSeeder extends Seeder
             array(
                 'user_id' => 2,
                 'email' => 'john_smith@dwells.com',
-                'password' => '$2y$12$BaJbIHau9/3wL5IBcojPAeyXg9kpynePoePrJ1Z3gnoltuEjndjkS',
+                'password' => '$argon2id$v=19$m=65536,t=4,p=1$QlFxdHBoYXpyS1dpU3lGSQ$4lkac1ZaW//txmVp7GaRBh/K3egluVSUlK8Q63KoC7Y',
                 'account_type' => 'admin',
                 'first_name' => 'john',
                 'last_name' => 'smith',
@@ -42,11 +42,20 @@ class UsersTableSeeder extends Seeder
             array(
                 'user_id' => 3,
                 'email' => 'jayvee_siuagan@dwells.com',
-                'password' => '$2y$12$LI1Zaea9q26tKso2uhnKvO0wkT6SBKilZWHIYyTUB8xEjIZh/3Mdy',
+                'password' => '$argon2id$v=19$m=65536,t=4,p=1$QlFxdHBoYXpyS1dpU3lGSQ$4lkac1ZaW//txmVp7GaRBh/K3egluVSUlK8Q63KoC7Y',
                 'account_type' => 'user',
                 'first_name' => 'jayvee',
                 'last_name' => 'siuagan',
             ),
+            3 =>
+            array(
+                'user_id' => 4,
+                'email' => 'jeininlei_arellano@dwells.com',
+                'password' => '$argon2id$v=19$m=65536,t=4,p=1$QlFxdHBoYXpyS1dpU3lGSQ$4lkac1ZaW//txmVp7GaRBh/K3egluVSUlK8Q63KoC7Y',
+                'account_type' => 'super admin',
+                'first_name' => 'Jeinin Lei',
+                'last_name' => 'Arellano',
+            )
         ));
     }
 }
