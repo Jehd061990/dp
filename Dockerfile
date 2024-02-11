@@ -25,11 +25,4 @@ ENV MYSQL_ATTR_SSL_CA cacert-2023-12-12.pem
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-<<<<<<< HEAD
 CMD ["/start.sh"]
-=======
-<<<<<<< HEAD
-CMD ["/start.sh"]
-=======
-CMD ["/start.sh"]
-
