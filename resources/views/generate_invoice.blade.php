@@ -2,7 +2,15 @@
 <html lang="en">
 
 <head>
-
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-size: 80%;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,19 +22,14 @@
             <p><b>{{ $item->design }}</b></p>
             <p>{{ $item->description }}</p>
         </div>
+        @endforeach
 
         <div class="row">
-            <div class="col-lg-3">
-                <img src="{{$item -> image_3d}}">
-            </div>
-            <div class="col-lg-3">
-                <img src="{{$item -> floor_plan_image}}">
-            </div>
-            <div class="col-lg-3">
-                <img src="{{$item -> interior_image}}">
-            </div>
+            <img src="https://eastwood.nyc3.cdn.digitaloceanspaces.com/blogs/Stanley%20Front%20Load.jpg" class="img-fluid">
         </div>
-        @endforeach
+        <div class="row">
+            <img src="https://i.pinimg.com/564x/28/01/a7/2801a7fc6beca8a39e18c34ccd198461.jpg" class="img-fluid">
+        </div>
     </div>
 
 </body>
