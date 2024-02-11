@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="navbar-bg"></div>
     <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="https://i.imgur.com/cH1IqZ2.png" alt="Dwelling Plans Logo" id="logo_pos"></a>
+        <a class="navbar-brand" href="/"><img src="https://i.imgur.com/ZbvY1Zl.png" alt="Dwelling Plans Logo" id="logo_pos"></a>
         <button class="navbar-tg d-block d-lg-none" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-label="Toggle navigation">
             <div class="top"></div>
             <div class="middle"></div>
