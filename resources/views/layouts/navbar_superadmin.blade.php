@@ -29,7 +29,7 @@
         <li><a href="/admin/accounts">Admin</a></li>
         <li><a href="/admin/products">Products</a></li>
         <li><a href="/admin/orders">Orders</a></li>
-        <li><a href="#">Settings</a></li>
+        <!-- <li><a href="#">Settings</a></li> -->
 
     </ul>
 
