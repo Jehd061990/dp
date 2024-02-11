@@ -69,7 +69,7 @@ Route::middleware(['checkSessionUser'])->group(function () {
 
 // ADMIN SIDE
 Route::middleware(['checkSessionAdmin'])->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'admin_dashboard']);
+    Route::get('/admins/dashboard', [AdminController::class, 'admin_dashboard']);
 });
 
 // SUPERADMIN SIDE

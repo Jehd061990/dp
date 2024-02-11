@@ -40,7 +40,7 @@ class UserController extends Controller
                 Session::put('email', $user->email);
                 Session::put('account_type', $user->account_type);
                 if (Session::get('account_type') == 'admin') {
-                    return redirect('/admin/dashboard');
+                    return redirect('/admins/dashboard');
                 } else if (Session::get('account_type') == 'user') {
                     return redirect('/');
                 } else if (Session::get('account_type') == 'super admin') {

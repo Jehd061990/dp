@@ -28,7 +28,7 @@
     color: var(--light);
 }
 
-.admin-products .sdropdown button {
+.prod.sdropdown button {
     border: none;
     background-color: transparent;
 }

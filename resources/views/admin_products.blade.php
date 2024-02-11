@@ -6,8 +6,14 @@
     <title>PRODUCTS</title>
 </head>
 
+
+    @if(Session::get('account_type')!='admin')
 <body class="admin-products d-flex justify-content-between">
-    @include('layouts/navbar_superadmin')
+        @include('layouts/navbar_superadmin')
+    @else
+<body class="d-flex justify-content-between">
+        @include('layouts/navbar_admin')
+    @endif
     <div class="container">
         @if(session()->has('message'))
         <div class="alert alert-success">
@@ -39,7 +45,8 @@
                     <td>{{$p -> description}}</td>
                     <td>{{$p -> lot_area}}</td>
                     <td>
-                        <div class="sdropdown">
+                        <div class="prod sdropdown">
+                            <!-- <button data-bs-toggle="dropdown" aria-expanded="false"> -->
                             <button data-bs-toggle="dropdown" aria-expanded="false">
                                 <span class="material-symbols-outlined">
                                     more_vert

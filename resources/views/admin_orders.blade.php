@@ -8,7 +8,11 @@
 </head>
 
 <body class="d-flex justify-content-between">
-    @include('layouts/navbar_superadmin')
+    @if(Session::get('account_type') !== 'admin')
+        @include('layouts/navbar_superadmin')
+    @else
+        @include('layouts/navbar_admin')
+    @endif
     <div class="content-body">
         <h1>Orders</h1>
         @if ($orders->isEmpty())
