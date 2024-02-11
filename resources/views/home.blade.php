@@ -3,7 +3,11 @@
 
 <head>
 
-  <link rel="icon" type="image/png" href="{{ asset('img/5.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/5.png') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&family=Righteous&display=swap" rel="stylesheet">
 
   @include('layouts/header')
   <title>Home</title>
@@ -14,19 +18,22 @@
     @include('layouts/navbar')
 
     <div>
+      <div>
+      <div class="row">
+        <div class="col-lg-12">
           <div id="dwelling_carousel">
             <div id="dwelling-hero" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="/img/2056374.jpg" alt="3D perspective" class="img-fluid img_home" />
+                  <img src="/img/2056374.jpg" alt="3D perspective" class="img-fluid" />
                   <div class="carousel-caption"></div>
                 </div>
                 <div class="carousel-item">
-                  <img src="/img/her_2.jpg" alt="3D perspective" class="img-fluid img_home" />
+                  <img src="/img/her_2.jpg" alt="3D perspective" class="img-fluid" />
                   <div class="carousel-caption"></div>
                 </div>
                 <div class="carousel-item">
-                  <img src="/img/her_1.jpg" alt="3D perspective" class="img-fluid img_home" />
+                  <img src="/img/her_1.jpg" alt="3D perspective" class="img-fluid " />
                   <div class="carousel-caption"></div>
                 </div>
               </div>
@@ -37,12 +44,27 @@
                 <span class="carousel-control-next-icon"></span>
               </button>
             </div>
+            
           </div>
+          
+        </div>
+        <div class="welcome-container">
+          <div class="welcome-text" id="dwellingPlace">
+              Dwelling
+          </div>
+          <div class="welcome-text" id="secondText">
+        Plans
+       
+          </div>
+          <p class="wedesign">We design residential and commercial structures.</p>
+      </div>
+      
+      </div>
 
       <div class="container d-grid justify-content-center dwelling_2nd_images">
         <div class="row">
           <div class="col-lg-4">
-            <img src="/img/2086922454.jpg" class="display_1 img-fluid" />
+            <img src="/img/2086922454.jpg" class="display_1 img-fluid fade-in-image" />
 
             <h6 class="text_indent_background" id="crafting">
               <strong>Crafting Spaces, Building Dreams: Explore Our Architectural
@@ -79,7 +101,7 @@
             </p>
           </div>
           <div class="col-lg-4" id="display_2">
-            <img src="/img/image_content.png" class="img-fluid" />
+            <img src="/img/image_content.png" class="img-fluid fade-in-image" />
           </div>
         </div>
 
@@ -87,7 +109,7 @@
           <div class="row" id="no-gutters">
             <div class="col-lg-3 homie display_1">
               <a href="/product">
-                <img src="/img/display_3.jpg" id="small_3" alt="3D Perspective" class="img-fluid" />
+                <img src="/img/display_3.jpg " id="small_3" alt="3D Perspective" class="img-fluid fade-in-image" />
               </a>
 
               <p class="text_indent">
@@ -97,7 +119,7 @@
             </div>
             <div class="col-lg-3 homie">
               <a href="/product">
-                <img src="/img/display_4.jpg" id="small_3" alt="3D Perspective" class="img-fluid" />
+                <img src="/img/display_4.jpg" id="small_3" alt="3D Perspective" class="img-fluid fade-in-image " />
               </a>
 
               <p class="text_indent" id="small_4">
@@ -148,12 +170,12 @@
             </div>
             <div class="col-lg-4 homie">
               <a href="/product">
-                <img src="/img/display_7.jpg" id="small_4" alt="3D Perspective" class="img-fluid" />
+                <img src="/img/display_7.jpg" id="small_4" alt="3D Perspective" class="img-fluid fade-in-image" />
               </a>
             </div>
             <div class="col-lg-4 homie display_1">
               <a href="/product">
-                <img src="/img/display_5.jpg" alt="3D Perspective" class="img-fluid" id="small_2" />
+                <img src="/img/display_5.jpg" alt="3D Perspective" class="img-fluid fade-in-image" id="small_2" />
               </a>
             </div>
           </div>
@@ -174,12 +196,80 @@
                   ensuring a seamless integration of creativity and compliance.
                 </p>
               </strong>
+              
+            {{-- </div>
+            <div class="row">
+              <div class="col-lg-10 d-grid justify-content-center">
+                <div id="port_carousel">
+                  <div id="dwelling-hero" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="/img/projects/project1.jpg" alt="3D perspective" class="img-fluid" />
+                        <div class="carousel-caption"></div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/img/projects/project2.jpg" alt="3D perspective" class="img-fluid" />
+                        <div class="carousel-caption"></div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/img/projects/project3.jpg" alt="3D perspective" class="img-fluid " />
+                        <div class="carousel-caption"></div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/img/projects/project4.jpg" alt="3D perspective" class="img-fluid " />
+                        <div class="carousel-caption"></div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" id="previous" type="button" data-bs-target="#dwelling-hero" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next next" id="next" type="button" data-bs-target="#dwelling-hero" data-bs-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                    </button>
+                  </div>
+                  
+                </div>
+                
+              </div>
+              <div class="col-lg-2">
+                <div class="colored-box">
+                    <h2>Box Heading</h2>
+                    <p>Box content goes here.</p>
+                </div>
             </div>
+            </div> --}}
           </div>
+          
         </div>
+        
       </div>
+      
     </div>
+    
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+           var dwellingPlaceText = document.getElementById('dwellingPlace');
+           var secondText = document.getElementById('secondText');
+   
+           // Add fading and sliding effects on load
+           dwellingPlaceText.style.opacity = 1;
+           dwellingPlaceText.style.transform = 'translateY(0)';
+           secondText.style.opacity = 1;
+           secondText.style.transform = 'translateY(0)';
+       });
+   
+       document.addEventListener("DOMContentLoaded", function () {
+       const images = document.querySelectorAll('.fade-in-image');
+   
+       images.forEach(image => {
+           image.addEventListener('load', function () {
+               image.classList.add('loaded');
+           });
+       });
+   });
+   
+   </script>
   @include('layouts/footer')
 </body>
 

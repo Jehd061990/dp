@@ -18,7 +18,6 @@ class OrderProductsTableSeeder extends Seeder
     public function run()
     {
 
-
         DB::table('order_products')->delete();
     }
 }

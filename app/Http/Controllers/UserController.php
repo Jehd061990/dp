@@ -12,12 +12,21 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
 
+
+    
+    public function showProfiles()
+    {
+        $users = User::all(); // Fetch all users from the database
+
+        return view('profiles', compact('users'));
+    }
     
     public function show_login()
     {
         return view('login');
     }
 
+    
     public function login(Request $r)
     {
         $user = User::where("email", "=", $r->email)
@@ -143,8 +152,26 @@ class UserController extends Controller
 
     public function about()
     {
-        
-        return view('about'); 
+        return view('about');
     }
 
+    public function upload_profile_picture(Request $r)
+    {
+        $sp = new User;
+        $sp->user_id = Session::get('user_id');
+        if ($r->file('profile_picture')) {
+            $file = $r->file('profile_picture');
+            $filename = date('YmdHiu') . $file->getClientOriginalName();
+            $file->move(public_path('img/user_profiles'), $filename);
+            $sp->image = $filename;
+        }
+        $sp->save();
+
+        return redirect('/profile')->with('success', 'Profile picture updated!');
+    }
+
+    public function FAQ()
+    {
+        return view('FAQ');
+    }
 }

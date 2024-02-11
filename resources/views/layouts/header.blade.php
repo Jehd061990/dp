@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/profile.css">
     <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/faq.css">
+    <link rel="stylesheet" href="/css/add_cart.css">
+   
+
+
+
 
 
 
@@ -26,6 +32,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Vujahday+Script&display=swap" rel="stylesheet">
+
+
+    {{-- google icons --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
+
 
     <!-- external js -->
     <script src="/js/navbar.js"></script>

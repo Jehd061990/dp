@@ -27,7 +27,7 @@
         <li><a href="/admin/dashboard">Dashboard</a></li>
         <li><a href="/admin/accounts">Admin</a></li>
         <li><a href="/admin/products">Products</a></li>
-        <li><a href="#">Orders</a></li>
+        <li><a href="/admin/orders">Orders</a></li>
         <li><a href="#">Settings</a></li>
 
     </ul>

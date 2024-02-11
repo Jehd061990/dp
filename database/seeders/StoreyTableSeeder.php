@@ -18,7 +18,6 @@ class StoreyTableSeeder extends Seeder
     public function run()
     {
 
-
         DB::table('storey')->delete();
 
         DB::table('storey')->insert(array(

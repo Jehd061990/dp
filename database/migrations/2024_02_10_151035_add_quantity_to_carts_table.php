@@ -8,27 +8,21 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::table('carts', function (Blueprint $table) {
-            $table->foreign(['product_id'])->references(['product_id'])->on('products');
-            $table->foreign(['user_id'])->references(['user_id'])->on('users');
+            //
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::table('carts', function (Blueprint $table) {
-            $table->dropForeign('carts_product_id_foreign');
-            $table->dropForeign('carts_user_id_foreign');
+            //
         });
     }
 };
