@@ -14,6 +14,21 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+    public function search_products(string $id){
+        $products = Product::query()
+            ->select('*')
+            ->join('storey', 'products.storey_id', '=', 'storey.storey_id')
+            // ->where('design','LIKE', $id .'%') 
+            ->where('title', 'LIKE','%'. $id .'%')
+            ->orWhere('lot_area', 'LIKE', $id .'%')
+            // ->where('description', 'LIKE', '%' . $id . '%')
+            ->get();
+
+        return response()->json($products);
+        
+    }
+
     public function products()
     {
         $products = Product::query()

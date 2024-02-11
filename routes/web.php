@@ -6,6 +6,9 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
+
+use App\Http\Controllers\AjaxController;
+
 use App\Models\Product;
 use App\Http\Middleware\CheckSessionAdmin;
 use App\Http\Middleware\CheckSessionSuperAdmin;
@@ -37,6 +40,15 @@ Route::get('/about', [UserController::class, 'about']);
 Route::get('/FAQ', [UserController::class, 'FAQ']);
 
 Route::get('/products', [ProductController::class, 'products'])->name('products');
+
+
+// Ajax
+Route::get('/products/search/{id}', [ProductController::class, 'search_products']);
+Route::get('/search', [AjaxController::class, 'view_search']);
+Route::get('/search/{id}', [AjaxController::class, 'view_search_id']);
+
+
+
 Route::get('/portfolio', [UserController::class, 'portfolio']);
 
 

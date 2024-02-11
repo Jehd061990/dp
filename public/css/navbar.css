@@ -119,12 +119,7 @@
     /* filter: blur(5px); */
     /* z-index: 1;
     background-color: var(--dark-gray);
-<<<<<<< HEAD
     transition: 0.5s linear; */
-=======
-    /* background-color: red; */
-    transition: 0.5s linear;
->>>>>>> b35e08e8be321e5d2437f42fe122b725793ab830
 }
 
 /* .navbar .extension {

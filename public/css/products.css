@@ -1,12 +1,12 @@
 #product-page {
     width: 100%;
-    background-color: var(--light);
+    background-color: yellow;
 }
 
 #product-page .search-bg {
-    width: 100%;
+    width: 70%;
     margin-top: 50px;
-    background-color: var(--gray);
+    background-color: red;
 }
 
 .house-pic img {
@@ -238,6 +238,25 @@
 }
 
 #search_bar {
-    width: 83%;
+    /* height: 50px; */
+    width: 400px;
     margin-right: 1px;
+    position: fixed;
+    z-index: 2;
+    top: 30px;
+    left: 50%;
+}
+
+@media only screen and (max-width: 1222px) {
+    #search_bar {
+        width: 350px;
+        left: 55%;
+    }
+}
+
+@media only screen and (max-width: 1127px) {
+    #search_bar {
+        /* left: 60%; */
+        width: 290px;
+    }
 }
