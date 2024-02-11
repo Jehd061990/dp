@@ -23,6 +23,15 @@
             <p>{{ $item->description }}</p>
             @endforeach
         </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="img/1_6_1s_90sqm_fp.jpg">
+            </div>
+            <div class="col-lg-6">
+                <img src="img/1_7_1s_90sqm_fp.jpg">
+            </div>
+        </div>
     </div>
 
 </body>
