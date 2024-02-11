@@ -9,7 +9,7 @@
 <div class="sidebar default text-center">
 
     <div class="brand-logo">
-        <img class="mt-5 mb-2" src="/img/logo3_white.png" alt="brand logo">
+        <img class="mt-5 mb-2" src="https://i.imgur.com/cH1IqZ2.png" alt="brand logo">
     </div>
 
 
