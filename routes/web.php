@@ -33,8 +33,8 @@ Route::post('/login', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/product', [ProductController::class, 'products']);
 Route::post('/register', [UserController::class, 'register']);
-Route::get('/about',[UserController::class, 'about']);
-Route::get('/FAQ',[UserController::class, 'FAQ']);
+Route::get('/about', [UserController::class, 'about']);
+Route::get('/FAQ', [UserController::class, 'FAQ']);
 
 Route::get('/products', [ProductController::class, 'products'])->name('products');
 Route::get('/portfolio', [UserController::class, 'portfolio']);
@@ -50,9 +50,11 @@ Route::middleware(['checkSessionUser'])->group(function () {
     Route::get('/cart', [OrderController::class, 'show_cart'])->name('show_cart');
     Route::post('/cart/{product_id}', [OrderController::class, 'add_to_cart'])->name('add_to_cart');
     Route::post('/checkout', [OrderController::class, 'place_order']);
+    Route::post('/checkout/{id}', [OrderController::class, 'order_placed']);
     Route::get('/checkout', [OrderController::class, 'view_orders']);
     Route::post('/checkout', [OrderController::class, 'view_orders']);
     Route::delete('/cart/delete/{id}', [OrderController::class, 'delete_cart'])->name('delete_cart');
+<<<<<<< HEAD
     Route::get('/checkout/{id}', [OrderController::class, 'view_order']);
 Route::delete('/cart/{cartItemId}', [OrderController::class, 'destroyCartItem'])->name('delete_cart_item');
 Route::post('/cart/update/{cartId}', [OrderController::class, 'updateCartQuantity']);
@@ -63,6 +65,9 @@ Route::post('/delete-item/{cartId}', [OrderController::class, 'deleteItem'])->mi
 
 
 
+=======
+    Route::post('/profile', [UserController::class, 'upload_profile_picture']);
+>>>>>>> 59abac7dbe24921ae12820f4bb4acb8c30264ab9
 });
 
 // ADMIN SIDE
@@ -89,8 +94,11 @@ Route::middleware(['checkSessionSuperAdminAndAdmin'])->group(function () {
     Route::put('/admin/products/{id}', [ProductController::class, 'edit_product']);
     Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit_product_form']);
     Route::get('/admin/products/{id}', [ProductController::class, 'show_product']);
+    Route::get('/admin/orders', [SuperAdminController::class, 'show_all_orders']);
+    Route::get('/admin/orders/{id}', [SuperAdminController::class, 'show_order'])->name('show_order'); //ito yun?
+    Route::put('/admin/orders/accept/{id}', [SuperAdminController::class, 'accept_order'])->name('accept_order');
+    Route::put('/admin/orders/status/{id}', [SuperAdminController::class, 'update_order_status'])->name('update_order_status');
     Route::get('/admin/test', [ProductController::class, 'showStorey']);
-
 
     // Route::get('/admin/products', [ProductController::class, 'index']);
 });
