@@ -15,14 +15,28 @@ ENV APP_DEBUG false
 ENV APP_KEY base64:Vh5r8k7dJPNcN1ejOQODLL8A/35leu/HVElquAZHTbU=
 ENV LOG_CHANNEL stderr
 ENV DB_CONNECTION pgsql
+<<<<<<< HEAD
 ENV DB_HOST dpg-cn4epggl6cac73ap5al0-a.singapore-postgres.render.com
 ENV DB_PORT 5432
 ENV DB_DATABASE dwelling_6xgs
 ENV DB_USERNAME root
 ENV DB_PASSWORD Huzegulw37wi9ypbpkZXT6VeeP3N7EgN
+=======
+ENV DB_HOST dpg-cn4b346n7f5s73928ou0-a.singapore-postgres.render.com
+ENV DB_PORT 5432
+ENV DB_DATABASE dwelling_xn0z
+ENV DB_USERNAME root
+ENV DB_PASSWORD 02tzhGuQzA0vDRVpRJnYt0PdDPD1cxQx
+>>>>>>> 6bb459242fda1a5e2d2987e1ede9066ca4c9afd8
 ENV MYSQL_ATTR_SSL_CA cacert-2023-12-12.pem
 
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
+<<<<<<< HEAD
 CMD ["/start.sh"]
+=======
+CMD ["/start.sh"]
+
+umokay naman na!
+>>>>>>> 6bb459242fda1a5e2d2987e1ede9066ca4c9afd8

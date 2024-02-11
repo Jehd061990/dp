@@ -18,6 +18,7 @@
                         <div class="col-lg-5 d-flex justify-content-center d-grid gap-2 pt-4">
                             <div><img src="/img/icons/add-person.png" alt="add-person-icon"></div>
                             <div>
+                                <h5>358</h5>
                                 <h6>NEW CUSTOMER | YTD</h6>
                             </div>
                         </div>

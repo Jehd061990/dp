@@ -2,11 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>Show Order</title>
+    @include('layouts/header_superadmin')
+    <title>ORDERS</title>
 </head>
 
-<body>
+<body class="admin-products d-flex justify-content-between">
+    @include('layouts/navbar_superadmin')
     <h1>Show Order</h1>
+    <a href="/admin/generate/order" class="btn btn-primary"> Generate report </a> </p>
     <table class="table">
         <tr>
             <th>Title</th>

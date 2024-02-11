@@ -55,7 +55,6 @@ Route::get('/portfolio', [UserController::class, 'portfolio']);
 // USER SIDE
 Route::middleware(['checkSessionUser'])->group(function () {
     Route::get('/profile', [UserController::class, 'user_profile']);
-    Route::post('/product', [OrderController::class, 'place_order']);
     Route::put('/profile/{id}', [UserController::class, 'edit_profile']);
     Route::get('/profile/edit/{id}', [UserController::class, 'edit_profile_form']);
     Route::get('/product/{storey_id}', [ProductController::class, 'index']);
@@ -64,18 +63,7 @@ Route::middleware(['checkSessionUser'])->group(function () {
     Route::post('/checkout', [OrderController::class, 'place_order']);
     Route::post('/checkout/{id}', [OrderController::class, 'order_placed']);
     Route::get('/checkout', [OrderController::class, 'view_orders']);
-    Route::post('/checkout', [OrderController::class, 'view_orders']);
     Route::delete('/cart/delete/{id}', [OrderController::class, 'delete_cart'])->name('delete_cart');
-    Route::get('/checkout/{id}', [OrderController::class, 'view_order']);
-Route::delete('/cart/{cartItemId}', [OrderController::class, 'destroyCartItem'])->name('delete_cart_item');
-Route::post('/cart/update/{cartId}', [OrderController::class, 'updateCartQuantity']);
-
-Route::post('/add-to-cart/{productId}', [OrderController::class, 'addToCart'])->middleware('auth');
-Route::get('/cart/{userId}', [OrderController::class, 'showCart'])->middleware('auth');
-Route::post('/delete-item/{cartId}', [OrderController::class, 'deleteItem'])->middleware('auth');
-
-
-
     Route::post('/profile', [UserController::class, 'upload_profile_picture']);
 });
 
@@ -105,11 +93,10 @@ Route::middleware(['checkSessionSuperAdminAndAdmin'])->group(function () {
     Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit_product_form']);
     Route::get('/admin/products/{id}', [ProductController::class, 'show_product']);
     Route::get('/admin/orders', [SuperAdminController::class, 'show_all_orders']);
-    Route::get('/admin/orders/{id}', [SuperAdminController::class, 'show_order'])->name('show_order'); //ito yun?
+    Route::get('/admin/orders/{id}/view', [SuperAdminController::class, 'show_order'])->name('show_order'); //ito yun?
     Route::put('/admin/orders/accept/{id}', [SuperAdminController::class, 'accept_order'])->name('accept_order');
     Route::put('/admin/orders/status/{id}', [SuperAdminController::class, 'update_order_status'])->name('update_order_status');
-    Route::get('/admin/orders/{id}', [AdminController::class, 'generate_order']);
-
+    Route::get('/admin/orders/{id}/generate-order', [AdminController::class, 'generate_order'])->name('generate_order');
     Route::get('/admin/test', [ProductController::class, 'showStorey']);
 
     // Route::get('/admin/products', [ProductController::class, 'index']);
