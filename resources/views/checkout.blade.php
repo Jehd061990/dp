@@ -14,12 +14,16 @@
     @include('layouts/navbar')
     <div class="container">
         <div>
-            <button type="button" class="btn btn-outline-dark can_del d-flex justify-content-center align-items-center" onclick="goBack()"><span class="material-symbols-outlined">
+            <button type="button" class="btn btn-outline-dark can_del d-flex justify-content-center align-items-center" onclick="goBack()">
+                <span class="material-symbols-outlined">
                     arrow_back
-                </span></button>
+                </span>
+            </button>
         </div>
         <h1 class="h1_checkout">My Orders</h1>
-        @if (!empty($order))
+        @if ($order->isEmpty())
+        <p class="no-orders">No orders found.</p>
+        @else
         <table class="table-checkout">
             <thead>
                 <tr>
@@ -38,14 +42,10 @@
                 @endforeach
             </tbody>
         </table>
-        @else
-        <p class="no-orders">No orders found.</p>
-        @endif
-
         <div class="pagination-links">
             {{ $order->links('pagination::bootstrap-5') }}
-
         </div>
+        @endif
     </div>
 </body>
 
@@ -122,6 +122,7 @@
 
     /* Additional styling for other elements as needed */
 </style>
+
 <script>
     function goBack() {
         window.history.back();

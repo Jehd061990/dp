@@ -13,7 +13,6 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
 
-
     public function show_cart()
     {
         $cartItems = Cart::join('products', 'carts.product_id', '=', 'products.product_id') //ganito gawin mo
@@ -42,6 +41,7 @@ class OrderController extends Controller
         return redirect()->route('show_cart')->with('success', 'Item added to cart successfully.',  ['cart' => $cart]);
     }
 
+
     public function delete_cart(string $id)
     {
         $product = Cart::where('cart_id', '=', $id)
@@ -65,6 +65,7 @@ class OrderController extends Controller
             ->select('products.*', 'carts.*')
             ->get();
 
+
         $data = $r->all();
         // dd($data);
 
@@ -73,15 +74,11 @@ class OrderController extends Controller
             $orderCart->order_id = $order->order_id;
             $orderCart->cart_id = $r->input("cart_" . $i);
             $orderCart->save();
-
-            $cartItem = Cart::find($r->input("cart_" . $i));
-            if ($cartItem) {
-                $cartItem->delete();
-            }
         }
 
         return redirect('checkout');
     }
+
 
     public function view_orders()
     {

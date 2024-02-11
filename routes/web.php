@@ -46,7 +46,7 @@ Route::middleware(['checkSessionUser'])->group(function () {
     Route::put('/profile/{id}', [UserController::class, 'edit_profile']);
     Route::get('/profile/edit/{id}', [UserController::class, 'edit_profile_form']);
     Route::get('/product/{storey_id}', [ProductController::class, 'index']);
-    Route::get('/cart', [OrderController::class, 'show_cart'])->name('cart.show');
+    Route::get('/cart', [OrderController::class, 'show_cart'])->name('show_cart');
     Route::post('/cart/{product_id}', [OrderController::class, 'add_to_cart'])->name('add_to_cart');
     Route::post('/checkout', [OrderController::class, 'place_order']);
     Route::post('/checkout/{id}', [OrderController::class, 'order_placed']);
@@ -81,11 +81,10 @@ Route::middleware(['checkSessionSuperAdminAndAdmin'])->group(function () {
     Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit_product_form']);
     Route::get('/admin/products/{id}', [ProductController::class, 'show_product']);
     Route::get('/admin/orders', [SuperAdminController::class, 'show_all_orders']);
-    Route::get('/admin/orders/{id}', [SuperAdminController::class, 'show_order'])->name('show_order'); //ito yun?
+    Route::get('/admin/orders/{id}/view', [SuperAdminController::class, 'show_order'])->name('show_order'); //ito yun?
     Route::put('/admin/orders/accept/{id}', [SuperAdminController::class, 'accept_order'])->name('accept_order');
     Route::put('/admin/orders/status/{id}', [SuperAdminController::class, 'update_order_status'])->name('update_order_status');
-    Route::get('/admin/orders/{id}', [AdminController::class, 'generate_order']);
-
+    Route::get('/admin/orders/{id}/generate-order', [AdminController::class, 'generate_order'])->name('generate_order');
     Route::get('/admin/test', [ProductController::class, 'showStorey']);
 
     // Route::get('/admin/products', [ProductController::class, 'index']);

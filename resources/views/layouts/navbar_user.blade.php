@@ -12,7 +12,7 @@
         <ul class="notification">
             <li class="nav-item me-2"><a href="#" class="nav-link"><img src="img/icons/nav-bell-icon.svg" alt="bell icon"></a></li>
             <li class="nav-item ms-2">
-                <a href="/checkout" class="nav-link">
+                <a href="/cart" class="nav-link">
                     <img src="img/icons/nav-cart-icon.svg" alt="cart icon">
                 </a>
             </li>
@@ -53,7 +53,7 @@
                     <li class="nav-item me-2">
                         <a href="#" class="nav-link"><img src="img/icons/nav-bell-icon.svg" alt="bell icon"></a>
                     </li>
-                    <li class="nav-item ms-2"><a href="/checkout" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"/></a></li>
+                    <li class="nav-item ms-2"><a href="/cart" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon" /></a></li>
                 </ul>
             </div>
 
