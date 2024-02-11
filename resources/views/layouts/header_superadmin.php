@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/admin_products.css">
     <link rel="stylesheet" href="/css/superadmin_dashboard.css">
+    <link rel="stylesheet" href="/css/admin_orders.css">
+    <link rel="stylesheet" href="/css/admin_products.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

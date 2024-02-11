@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+@include ('layouts/header')
 
 <head>
     <meta charset="UTF-8">
@@ -7,33 +8,37 @@
     <title>Orders</title>
 </head>
 
-<body>
-
-    <h1>Orders</h1>
-    @if ($orders->isEmpty())
-    <p>No orders available.</p>
-    @else
-    <table class="table">
+<body class="admin_orders_body">
+    <button type="button" class="btn btn-outline-dark can_del_ad_ord d-flex justify-content-center align-items-center" onclick="goBack()"><span class="material-symbols-outlined">
+            arrow_back
+        </span></button>
+    <h1 class="title_orders">Orders</h1>
+    <table class="table_admin_orders">
         <tr>
-            <th>Order ID</th>
-            <th>Time Placed</th>
-            <th>Status</th>
-            <th>Name</th>
-            <th>View Order</th>
-            <th>Generate Order</th>
+            <th class="th_admin_orders">Order ID</th>
+            <th class="th_admin_orders">Time Placed</th>
+            <th class="th_admin_orders">Status</th>
+            <th class="th_admin_orders">Name</th>
+            <th class="th_admin_orders">View Order</th>
+            <th class="th_admin_orders">Generate Order</th>
+
         </tr>
         @foreach ($orders as $o)
         <tr>
-            <td>{{ $o->order_id }}</td>
-            <td>{{ $o->time_placed }}</td>
-            <td>{{ $o->status }}</td>
-            <td>{{ $o->last_name }}, {{ $o->first_name }}</td>
-            <td><a href="/admin/orders/{{ $o->order_id }}/view" class="btn btn-success">View</a></td>
-            <td><a href="/admin/orders/{{ $o->order_id }}/generate-order" class="btn btn-primary">Generate Order</a></td>
+            <td class="td_admin_orders">{{$o -> order_id}}</td>
+            <td class="td_admin_orders">{{$o -> time_placed}}</td>
+            <td class="td_admin_orders">{{$o -> status}}</td>
+            <td class="td_admin_orders">{{$o -> last_name}}, {{$o -> first_name}}</td>
+            <td class="td_admin_orders"><a class="a_orders_admin" href="/admin/orders/{{ $o->order_id }}/view" class="btn btn-success">View</a></td>
+            <td class="td_admin_orders"><a href="/admin/orders/{{ $o->order_id }}/generate-order" class="btn btn-primary">Generate Order</a></td>
         </tr>
         @endforeach
     </table>
-    @endif
 </body>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 
 </html>
