@@ -3,12 +3,12 @@
 @include ('layouts/header')
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @include('layouts/header_superadmin')
     <title>Orders</title>
 </head>
 
 <body class="admin_orders_body">
+    @include('layouts/navbar_superadmin')
     <button type="button" class="btn btn-outline-dark can_del_ad_ord d-flex justify-content-center align-items-center" onclick="goBack()"><span class="material-symbols-outlined">
             arrow_back
         </span></button>
