@@ -69,7 +69,7 @@
                         </div>
 
                         {{-- pagination --}}
-                        {{-- {{$products -> links('pagination::bootstrap-5')}} --}}
+                        
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal{{$p->product_id}}" tabindex="-1" aria-labelledby="exampleModalLabel{{$p->product_id}}" aria-hidden="true">
@@ -148,6 +148,7 @@
             </div>
             @endforeach
         </div>
+        {{$products -> links('pagination::bootstrap-5')}}
     </div>
 
     <!-- <script src="/js/price.js"></script> -->

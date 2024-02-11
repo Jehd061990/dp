@@ -12,7 +12,7 @@
         <ul class="notification">
             <li class="nav-item me-2"><a href="#" class="nav-link"><img src="img/icons/nav-bell-icon.svg" alt="bell icon"></a></li>
             <li class="nav-item ms-2">
-                <a href="/cart" class="nav-link">
+                <a href="/checkout" class="nav-link">
                     <img src="img/icons/nav-cart-icon.svg" alt="cart icon">
                 </a>
             </li>
@@ -53,13 +53,13 @@
                     <li class="nav-item me-2">
                         <a href="#" class="nav-link"><img src="img/icons/nav-bell-icon.svg" alt="bell icon"></a>
                     </li>
-                    <li class="nav-item ms-2"><a href="" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"></a></li>
+                    <li class="nav-item ms-2"><a href="/checkout" class="nav-link"><img src="img/icons/nav-cart-icon.svg" alt="cart icon"/></a></li>
                 </ul>
             </div>
 
-            <div class="sdropdown profile-set">
+            <div class="dropdown profile-set">
                 <button class="profile-pic" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://newprofilepic.photo-cdn.net//assets/images/article/profile.jpg?90af0c8" alt="Profile picture">
+                    <img src="https://newprofilepic.photo-cdn.net//assets/images/article/profile.jpg?90af0c8" alt="Profile picture"></li>
                 </button>
                 <ul class="dropdown-menu text-center">
                     <!-- <h6> <b>FIRST NAME</b></h6> -->

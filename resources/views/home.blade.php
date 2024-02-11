@@ -18,6 +18,7 @@
     @include('layouts/navbar')
 
     <div>
+      <div>
       <div class="row">
         <div class="col-lg-12">
           <div id="dwelling_carousel">

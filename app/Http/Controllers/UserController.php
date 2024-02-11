@@ -12,12 +12,21 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
 
+
+    
+    public function showProfiles()
+    {
+        $users = User::all(); // Fetch all users from the database
+
+        return view('profiles', compact('users'));
+    }
     
     public function show_login()
     {
         return view('login');
     }
 
+    
     public function login(Request $r)
     {
         $user = User::where("email", "=", $r->email)

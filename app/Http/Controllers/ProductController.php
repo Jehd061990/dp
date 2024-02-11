@@ -19,7 +19,7 @@ class ProductController extends Controller
         $products = Product::query()
             ->select('*')
             ->join('storey', 'products.storey_id', '=', 'storey.storey_id')
-            ->get();
+            ->paginate(8);
 
 
         return view('product', compact('products'));
