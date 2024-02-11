@@ -125,7 +125,6 @@ class SuperAdminController extends Controller
             ->get()
             ->last();
 
-
         return view('admin_show_order', compact('orders', 'user_info'));
     }
 

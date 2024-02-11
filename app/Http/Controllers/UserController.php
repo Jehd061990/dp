@@ -162,7 +162,6 @@ class UserController extends Controller
 
     public function FAQ()
     {
-
         return view('FAQ');
     }
 }

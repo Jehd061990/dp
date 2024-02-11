@@ -26,13 +26,13 @@
     <h2>Update Order Status</h2>
     <p>Status: {{$user_info->status}}</p>
     @if ($user_info->status == "pending")
-    <form action="/admin/orders/accept/{{$orders[0]->order_id}}" method="POST">
+    <form action="{{route('show_order', $user_info->order_id)}}" method="PUT">
         @csrf
         @method('PUT')
         <button type="submit" class="btn btn-success">Accept Order</button>
     </form>
     @else
-    <form action="/admin/orders/status/{{$orders[0]->order_id}}" method="POST">
+    <form action="{{route('accept_order', $user_info->order_id)}}" method="POST">
         @csrf
         @method('PUT')
         <select name="status">
