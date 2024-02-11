@@ -18,7 +18,7 @@
         @endif
 
         <h1>Total Admin: {{$total_admin -> total}}</h1>
-        <a href="/register/admin" class="btn btn-success">+ Add</a>
+        <a href="/register/admin" class="btn btn-dark">+ Add</a>
         <div class="row">
             <table class="table">
                 <tr>

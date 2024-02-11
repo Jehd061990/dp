@@ -101,4 +101,3 @@ Route::middleware(['checkSessionSuperAdminAndAdmin'])->group(function () {
 
     // Route::get('/admin/products', [ProductController::class, 'index']);
 });
-//saan dito yung route ng delee?

@@ -161,7 +161,7 @@ class SuperAdminController extends Controller
         // $notif->user_id = $order->user_id;
         // $notif->save();
 
-        return redirect('/admin/orders/' . $id)->with('success', 'Updated order status to ' . $r->input("status"));
+        return redirect('/admin/orders/' . $id . '/view')->with('success', 'Updated order status to ' . $r->input("status"));
     }
 
     public function accept_order(string $id)
@@ -173,7 +173,7 @@ class SuperAdminController extends Controller
                 ]
             );
 
-        return redirect('/admin/orders/' . $id)->with('success', 'Updated order status to accepted.');
+        return redirect('/admin/orders/' . $id . '/view')->with('success', 'Updated order status to accepted.');
     }
 
     public function view_order(string $id)

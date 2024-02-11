@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+@include ('layouts/header')
 
 <head>
     @include('layouts/header_superadmin')
@@ -36,5 +37,10 @@
         @endif
     </div>
 </body>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 
 </html>
