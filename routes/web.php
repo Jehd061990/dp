@@ -67,6 +67,7 @@ Route::middleware(['checkSessionSuperAdmin'])->group(function () {
     Route::get('/register/admin', [SuperAdminController::class, 'show_register_admin']);
     Route::post('/admin/accounts', [SuperAdminController::class, 'register_admin']);
     Route::get('/admin/accounts', [SuperAdminController::class, 'register_admin_show']);
+    Route::get('/admin/dashboard', [SuperAdminController::class, 'registered_users']);
     Route::delete('/admin/accounts/{id}', [SuperAdminController::class, 'delete_admin']);
     Route::get('/admin/accounts/{id}', [SuperAdminController::class, 'show_admin']);
 });
@@ -84,6 +85,8 @@ Route::middleware(['checkSessionSuperAdminAndAdmin'])->group(function () {
     Route::get('/admin/orders/{id}', [SuperAdminController::class, 'show_order'])->name('show_order'); //ito yun?
     Route::put('/admin/orders/accept/{id}', [SuperAdminController::class, 'accept_order'])->name('accept_order');
     Route::put('/admin/orders/status/{id}', [SuperAdminController::class, 'update_order_status'])->name('update_order_status');
+    Route::get('/admin/orders/{id}', [AdminController::class, 'generate_order']);
+
     Route::get('/admin/test', [ProductController::class, 'showStorey']);
 
     // Route::get('/admin/products', [ProductController::class, 'index']);

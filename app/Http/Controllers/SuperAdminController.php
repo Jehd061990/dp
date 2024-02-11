@@ -226,4 +226,15 @@ class SuperAdminController extends Controller
             return redirect('/orders')->with('fail', "Unauthorized access! Incorrect user logged in.");
         }
     }
+
+    public function registered_users()
+    {
+        $total_users = User::query()
+            ->select(DB::raw('COUNT(*) AS total'))
+            ->where('account_type', '=', 'user')
+            ->get()
+            ->first();
+
+        return view('superadmin_dashboard', compact('total_users'));
+    }
 }
