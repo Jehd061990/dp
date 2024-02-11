@@ -12,14 +12,6 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-<<<<<<< HEAD
-=======
-    public function show_cart()
-    {
-        $cartItems = Cart::join('products', 'carts.product_id', '=', 'products.product_id') //ganito gawin mo
-            ->select('products.*', 'carts.*')
-            ->get();
->>>>>>> 59abac7dbe24921ae12820f4bb4acb8c30264ab9
 
    
 // public function destroyCartItem($cartItemId)
@@ -75,19 +67,10 @@ public function show_cart()
         $cart->user_id = Session::get('user_id'); // Ensure you have user_id set in the session
         $cart->price = $request->total_price; // Using input method for safety
         $cart->save();
-<<<<<<< HEAD
     
         // Instead of returning a view directly, redirect to a route that shows the cart
         // This prevents form re-submission on refresh
         return redirect()->route('show_cart')->with('success', 'Item added to cart successfully.',  ['cart' => $cart]);
-=======
-
-        $cartItems = Cart::join('products', 'carts.product_id', '=', 'products.product_id')
-            ->select('products.*', 'carts.*')
-            ->get();
-
-        return view('add_to_cart', ['cartItems' => $cartItems]);
->>>>>>> 59abac7dbe24921ae12820f4bb4acb8c30264ab9
     }
     
     // public function add_to_cart(Request $request, $product_id)
@@ -120,18 +103,12 @@ public function show_cart()
 
     public function place_order(Request $r)
     {
-<<<<<<< HEAD
         $order = new Order([
             'user_id' => Session::get('user_id'),
             'status' => 'pending',
             
             'default_value' => 'some_value',
         ]);
-=======
-        $order = new Order();
-        $order->user_id = Session::get('user_id');
-        $order->status = 'pending';
->>>>>>> 59abac7dbe24921ae12820f4bb4acb8c30264ab9
         $order->save();
         
 
@@ -151,11 +128,6 @@ public function show_cart()
             $orderCart->order_id = $order->order_id;
             $orderCart->cart_id = $r->input("cart_" . $i);
             $orderCart->save();
-
-            $cartItem = Cart::find($r->input("cart_" . $i));
-            if ($cartItem) {
-                $cartItem->delete();
-            }
         }
 
         return redirect('checkout');
@@ -176,15 +148,11 @@ public function show_cart()
 
     public function view_orders()
     {
-<<<<<<< HEAD
     
-=======
->>>>>>> 59abac7dbe24921ae12820f4bb4acb8c30264ab9
         $order = Order::query()
             ->select('*')
             ->where('user_id', Session::get('user_id'))
             ->orderBy('time_placed', 'DESC')
-<<<<<<< HEAD
             ->paginate(10);
     
         return view('checkout', compact('order'));
@@ -198,10 +166,3 @@ public function show_cart()
 
     
 }
-=======
-            ->get();
-
-        return view('checkout', compact('order'));
-    }
-}
->>>>>>> 59abac7dbe24921ae12820f4bb4acb8c30264ab9

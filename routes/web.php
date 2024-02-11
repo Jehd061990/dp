@@ -54,7 +54,6 @@ Route::middleware(['checkSessionUser'])->group(function () {
     Route::get('/checkout', [OrderController::class, 'view_orders']);
     Route::post('/checkout', [OrderController::class, 'view_orders']);
     Route::delete('/cart/delete/{id}', [OrderController::class, 'delete_cart'])->name('delete_cart');
-<<<<<<< HEAD
     Route::get('/checkout/{id}', [OrderController::class, 'view_order']);
 Route::delete('/cart/{cartItemId}', [OrderController::class, 'destroyCartItem'])->name('delete_cart_item');
 Route::post('/cart/update/{cartId}', [OrderController::class, 'updateCartQuantity']);
@@ -65,9 +64,7 @@ Route::post('/delete-item/{cartId}', [OrderController::class, 'deleteItem'])->mi
 
 
 
-=======
     Route::post('/profile', [UserController::class, 'upload_profile_picture']);
->>>>>>> 59abac7dbe24921ae12820f4bb4acb8c30264ab9
 });
 
 // ADMIN SIDE

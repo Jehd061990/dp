@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -46,31 +45,6 @@
 
         </div>
     </div>
-=======
-    <title>My Orders</title>
-</head>
-
-<body>
-    <h1>My Orders</h1>
-    @if (!empty($order))
-    <table class="table">
-        <tr>
-            <th>Order ID</th>
-            <th>Time Placed</th>
-            <th>Status</th>
-        </tr>
-        @foreach ($order as $o)
-        <tr>
-            <td>{{$o->order_id}}</td>
-            <td>{{$o->time_placed}}</td>
-            <td>{{$o->status}}</td>
-        </tr>
-        @endforeach
-    </table>
-    @else
-    <p>No orders found.</p>
-    @endif
->>>>>>> 59abac7dbe24921ae12820f4bb4acb8c30264ab9
 </body>
 
 <style>

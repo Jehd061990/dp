@@ -12,7 +12,6 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
 
-<<<<<<< HEAD
 
     
     public function showProfiles()
@@ -22,8 +21,6 @@ class UserController extends Controller
         return view('profiles', compact('users'));
     }
     
-=======
->>>>>>> 59abac7dbe24921ae12820f4bb4acb8c30264ab9
     public function show_login()
     {
         return view('login');
