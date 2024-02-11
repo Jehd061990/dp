@@ -5,15 +5,15 @@
     @include('layouts/header')
     <title>Your Cart</title>
     <style>
-     
+
     </style>
 </head>
 <script>
     function goBack() {
         window.history.back();
     }
-    
 </script>
+
 <body class="addtocart_body">
     @include('layouts/navbar')
     <div class="container-add_to">
@@ -27,28 +27,29 @@
                             <th class="th_add_to">Title</th>
                             <th class="th_add_to">Design</th>
                             <th class="th_add_to">Price</th>
-                           
+
                         </tr>
                     </thead>
                     <tbody>
                         @php $totalPrice = 0; @endphp
                         <div>
                             <button type="button" class="btn btn-outline-dark can_del d-flex justify-content-center align-items-center" onclick="goBack()"><span class="material-symbols-outlined">
-                                arrow_back
+                                    arrow_back
                                 </span></button>
                         </div>
-                        
+
                         <h2 class="add_head">Add to cart</h2>
                         @foreach($cartItems as $item)
                         <tr>
                             <input type="text" value="{{$item -> cart_id}}" name="cart_{{$loop->index + 1}}" hidden>
-                            <td class="td_add_to"><img src="{{$item -> image_3D}}"/>{{$item -> storey_id}} {{$item -> title}} ({{$item -> lot_area}})</td>
+                            <td class="td_add_to"><img src="{{$item -> image_3D}}" />{{$item -> storey_id}} {{$item -> title}} ({{$item -> lot_area}})</td>
                             <td class="td_add_to">{{$item -> design}}</td>
                             <div>
-                            <td  class="td_add_to">{{"₱" . number_format($item->price, 2, '.', ',')}}<button type="button" class="delete-btn delete_add_to" id="delete_add_to_{{$item->cart_id}}" data-bs-toggle="modal" data-bs-target="#delete_{{$item -> cart_id}}">
-                                <i class="fa-solid fa-xmark"></i>
-                            </button></td></div>
-                           
+                                <td class="td_add_to">{{"₱" . number_format($item->price, 2, '.', ',')}}<button type="button" class="delete-btn delete_add_to" id="delete_add_to_{{$item->cart_id}}" data-bs-toggle="modal" data-bs-target="#delete_{{$item -> cart_id}}">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button></td>
+                            </div>
+
                         </tr>
                         @php $totalPrice += $item->price; @endphp
                         @endforeach
@@ -93,9 +94,9 @@
     <div>
 
         <footer class="add_footer">
-    @include('layouts/footer')
+            @include('layouts/footer')
         </footer>
-   
+
 </body>
 
 </html>

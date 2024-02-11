@@ -43,16 +43,16 @@ $(document).ready(function () {
             .each(function () {
                 let item_price = parseFloat($(this).data("price"));
                 if (!isNaN(item_price)) {
-                    // Check if item_price is a valid number
+                  
                     total_price += item_price;
                 }
             });
         checkbox
             .closest(".modal")
             .find(".total-price")
-            .text("Total Price: PHP " + total_price.toFixed(2)); // Update total price element within the modal
+            .text("Total Price: PHP " + total_price.toFixed(2)); 
     }
 
-    // Initial update when the page loads
+
     updateTotalPrice();
 });

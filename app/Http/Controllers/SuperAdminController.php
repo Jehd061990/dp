@@ -45,7 +45,7 @@ class SuperAdminController extends Controller
             ->join('storey', 'storey.storey_id', '=', 'products.storey_id')
             ->select('products.*', 'storey.*')
             ->orderBy('products.product_id', 'desc')
-            ->get();
+            ->paginate(5);
 
         return view('admin_products', compact('product'));
     }

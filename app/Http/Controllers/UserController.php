@@ -13,20 +13,20 @@ class UserController extends Controller
 {
 
 
-    
+
     public function showProfiles()
     {
         $users = User::all(); // Fetch all users from the database
 
         return view('profiles', compact('users'));
     }
-    
+
     public function show_login()
     {
         return view('login');
     }
 
-    
+
     public function login(Request $r)
     {
         $user = User::where("email", "=", $r->email)
@@ -73,8 +73,6 @@ class UserController extends Controller
 
         return view('profile', compact('user'));
     }
-
-
 
     public function edit_profile(Request $r, string $id)
     {
