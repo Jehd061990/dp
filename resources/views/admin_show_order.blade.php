@@ -14,18 +14,12 @@
             <th>Title</th>
             <th>Design</th>
             <th>Description</th>
-            <th>3D Image</th>
-            <th>Floor Plan Image</th>
-            <th>Interior Image</th>
         </tr>
         @foreach ($orders as $o)
         <tr>
             <td>{{$o->title}}</td>
             <td>{{$o->design}}</td>
             <td>{{$o->description}}</td>
-            <td><img src="{{ asset('img/products/' . $o->image_3d) }}"></td>
-            <td><img src="{{ asset('img/products/' . $o->floor_plan_image) }}"></td>
-            <td><img src="{{ asset('img/products/' . $o->interior_image) }}"></td>
         </tr>
         @endforeach
     </table>
