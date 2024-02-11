@@ -250,11 +250,13 @@
 @media only screen and (max-width: 1222px) {
     #search_bar {
         width: 350px;
+        left: 55%;
     }
 }
 
 @media only screen and (max-width: 1127px) {
     #search_bar {
-        width: 350px;
+        /* left: 60%; */
+        width: 290px;
     }
 }
