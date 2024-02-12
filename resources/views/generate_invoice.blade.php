@@ -17,7 +17,7 @@
     <div class="container-fluid">
         @foreach($invoice as $item)
         <div class="row">
-            <h1>{{ $item->order_title }}</h1>
+            <h1>{{ $item->title }}</h1>
             <p><b>LOT AREA: {{ $item->lot_area }}</b></p>
             <p><b>{{ $item->design }}</b></p>
             <p>{{ $item->description }}</p>
